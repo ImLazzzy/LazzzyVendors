@@ -8,12 +8,12 @@ const products = [
     id: 1,
     name: "2026 All-In-One Supplier",
     badge: "BEST SELLER",
-    badgeColor: "bg-yellow-400 text-black",
+    badgeColor: "bg-green-400 text-black",
     regularPrice: 34.99,
     salePrice: 24.99,
     image: null,
     emoji: "🏆",
-    gradient: "from-yellow-900/40 to-amber-900/40",
+    gradient: "from-green-900/40 to-emerald-900/40",
     description: "Every category covered — clothes, shoes, jewelry, belts, handbags & more. Instant email delivery.",
     tags: ["Clothes", "Shoes", "Jewelry", "Handbags", "Belts"],
   },
@@ -26,7 +26,7 @@ const products = [
     salePrice: 39.99,
     image: null,
     emoji: "💎",
-    gradient: "from-purple-900/40 to-indigo-900/40",
+    gradient: "from-emerald-900/40 to-teal-900/40",
     description: "The ultimate bundle — all individual suppliers in one package at the lowest price possible.",
     tags: ["All Categories", "Best Value", "Exclusive"],
   },
@@ -39,7 +39,7 @@ const products = [
     salePrice: 14.99,
     image: null,
     emoji: "👟",
-    gradient: "from-orange-900/40 to-red-900/40",
+    gradient: "from-green-900/30 to-lime-900/30",
     description: "Wholesale sneaker & footwear suppliers. Name brands at fraction of retail cost.",
     tags: ["Sneakers", "Boots", "Sandals"],
   },
@@ -60,12 +60,12 @@ const products = [
     id: 5,
     name: "Moissanite Supplier",
     badge: "POPULAR",
-    badgeColor: "bg-blue-500 text-white",
+    badgeColor: "bg-emerald-500 text-white",
     regularPrice: 20.00,
     salePrice: 14.99,
     image: null,
     emoji: "💍",
-    gradient: "from-blue-900/40 to-cyan-900/40",
+    gradient: "from-teal-900/40 to-green-900/40",
     description: "Earrings, rings & watches. Moissanite jewelry at wholesale pricing.",
     tags: ["Earrings", "Rings", "Watches"],
   },
@@ -146,7 +146,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white font-sans">
       {/* Announcement Bar */}
-      <div className="bg-yellow-400 text-black text-center py-2 text-sm font-bold tracking-wide">
+      <div className="bg-green-500 text-black text-center py-2 text-sm font-bold tracking-wide">
         🔥 LIMITED TIME — 50% OFF ELITE BUNDLE &nbsp;|&nbsp; INSTANT DIGITAL DELIVERY ⚡
       </div>
 
@@ -155,7 +155,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-2">
-              <span className="text-yellow-400 text-2xl font-black tracking-tighter">RICH<span className="text-white">OFF</span><span className="text-yellow-400">POD</span></span>
+              <span className="text-2xl font-black tracking-tighter">
+                <span className="text-green-400">Lazzzy</span><span className="text-white">Vendors</span>
+              </span>
             </div>
             <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
               <a href="#products" className="hover:text-white transition-colors">Products</a>
@@ -164,7 +166,7 @@ export default function Home() {
             </div>
             <button
               onClick={() => setCartOpen(true)}
-              className="relative flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-black font-bold px-4 py-2 rounded-full text-sm transition-colors"
+              className="relative flex items-center gap-2 bg-green-500 hover:bg-green-400 text-black font-bold px-4 py-2 rounded-full text-sm transition-colors"
             >
               <ShoppingCart size={16} />
               Cart
@@ -180,16 +182,16 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/5 via-transparent to-yellow-400/5 pointer-events-none" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-yellow-400/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-transparent to-green-500/5 pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-green-500/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20 text-center relative">
-          <div className="inline-flex items-center gap-2 bg-yellow-400/10 border border-yellow-400/30 rounded-full px-4 py-1.5 text-yellow-400 text-xs font-semibold uppercase tracking-widest mb-6">
+          <div className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/30 rounded-full px-4 py-1.5 text-green-400 text-xs font-semibold uppercase tracking-widest mb-6">
             <Zap size={12} />
             #1 Reseller Supplier Source
           </div>
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-black leading-none tracking-tight mb-6">
             Start Your{" "}
-            <span className="bg-gradient-to-r from-yellow-400 to-amber-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-green-400 to-emerald-300 bg-clip-text text-transparent">
               Reselling
             </span>
             <br />
@@ -202,7 +204,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="#products"
-              className="flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-black font-black px-8 py-4 rounded-full text-lg transition-all hover:scale-105 shadow-xl shadow-yellow-400/20"
+              className="flex items-center gap-2 bg-green-500 hover:bg-green-400 text-black font-black px-8 py-4 rounded-full text-lg transition-all hover:scale-105 shadow-xl shadow-green-500/20"
             >
               Shop Suppliers <ChevronRight size={20} />
             </a>
@@ -222,7 +224,7 @@ export default function Home() {
               { value: "100%", label: "Satisfaction" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="text-2xl font-black text-yellow-400">{stat.value}</div>
+                <div className="text-2xl font-black text-green-400">{stat.value}</div>
                 <div className="text-zinc-500 text-sm mt-0.5">{stat.label}</div>
               </div>
             ))}
@@ -243,9 +245,9 @@ export default function Home() {
               { icon: <Zap size={28} />, step: "02", title: "Get Links Instantly", desc: "Receive supplier links directly to your email within seconds of purchase." },
               { icon: <TrendingUp size={28} />, step: "03", title: "Start Flipping", desc: "Source products at wholesale, sell at retail. Keep 100% of your profits." },
             ].map((step) => (
-              <div key={step.step} className="relative bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-yellow-400/40 transition-colors group">
-                <div className="text-yellow-400/20 font-black text-6xl absolute top-4 right-6 leading-none select-none">{step.step}</div>
-                <div className="text-yellow-400 mb-4">{step.icon}</div>
+              <div key={step.step} className="relative bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-green-500/40 transition-colors group">
+                <div className="text-green-400/20 font-black text-6xl absolute top-4 right-6 leading-none select-none">{step.step}</div>
+                <div className="text-green-400 mb-4">{step.icon}</div>
                 <h3 className="text-xl font-bold mb-2">{step.title}</h3>
                 <p className="text-zinc-400 text-sm leading-relaxed">{step.desc}</p>
               </div>
@@ -267,14 +269,13 @@ export default function Home() {
               return (
                 <div
                   key={p.id}
-                  className={`relative bg-gradient-to-br ${p.gradient} border border-white/10 rounded-2xl overflow-hidden hover:border-yellow-400/40 transition-all hover:-translate-y-1 group`}
+                  className={`relative bg-gradient-to-br ${p.gradient} border border-white/10 rounded-2xl overflow-hidden hover:border-green-500/40 transition-all hover:-translate-y-1 group`}
                 >
                   {p.badge && (
                     <div className={`absolute top-3 left-3 z-10 ${p.badgeColor} text-xs font-black px-2.5 py-1 rounded-full`}>
                       {p.badge}
                     </div>
                   )}
-                  {/* Product Image Area */}
                   <div className="flex items-center justify-center h-44 text-7xl bg-black/30">
                     {p.emoji}
                   </div>
@@ -290,7 +291,7 @@ export default function Home() {
                     </div>
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-baseline gap-2">
-                        <span className="text-2xl font-black text-yellow-400">${p.salePrice.toFixed(2)}</span>
+                        <span className="text-2xl font-black text-green-400">${p.salePrice.toFixed(2)}</span>
                         <span className="text-zinc-500 text-sm line-through">${p.regularPrice.toFixed(2)}</span>
                       </div>
                       <span className="bg-red-500/20 text-red-400 text-xs font-bold px-2 py-0.5 rounded-full">
@@ -299,7 +300,7 @@ export default function Home() {
                     </div>
                     <button
                       onClick={() => addToCart(p)}
-                      className="w-full bg-yellow-400 hover:bg-yellow-300 text-black font-black py-2.5 rounded-xl text-sm transition-all hover:scale-[1.02] active:scale-95"
+                      className="w-full bg-green-500 hover:bg-green-400 text-black font-black py-2.5 rounded-xl text-sm transition-all hover:scale-[1.02] active:scale-95"
                     >
                       Add to Cart
                     </button>
@@ -333,7 +334,7 @@ export default function Home() {
               },
             ].map((item) => (
               <div key={item.title} className="flex gap-4 items-start">
-                <div className="text-yellow-400 mt-1 flex-shrink-0">{item.icon}</div>
+                <div className="text-green-400 mt-1 flex-shrink-0">{item.icon}</div>
                 <div>
                   <h3 className="font-bold mb-1">{item.title}</h3>
                   <p className="text-zinc-400 text-sm leading-relaxed">{item.desc}</p>
@@ -360,7 +361,7 @@ export default function Home() {
               <div key={review.name} className="bg-white/5 border border-white/10 rounded-2xl p-6">
                 <div className="flex gap-0.5 mb-3">
                   {Array.from({ length: review.stars }).map((_, i) => (
-                    <Star key={i} size={14} className="fill-yellow-400 text-yellow-400" />
+                    <Star key={i} size={14} className="fill-green-400 text-green-400" />
                   ))}
                 </div>
                 <p className="text-zinc-300 text-sm leading-relaxed mb-4">"{review.text}"</p>
@@ -384,13 +385,13 @@ export default function Home() {
           <div className="space-y-4">
             {[
               { q: "How do I receive my supplier links?", a: "Immediately after purchase, supplier links are sent to the email you used at checkout. Check spam if you don't see it within 5 minutes." },
-              { q: "What is this a subscription?", a: "Some packages are offered as a one-time or subscription purchase. The product page will clearly state if it's recurring." },
+              { q: "Is this a subscription?", a: "Some packages are offered as a one-time or subscription purchase. The product page will clearly state if it's recurring." },
               { q: "Can I resell what I source from these suppliers?", a: "Yes — that's the entire point. Source wholesale, sell retail, keep 100% of your margins." },
               { q: "What if the supplier links don't work?", a: "All suppliers are vetted and updated regularly. If you experience any issues, contact us and we'll make it right immediately." },
               { q: "Is there a refund policy?", a: "Due to the digital nature of the products, all sales are final. We stand behind the quality of every supplier on our list." },
             ].map((item) => (
               <details key={item.q} className="group bg-white/5 border border-white/10 rounded-xl overflow-hidden">
-                <summary className="flex items-center justify-between px-6 py-4 cursor-pointer font-semibold text-sm select-none hover:text-yellow-400 transition-colors">
+                <summary className="flex items-center justify-between px-6 py-4 cursor-pointer font-semibold text-sm select-none hover:text-green-400 transition-colors">
                   {item.q}
                   <ChevronRight size={16} className="flex-shrink-0 group-open:rotate-90 transition-transform" />
                 </summary>
@@ -406,21 +407,21 @@ export default function Home() {
       {/* CTA Banner */}
       <section className="py-20 border-t border-white/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="relative bg-gradient-to-br from-yellow-400/10 to-amber-400/5 border border-yellow-400/20 rounded-3xl p-12 overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/5 to-transparent pointer-events-none" />
+          <div className="relative bg-gradient-to-br from-green-500/10 to-emerald-500/5 border border-green-500/20 rounded-3xl p-12 overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent pointer-events-none" />
             <h2 className="text-4xl sm:text-5xl font-black mb-4 relative">
-              Ready to Get{" "}
-              <span className="bg-gradient-to-r from-yellow-400 to-amber-300 bg-clip-text text-transparent">
-                Rich
+              Ready to Start{" "}
+              <span className="bg-gradient-to-r from-green-400 to-emerald-300 bg-clip-text text-transparent">
+                Winning
               </span>
               ?
             </h2>
             <p className="text-zinc-400 text-lg mb-8 relative">
-              Join thousands of resellers already using our supplier network to build income.
+              Join thousands of resellers already using LazzzyVendors to build their income.
             </p>
             <a
               href="#products"
-              className="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-black font-black px-10 py-4 rounded-full text-lg transition-all hover:scale-105 shadow-2xl shadow-yellow-400/30 relative"
+              className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-400 text-black font-black px-10 py-4 rounded-full text-lg transition-all hover:scale-105 shadow-2xl shadow-green-500/30 relative"
             >
               Shop Suppliers Now <ChevronRight size={20} />
             </a>
@@ -431,10 +432,10 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-white/10 py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-yellow-400 font-black tracking-tighter">
-            RICH<span className="text-white">OFF</span><span className="text-yellow-400">POD</span>
+          <div className="font-black tracking-tighter text-lg">
+            <span className="text-green-400">Lazzzy</span><span className="text-white">Vendors</span>
           </div>
-          <p className="text-zinc-600 text-sm">© 2026 RichOffPod. All rights reserved.</p>
+          <p className="text-zinc-600 text-sm">© 2026 LazzzyVendors. All rights reserved.</p>
           <div className="flex gap-6 text-zinc-500 text-sm">
             <a href="#" className="hover:text-white transition-colors">Terms</a>
             <a href="#" className="hover:text-white transition-colors">Privacy</a>
@@ -449,7 +450,7 @@ export default function Home() {
           <div className="flex-1 bg-black/60 backdrop-blur-sm" onClick={() => setCartOpen(false)} />
           <div className="w-full max-w-md bg-[#111] border-l border-white/10 flex flex-col shadow-2xl">
             <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
-              <h2 className="font-black text-lg">Your Cart {cartCount > 0 && <span className="text-yellow-400">({cartCount})</span>}</h2>
+              <h2 className="font-black text-lg">Your Cart {cartCount > 0 && <span className="text-green-400">({cartCount})</span>}</h2>
               <button onClick={() => setCartOpen(false)} className="text-zinc-400 hover:text-white transition-colors">
                 <X size={20} />
               </button>
@@ -459,7 +460,7 @@ export default function Home() {
                 <div className="text-center py-16 text-zinc-500">
                   <ShoppingCart size={40} className="mx-auto mb-3 opacity-30" />
                   <p>Your cart is empty</p>
-                  <button onClick={() => setCartOpen(false)} className="mt-4 text-yellow-400 text-sm font-semibold hover:underline">
+                  <button onClick={() => setCartOpen(false)} className="mt-4 text-green-400 text-sm font-semibold hover:underline">
                     Browse Suppliers
                   </button>
                 </div>
@@ -471,7 +472,7 @@ export default function Home() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="font-semibold text-sm leading-tight truncate">{item.name}</div>
-                      <div className="text-yellow-400 font-bold text-sm mt-0.5">${item.price.toFixed(2)}</div>
+                      <div className="text-green-400 font-bold text-sm mt-0.5">${item.price.toFixed(2)}</div>
                     </div>
                     <div className="flex items-center gap-2">
                       <button
@@ -502,7 +503,7 @@ export default function Home() {
                   <Zap size={12} />
                   Instant digital delivery after checkout
                 </div>
-                <button className="w-full bg-yellow-400 hover:bg-yellow-300 text-black font-black py-4 rounded-xl text-base transition-all hover:scale-[1.02] active:scale-95">
+                <button className="w-full bg-green-500 hover:bg-green-400 text-black font-black py-4 rounded-xl text-base transition-all hover:scale-[1.02] active:scale-95">
                   Checkout — ${cartTotal.toFixed(2)}
                 </button>
               </div>

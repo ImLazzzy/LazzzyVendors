@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "RichOffPod — Start Your Reselling Journey",
+  title: "LazzzyVendors — Start Your Reselling Journey",
   description: "Access premium supplier directories. Source products at wholesale, sell at retail. Instant digital delivery.",
 };
 
