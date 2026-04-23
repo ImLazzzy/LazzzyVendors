@@ -8,6 +8,16 @@ import {
   ShirtIcon, CologneIconSVG, PodsIcon,
 } from "@/components/NeonProductIcons";
 
+const iconMap: Record<number, () => React.ReactElement> = {
+  1: AllInOneIcon, 2: BundleIcon, 3: ShoeIcon, 4: WatchIcon,
+  5: JewelryIcon, 6: HoodieIcon, 7: EarbudsIcon, 8: DressIcon,
+  9: HandbagIcon, 10: LegoIcon, 11: ShirtIcon, 12: CologneIconSVG, 13: PodsIcon,
+};
+function ProductIcon({ id }: { id: number }) {
+  const Icon = iconMap[id];
+  return Icon ? <Icon /> : null;
+}
+
 const SHOPIFY_STORE = "lazzzyresells.myshopify.com";
 const BASE = `https://${SHOPIFY_STORE}/products`;
 const CHECKOUT = `https://${SHOPIFY_STORE}/cart`;
@@ -541,23 +551,10 @@ export default function Home() {
                       {p.badge}
                     </div>
                   )}
-                  <div className="flex items-center justify-center h-44 text-7xl bg-black/30">
-                    {p.emoji === "COLOGNE" ? (
-                      <svg width="72" height="88" viewBox="0 0 72 88" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="26" y="2" width="20" height="10" rx="3" fill="#4ade80" />
-                        <rect x="30" y="12" width="12" height="8" rx="2" fill="#86efac" />
-                        <rect x="42" y="14" width="10" height="4" rx="2" fill="#4ade80" />
-                        <rect x="18" y="20" width="36" height="56" rx="8" fill="#166534" />
-                        <rect x="24" y="28" width="6" height="24" rx="3" fill="#4ade80" opacity="0.3" />
-                        <rect x="22" y="38" width="28" height="22" rx="4" fill="#14532d" />
-                        <rect x="24" y="41" width="24" height="2" rx="1" fill="#4ade80" opacity="0.7" />
-                        <rect x="26" y="46" width="20" height="1.5" rx="1" fill="#4ade80" opacity="0.4" />
-                        <rect x="26" y="50" width="16" height="1.5" rx="1" fill="#4ade80" opacity="0.4" />
-                        <rect x="20" y="74" width="32" height="4" rx="2" fill="#15803d" />
-                      </svg>
-                    ) : (
-                      p.emoji
-                    )}
+                  <div className="flex items-center justify-center h-44 bg-black/40">
+                    <div className="w-28 h-28">
+                      <ProductIcon id={p.id} />
+                    </div>
                   </div>
                   <div className="p-5">
                     <h3 className="font-bold text-base leading-tight mb-1">{p.name}</h3>
@@ -887,18 +884,8 @@ export default function Home() {
                 </button>
               </div>
               <div className="flex items-center gap-4">
-                <div className="text-5xl w-16 h-16 flex items-center justify-center bg-black/30 rounded-2xl flex-shrink-0">
-                  {detailProduct.emoji === "COLOGNE" ? (
-                    <svg width="32" height="40" viewBox="0 0 72 88" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <rect x="26" y="2" width="20" height="10" rx="3" fill="#4ade80" />
-                      <rect x="30" y="12" width="12" height="8" rx="2" fill="#86efac" />
-                      <rect x="42" y="14" width="10" height="4" rx="2" fill="#4ade80" />
-                      <rect x="18" y="20" width="36" height="56" rx="8" fill="#166534" />
-                      <rect x="24" y="28" width="6" height="24" rx="3" fill="#4ade80" opacity="0.3" />
-                      <rect x="22" y="38" width="28" height="22" rx="4" fill="#14532d" />
-                      <rect x="20" y="74" width="32" height="4" rx="2" fill="#15803d" />
-                    </svg>
-                  ) : detailProduct.emoji}
+                <div className="w-16 h-16 flex-shrink-0 bg-black/30 rounded-2xl overflow-hidden">
+                  <ProductIcon id={detailProduct.id} />
                 </div>
                 <div>
                   <h2 className="text-xl font-black text-white">{detailProduct.name}</h2>
