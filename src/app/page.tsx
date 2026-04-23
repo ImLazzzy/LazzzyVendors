@@ -155,7 +155,7 @@ const products = [
     regularPrice: 20.00,
     salePrice: 14.99,
     image: null,
-    emoji: "🧴",
+    emoji: "COLOGNE",
     gradient: "from-zinc-800/60 to-neutral-800/60",
     description: "Designer & niche fragrance suppliers. Cologne resale is booming — get in early.",
     tags: ["Designer", "Niche", "Fragrance"],
@@ -342,7 +342,29 @@ export default function Home() {
                     </div>
                   )}
                   <div className="flex items-center justify-center h-44 text-7xl bg-black/30">
-                    {p.emoji}
+                    {p.emoji === "COLOGNE" ? (
+                      <svg width="72" height="88" viewBox="0 0 72 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        {/* cap */}
+                        <rect x="26" y="2" width="20" height="10" rx="3" fill="#4ade80" />
+                        {/* neck */}
+                        <rect x="30" y="12" width="12" height="8" rx="2" fill="#86efac" />
+                        {/* spray nozzle */}
+                        <rect x="42" y="14" width="10" height="4" rx="2" fill="#4ade80" />
+                        {/* body */}
+                        <rect x="18" y="20" width="36" height="56" rx="8" fill="#166534" />
+                        {/* shine */}
+                        <rect x="24" y="28" width="6" height="24" rx="3" fill="#4ade80" opacity="0.3" />
+                        {/* label */}
+                        <rect x="22" y="38" width="28" height="22" rx="4" fill="#14532d" />
+                        <rect x="24" y="41" width="24" height="2" rx="1" fill="#4ade80" opacity="0.7" />
+                        <rect x="26" y="46" width="20" height="1.5" rx="1" fill="#4ade80" opacity="0.4" />
+                        <rect x="26" y="50" width="16" height="1.5" rx="1" fill="#4ade80" opacity="0.4" />
+                        {/* base */}
+                        <rect x="20" y="74" width="32" height="4" rx="2" fill="#15803d" />
+                      </svg>
+                    ) : (
+                      p.emoji
+                    )}
                   </div>
                   <div className="p-5">
                     <h3 className="font-bold text-base leading-tight mb-1">{p.name}</h3>
