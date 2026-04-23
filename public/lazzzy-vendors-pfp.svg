@@ -105,27 +105,27 @@
     filter="url(#softNeon)"
   >◆ OFFICIAL ◆</text>
 
-  <!-- LAZZZY — white bold -->
+  <!-- LAZZZY — neon green bold -->
   <text
     x="500" y="510"
     text-anchor="middle"
     font-family="'Arial Black', 'Arial Bold', Impact, sans-serif"
     font-size="152"
     font-weight="900"
-    fill="#ffffff"
-    filter="url(#softNeon)"
+    fill="url(#greenGrad)"
+    filter="url(#neon)"
     letter-spacing="-3"
   >LAZZZY</text>
 
-  <!-- VENDORS — neon green bold -->
+  <!-- VENDORS — white bold -->
   <text
     x="500" y="640"
     text-anchor="middle"
     font-family="'Arial Black', 'Arial Bold', Impact, sans-serif"
     font-size="152"
     font-weight="900"
-    fill="url(#greenGrad)"
-    filter="url(#neon)"
+    fill="#ffffff"
+    filter="url(#softNeon)"
     letter-spacing="0"
   >VENDORS</text>
 
