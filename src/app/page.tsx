@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ShoppingCart, X, Plus, Minus, Zap, Shield, Star, ChevronRight, Package, TrendingUp, Award, DollarSign, TrendingUp as Flip } from "lucide-react";
+import { ShoppingCart, X, Plus, Minus, Zap, Shield, Star, ChevronRight, Package, TrendingUp, Award, Info } from "lucide-react";
 
 const SHOPIFY_STORE = "lazzzyresells.myshopify.com";
 const BASE = `https://${SHOPIFY_STORE}/products`;
@@ -19,6 +19,12 @@ const products = [
     tags: ["Clothes", "Shoes", "Jewelry", "Handbags", "Belts"],
     shopifyUrl: `${BASE}/2026`,
     variantId: "53352382562622",
+    details: {
+      whatYouGet: ["Clothing suppliers (50+ sources)", "Shoe & sneaker wholesalers", "Jewelry & accessory suppliers", "Handbag & belt sources", "Instant email delivery after purchase"],
+      bestFor: "Resellers who want to cover multiple niches from day one.",
+      avgProfit: "$200–$600/mo per category",
+      delivery: "Instant — links sent to your email within seconds",
+    },
   },
   {
     id: 2,
@@ -33,6 +39,12 @@ const products = [
     tags: ["All Categories", "Best Value", "Exclusive"],
     shopifyUrl: `${BASE}/all`,
     variantId: "53352541913406",
+    details: {
+      whatYouGet: ["Every individual supplier list included", "13 categories in one purchase", "Unlimited access — no expiry", "Priority support", "Instant email delivery after purchase"],
+      bestFor: "Serious resellers who want the complete toolkit at the lowest price.",
+      avgProfit: "$800–$2,000+/mo across all niches",
+      delivery: "Instant — links sent to your email within seconds",
+    },
   },
   {
     id: 3,
@@ -47,6 +59,12 @@ const products = [
     tags: ["Sneakers", "Boots", "Sandals"],
     shopifyUrl: `${BASE}/shoes`,
     variantId: "53352384233790",
+    details: {
+      whatYouGet: ["Name-brand sneaker wholesalers", "Boots & casual footwear sources", "Sandal & seasonal suppliers", "Instant email delivery after purchase"],
+      bestFor: "Resellers focused on footwear — high demand, year-round sales.",
+      avgProfit: "$150–$400/mo",
+      delivery: "Instant — links sent to your email within seconds",
+    },
   },
   {
     id: 4,
@@ -61,6 +79,12 @@ const products = [
     tags: ["Luxury", "Fashion", "Wholesale"],
     shopifyUrl: `${BASE}/other-example-product-4`,
     variantId: "53342887084350",
+    details: {
+      whatYouGet: ["Luxury watch wholesalers", "Fashion & casual watch sources", "High-margin resale contacts", "Instant email delivery after purchase"],
+      bestFor: "Resellers targeting the watch & accessories market.",
+      avgProfit: "$200–$500/mo",
+      delivery: "Instant — links sent to your email within seconds",
+    },
   },
   {
     id: 5,
@@ -75,6 +99,12 @@ const products = [
     tags: ["Earrings", "Rings", "Watches"],
     shopifyUrl: `${BASE}/jewelry`,
     variantId: "53352384790846",
+    details: {
+      whatYouGet: ["Moissanite ring suppliers", "Earring wholesalers", "Watch & bracelet sources", "Instant email delivery after purchase"],
+      bestFor: "Resellers in jewelry — one of the highest-margin niches available.",
+      avgProfit: "$300–$900/mo",
+      delivery: "Instant — links sent to your email within seconds",
+    },
   },
   {
     id: 6,
@@ -89,6 +119,12 @@ const products = [
     tags: ["Hoodies", "Streetwear", "Tactical"],
     shopifyUrl: `${BASE}/spider-t`,
     variantId: "53352380662078",
+    details: {
+      whatYouGet: ["Spy/tactical hoodie wholesalers", "Trending streetwear sources", "TikTok-viral style suppliers", "Instant email delivery after purchase"],
+      bestFor: "Resellers targeting streetwear & viral fashion trends.",
+      avgProfit: "$150–$350/mo",
+      delivery: "Instant — links sent to your email within seconds",
+    },
   },
   {
     id: 7,
@@ -103,6 +139,12 @@ const products = [
     tags: ["Earbuds", "Audio", "Tech"],
     shopifyUrl: `${BASE}/other-example-product-1`,
     variantId: "53342886854974",
+    details: {
+      whatYouGet: ["Wireless earbud wholesalers", "Audio accessory suppliers", "Budget to mid-range sources", "Instant email delivery after purchase"],
+      bestFor: "Resellers in tech accessories — fast-moving, repeat buyers.",
+      avgProfit: "$100–$300/mo",
+      delivery: "Instant — links sent to your email within seconds",
+    },
   },
   {
     id: 8,
@@ -117,6 +159,12 @@ const products = [
     tags: ["Women's", "Fashion", "Boutique"],
     shopifyUrl: `${BASE}/lulu`,
     variantId: "53352387772734",
+    details: {
+      whatYouGet: ["Women's fashion wholesalers", "Boutique clothing sources", "Seasonal trend suppliers", "Instant email delivery after purchase"],
+      bestFor: "Resellers targeting women's fashion — huge and consistent demand.",
+      avgProfit: "$200–$500/mo",
+      delivery: "Instant — links sent to your email within seconds",
+    },
   },
   {
     id: 9,
@@ -131,6 +179,12 @@ const products = [
     tags: ["Louis Vuitton", "Gucci", "Prada", "Wholesale"],
     shopifyUrl: `${BASE}/other-example-product-2`,
     variantId: "53342886920510",
+    details: {
+      whatYouGet: ["Louis Vuitton-style bag wholesalers", "Gucci & Prada-inspired sources", "Premium handbag suppliers", "Instant email delivery after purchase"],
+      bestFor: "Resellers targeting luxury-inspired accessories — high ticket, great margins.",
+      avgProfit: "$300–$800/mo",
+      delivery: "Instant — links sent to your email within seconds",
+    },
   },
   {
     id: 10,
@@ -145,6 +199,12 @@ const products = [
     tags: ["Rare Sets", "Bulk", "Retired"],
     shopifyUrl: `${BASE}/cologne`,
     variantId: "53352373420350",
+    details: {
+      whatYouGet: ["Rare & retired set suppliers", "Bulk Lego wholesalers", "Collector-focused sources", "Instant email delivery after purchase"],
+      bestFor: "Resellers in the toy & collectibles niche — one of the highest ROI categories.",
+      avgProfit: "$250–$700/mo",
+      delivery: "Instant — links sent to your email within seconds",
+    },
   },
   {
     id: 11,
@@ -159,6 +219,12 @@ const products = [
     tags: ["Streetwear", "Basics", "Boutique"],
     shopifyUrl: `${BASE}/clothing`,
     variantId: "53352387281214",
+    details: {
+      whatYouGet: ["Streetwear wholesalers", "Basic & essential clothing sources", "Boutique style suppliers", "Instant email delivery after purchase"],
+      bestFor: "Resellers who want to flip everyday clothing across all demographics.",
+      avgProfit: "$200–$500/mo",
+      delivery: "Instant — links sent to your email within seconds",
+    },
   },
   {
     id: 12,
@@ -173,6 +239,12 @@ const products = [
     tags: ["Designer", "Niche", "Fragrance"],
     shopifyUrl: `${BASE}/cologne`,
     variantId: "53352373420350",
+    details: {
+      whatYouGet: ["Designer fragrance wholesalers", "Niche & indie perfume sources", "High-margin cologne suppliers", "Instant email delivery after purchase"],
+      bestFor: "Resellers getting into fragrance — booming niche with loyal repeat customers.",
+      avgProfit: "$150–$400/mo",
+      delivery: "Instant — links sent to your email within seconds",
+    },
   },
   {
     id: 13,
@@ -187,6 +259,12 @@ const products = [
     tags: ["AirPods", "Wireless", "Exclusive"],
     shopifyUrl: `${BASE}/other-example-product-3`,
     variantId: "53342886986046",
+    details: {
+      whatYouGet: ["AirPods-compatible wholesalers", "Wireless earbud suppliers", "Exclusive LazzzyPodz source access", "Instant email delivery after purchase"],
+      bestFor: "Resellers targeting audio accessories — fast-selling, affordable to source.",
+      avgProfit: "$150–$350/mo",
+      delivery: "Instant — links sent to your email within seconds",
+    },
   },
 ];
 
@@ -272,6 +350,7 @@ export default function Home() {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [cartOpen, setCartOpen] = useState(false);
   const [slideIndex, setSlideIndex] = useState(0);
+  const [detailProduct, setDetailProduct] = useState<typeof products[0] | null>(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -500,23 +579,32 @@ export default function Home() {
                         -{discount}%
                       </span>
                     </div>
-                    {p.shopifyUrl ? (
-                      <a
-                        href={p.shopifyUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full block text-center bg-green-500 hover:bg-green-400 text-black font-black py-2.5 rounded-xl text-sm transition-all hover:scale-[1.02] active:scale-95"
-                      >
-                        Buy Now
-                      </a>
-                    ) : (
+                    <div className="flex gap-2">
+                      {p.shopifyUrl ? (
+                        <a
+                          href={p.shopifyUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 block text-center bg-green-500 hover:bg-green-400 text-black font-black py-2.5 rounded-xl text-sm transition-all hover:scale-[1.02] active:scale-95"
+                        >
+                          Buy Now
+                        </a>
+                      ) : (
+                        <button
+                          disabled
+                          className="flex-1 bg-zinc-700 text-zinc-400 font-black py-2.5 rounded-xl text-sm cursor-not-allowed"
+                        >
+                          Coming Soon
+                        </button>
+                      )}
                       <button
-                        disabled
-                        className="w-full bg-zinc-700 text-zinc-400 font-black py-2.5 rounded-xl text-sm cursor-not-allowed"
+                        onClick={() => setDetailProduct(p)}
+                        className="flex items-center justify-center gap-1.5 border border-white/20 hover:border-green-500/60 hover:text-green-400 text-zinc-400 font-semibold px-3 py-2.5 rounded-xl text-sm transition-all"
+                        title="View details"
                       >
-                        Coming Soon
+                        <Info size={15} />
                       </button>
-                    )}
+                    </div>
                   </div>
                 </div>
               );
@@ -775,6 +863,114 @@ export default function Home() {
                 </a>
               </div>
             )}
+          </div>
+        </div>
+      )}
+
+      {/* Product Detail Modal */}
+      {detailProduct && (
+        <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4">
+          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={() => setDetailProduct(null)} />
+          <div className="relative w-full sm:max-w-lg bg-[#111] border border-white/10 rounded-t-3xl sm:rounded-3xl shadow-2xl overflow-hidden animate-in slide-in-from-bottom-4 duration-300">
+            {/* Header */}
+            <div className={`bg-gradient-to-br ${detailProduct.gradient} px-6 pt-6 pb-8`}>
+              <div className="flex items-start justify-between mb-4">
+                {detailProduct.badge && (
+                  <span className={`${detailProduct.badgeColor} text-xs font-black px-2.5 py-1 rounded-full`}>
+                    {detailProduct.badge}
+                  </span>
+                )}
+                <button
+                  onClick={() => setDetailProduct(null)}
+                  className="ml-auto text-white/60 hover:text-white transition-colors"
+                >
+                  <X size={20} />
+                </button>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="text-5xl w-16 h-16 flex items-center justify-center bg-black/30 rounded-2xl flex-shrink-0">
+                  {detailProduct.emoji === "COLOGNE" ? (
+                    <svg width="32" height="40" viewBox="0 0 72 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="26" y="2" width="20" height="10" rx="3" fill="#4ade80" />
+                      <rect x="30" y="12" width="12" height="8" rx="2" fill="#86efac" />
+                      <rect x="42" y="14" width="10" height="4" rx="2" fill="#4ade80" />
+                      <rect x="18" y="20" width="36" height="56" rx="8" fill="#166534" />
+                      <rect x="24" y="28" width="6" height="24" rx="3" fill="#4ade80" opacity="0.3" />
+                      <rect x="22" y="38" width="28" height="22" rx="4" fill="#14532d" />
+                      <rect x="20" y="74" width="32" height="4" rx="2" fill="#15803d" />
+                    </svg>
+                  ) : detailProduct.emoji}
+                </div>
+                <div>
+                  <h2 className="text-xl font-black text-white">{detailProduct.name}</h2>
+                  <p className="text-white/60 text-sm mt-0.5">{detailProduct.description}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Body */}
+            <div className="px-6 py-5 space-y-5 max-h-[55vh] overflow-y-auto">
+              {/* What you get */}
+              <div>
+                <h3 className="text-xs font-black uppercase tracking-widest text-green-400 mb-3">What You Get</h3>
+                <ul className="space-y-2">
+                  {detailProduct.details.whatYouGet.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-zinc-300">
+                      <span className="text-green-400 mt-0.5 flex-shrink-0">✓</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Stats row */}
+              <div className="grid grid-cols-2 gap-3">
+                <div className="bg-white/5 border border-white/10 rounded-xl p-3">
+                  <div className="text-xs text-zinc-500 mb-1">Avg. Monthly Profit</div>
+                  <div className="text-green-400 font-black text-sm">{detailProduct.details.avgProfit}</div>
+                </div>
+                <div className="bg-white/5 border border-white/10 rounded-xl p-3">
+                  <div className="text-xs text-zinc-500 mb-1">Delivery</div>
+                  <div className="text-white font-bold text-xs leading-tight">{detailProduct.details.delivery}</div>
+                </div>
+              </div>
+
+              {/* Best for */}
+              <div className="bg-green-500/10 border border-green-500/20 rounded-xl p-4">
+                <div className="text-xs font-black uppercase tracking-widest text-green-400 mb-1">Best For</div>
+                <p className="text-zinc-300 text-sm leading-relaxed">{detailProduct.details.bestFor}</p>
+              </div>
+
+              {/* Tags */}
+              <div className="flex flex-wrap gap-1.5">
+                {detailProduct.tags.map((tag) => (
+                  <span key={tag} className="bg-white/5 border border-white/10 text-zinc-400 text-xs font-medium px-2.5 py-1 rounded-full">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Footer actions */}
+            <div className="px-6 py-4 border-t border-white/10 flex gap-3">
+              <button
+                onClick={() => {
+                  addToCart(detailProduct);
+                  setDetailProduct(null);
+                }}
+                className="flex-1 bg-white/10 hover:bg-white/20 text-white font-bold py-3 rounded-xl text-sm transition-all"
+              >
+                Add to Cart
+              </button>
+              <a
+                href={detailProduct.shopifyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 block text-center bg-green-500 hover:bg-green-400 text-black font-black py-3 rounded-xl text-sm transition-all"
+              >
+                Buy Now — ${detailProduct.salePrice.toFixed(2)}
+              </a>
+            </div>
           </div>
         </div>
       )}
