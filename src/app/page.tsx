@@ -2,6 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { ShoppingCart, X, Plus, Minus, Zap, Shield, Star, ChevronRight, Package, TrendingUp, Award, Info } from "lucide-react";
+import {
+  AllInOneIcon, BundleIcon, ShoeIcon, WatchIcon, JewelryIcon,
+  HoodieIcon, EarbudsIcon, DressIcon, HandbagIcon, LegoIcon,
+  ShirtIcon, CologneIconSVG, PodsIcon,
+} from "@/components/NeonProductIcons";
 
 const SHOPIFY_STORE = "lazzzyresells.myshopify.com";
 const CHECKOUT = `https://${SHOPIFY_STORE}/cart`;
