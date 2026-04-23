@@ -2,23 +2,9 @@
 > app@0.1.0 dev
 > next dev --turbopack
 
- ⚠ Port 3000 is in use, using available port 3003 instead.
    ▲ Next.js 15.3.6 (Turbopack)
-   - Local:        http://localhost:3003
-   - Network:      http://172.20.0.3:3003
+   - Local:        http://localhost:3000
+   - Network:      http://172.20.0.3:3000
 
  ✓ Starting...
- ✓ Ready in 815ms
- ○ Compiling / ...
- ✓ Compiled / in 2.9s
- GET /?_cb=1776957565613 200 in 3195ms
- GET /?_cb=1776957582464 200 in 162ms
- GET /?_cb=1776957583028 200 in 157ms
- GET /?_cb=1776957583498 200 in 154ms
- GET / 200 in 138ms
- ○ Compiling /favicon.ico ...
- ✓ Compiled /favicon.ico in 609ms
- GET /favicon.ico?favicon.45db1c09.ico 200 in 898ms
- GET / 200 in 137ms
- GET / 200 in 128ms
- GET / 200 in 180ms
+ ✓ Ready in 807ms
