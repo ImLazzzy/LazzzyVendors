@@ -631,9 +631,14 @@ export default function Home() {
                   <Zap size={12} />
                   Instant digital delivery after checkout
                 </div>
-                <button className="w-full bg-green-500 hover:bg-green-400 text-black font-black py-4 rounded-xl text-base transition-all hover:scale-[1.02] active:scale-95">
+                <a
+                  href={buildShopifyCheckoutUrl(cart.map((i) => ({ variantId: i.variantId, qty: i.qty, shopifyUrl: i.shopifyUrl })))}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full block text-center bg-green-500 hover:bg-green-400 text-black font-black py-4 rounded-xl text-base transition-all hover:scale-[1.02] active:scale-95"
+                >
                   Checkout — ${cartTotal.toFixed(2)}
-                </button>
+                </a>
               </div>
             )}
           </div>
