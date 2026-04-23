@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0d1f0d"/>
+      <stop offset="100%" stop-color="#050a05"/>
+    </radialGradient>
+    <radialGradient id="glowGrad" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4ade80"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4ade80" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#4ade80"/>
+      <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="circle">
+      <circle cx="500" cy="500" r="500"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="500" cy="500" r="500" fill="url(#bgGrad)"/>
+
+  <!-- Glow overlay -->
+  <circle cx="500" cy="500" r="500" fill="url(#glowGrad)"/>
+
+  <!-- Outer ring -->
+  <circle cx="500" cy="500" r="478" fill="none" stroke="#22c55e" stroke-width="3" opacity="0.4"/>
+
+  <!-- Inner ring -->
+  <circle cx="500" cy="500" r="460" fill="none" stroke="#22c55e" stroke-width="1" opacity="0.2"/>
+
+  <!-- Corner decorative arcs -->
+  <path d="M 500 60 A 440 440 0 0 1 820 240" fill="none" stroke="#4ade80" stroke-width="2" opacity="0.3"/>
+  <path d="M 500 940 A 440 440 0 0 1 180 760" fill="none" stroke="#4ade80" stroke-width="2" opacity="0.3"/>
+
+  <!-- Top accent line -->
+  <rect x="200" y="310" width="600" height="2" rx="1" fill="url(#accentGrad)" opacity="0.6"/>
+
+  <!-- Bottom accent line -->
+  <rect x="200" y="688" width="600" height="2" rx="1" fill="url(#accentGrad)" opacity="0.6"/>
+
+  <!-- LV monogram background shape -->
+  <circle cx="500" cy="390" r="110" fill="#22c55e" opacity="0.08"/>
+  <circle cx="500" cy="390" r="90" fill="none" stroke="#22c55e" stroke-width="1.5" opacity="0.3"/>
+
+  <!-- LV Monogram -->
+  <text
+    x="500"
+    y="430"
+    text-anchor="middle"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="110"
+    font-weight="700"
+    fill="url(#textGrad)"
+    filter="url(#glow)"
+    letter-spacing="-4"
+  >LV</text>
+
+  <!-- Main brand name: Lazzzy -->
+  <text
+    x="500"
+    y="570"
+    text-anchor="middle"
+    font-family="Arial Black, 'Arial Bold', sans-serif"
+    font-size="96"
+    font-weight="900"
+    fill="#ffffff"
+    filter="url(#softGlow)"
+    letter-spacing="-1"
+  >Lazzzy</text>
+
+  <!-- Main brand name: Vendors -->
+  <text
+    x="500"
+    y="660"
+    text-anchor="middle"
+    font-family="Arial Black, 'Arial Bold', sans-serif"
+    font-size="96"
+    font-weight="900"
+    fill="url(#textGrad)"
+    filter="url(#softGlow)"
+    letter-spacing="2"
+  >Vendors</text>
+
+  <!-- Tagline -->
+  <text
+    x="500"
+    y="730"
+    text-anchor="middle"
+    font-family="Arial, sans-serif"
+    font-size="28"
+    font-weight="400"
+    fill="#4ade80"
+    opacity="0.7"
+    letter-spacing="6"
+  >RESELLER SUPPLIERS</text>
+
+  <!-- Decorative dots row -->
+  <circle cx="380" cy="768" r="3" fill="#4ade80" opacity="0.5"/>
+  <circle cx="400" cy="768" r="3" fill="#4ade80" opacity="0.5"/>
+  <circle cx="420" cy="768" r="3" fill="#4ade80" opacity="0.5"/>
+  <circle cx="500" cy="768" r="5" fill="#4ade80" opacity="0.9"/>
+  <circle cx="580" cy="768" r="3" fill="#4ade80" opacity="0.5"/>
+  <circle cx="600" cy="768" r="3" fill="#4ade80" opacity="0.5"/>
+  <circle cx="620" cy="768" r="3" fill="#4ade80" opacity="0.5"/>
+
+  <!-- Subtle corner hex marks -->
+  <text x="152" y="510" text-anchor="middle" font-family="monospace" font-size="18" fill="#22c55e" opacity="0.25">◆</text>
+  <text x="848" y="510" text-anchor="middle" font-family="monospace" font-size="18" fill="#22c55e" opacity="0.25">◆</text>
+</svg>
