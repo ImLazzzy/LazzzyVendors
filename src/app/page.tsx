@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { ShoppingCart, X, Plus, Minus, Zap, Shield, Star, ChevronRight, Package, TrendingUp, Award } from "lucide-react";
+import { useState, useEffect } from "react";
+import { ShoppingCart, X, Plus, Minus, Zap, Shield, Star, ChevronRight, Package, TrendingUp, Award, DollarSign, TrendingUp as Flip } from "lucide-react";
 
 const SHOPIFY_STORE = "lazzzyresells.myshopify.com";
 const BASE = `https://${SHOPIFY_STORE}/products`;
@@ -211,9 +211,74 @@ interface CartItem {
   shopifyUrl: string;
 }
 
+const resellSlides = [
+  {
+    emoji: "👟",
+    name: "Marcus T.",
+    location: "Atlanta, GA",
+    profit: "+$400",
+    product: "Shoe Supplier",
+    text: "Made back the cost of the bundle in my first week. The shoe supplier alone was worth it.",
+    bg: "from-green-900/60 to-emerald-900/40",
+  },
+  {
+    emoji: "👗",
+    name: "Jasmine R.",
+    location: "Houston, TX",
+    profit: "+$850",
+    product: "All-In-One Supplier",
+    text: "The all-in-one supplier changed everything. I'm sourcing 6 different product types now.",
+    bg: "from-teal-900/60 to-green-900/40",
+  },
+  {
+    emoji: "👜",
+    name: "Devon K.",
+    location: "Chicago, IL",
+    profit: "+$300",
+    product: "Designer Bag Supplier",
+    text: "Was skeptical at first but every supplier checked out. Flipped $300 profit first month.",
+    bg: "from-emerald-900/60 to-lime-900/40",
+  },
+  {
+    emoji: "⌚",
+    name: "Trey M.",
+    location: "Dallas, TX",
+    profit: "+$620",
+    product: "Watch Supplier",
+    text: "Watch resale is underrated. Got my first 10 orders within 3 days using the supplier list.",
+    bg: "from-green-900/60 to-teal-900/40",
+  },
+  {
+    emoji: "💍",
+    name: "Aaliyah S.",
+    location: "Miami, FL",
+    profit: "+$1,100",
+    product: "Moissanite Supplier",
+    text: "Jewelry resale is insane right now. I'm doing $1k+ months just on moissanite pieces.",
+    bg: "from-lime-900/50 to-emerald-900/50",
+  },
+  {
+    emoji: "🧥",
+    name: "Jordan P.",
+    location: "New York, NY",
+    profit: "+$540",
+    product: "Spy Hoodie Supplier",
+    text: "The spy hoodie niche is blowing up on TikTok. This supplier list is the real deal.",
+    bg: "from-zinc-800/70 to-green-900/40",
+  },
+];
+
 export default function Home() {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [cartOpen, setCartOpen] = useState(false);
+  const [slideIndex, setSlideIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSlideIndex((prev) => (prev + 1) % resellSlides.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
 
   const addToCart = (product: typeof products[0]) => {
     setCart((prev) => {
@@ -238,9 +303,31 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white font-sans">
-      {/* Announcement Bar */}
-      <div className="bg-green-500 text-black text-center py-2 text-sm font-bold tracking-wide">
-        🔥 LIMITED TIME — 50% OFF ELITE BUNDLE &nbsp;|&nbsp; INSTANT DIGITAL DELIVERY ⚡
+      {/* Scrolling Ticker */}
+      <div className="bg-green-500 text-black py-2 text-sm font-bold tracking-wide overflow-hidden whitespace-nowrap">
+        <div className="flex animate-ticker">
+          {[
+            "🔥 LIMITED TIME — 50% OFF ELITE BUNDLE",
+            "⚡ INSTANT DIGITAL DELIVERY",
+            "🏆 10,000+ HAPPY RESELLERS",
+            "💰 START FLIPPING THIS WEEK",
+            "🔒 SECURE CHECKOUT",
+            "📦 ALL CATEGORIES COVERED",
+            "✅ VETTED SUPPLIERS ONLY",
+            "🔥 LIMITED TIME — 50% OFF ELITE BUNDLE",
+            "⚡ INSTANT DIGITAL DELIVERY",
+            "🏆 10,000+ HAPPY RESELLERS",
+            "💰 START FLIPPING THIS WEEK",
+            "🔒 SECURE CHECKOUT",
+            "📦 ALL CATEGORIES COVERED",
+            "✅ VETTED SUPPLIERS ONLY",
+          ].map((item, i) => (
+            <span key={i} className="inline-flex items-center gap-2 px-8">
+              {item}
+              <span className="opacity-40 mx-2">•</span>
+            </span>
+          ))}
+        </div>
       </div>
 
       {/* Navbar */}
@@ -471,32 +558,81 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-20 border-t border-white/10 bg-white/[0.02]">
+      {/* Reseller Proof Carousel */}
+      <section className="py-20 border-t border-white/10 bg-white/[0.02] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-black mb-3">Real Results</h2>
-            <p className="text-zinc-400">From resellers just like you</p>
+            <p className="text-zinc-400">Resellers flipping right now with our supplier lists</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { name: "Marcus T.", location: "Atlanta, GA", text: "Made back the cost of the bundle in my first week. The shoe supplier alone was worth it. Already up $400.", stars: 5 },
-              { name: "Jasmine R.", location: "Houston, TX", text: "The all-in-one supplier changed everything. I'm sourcing 6 different product types now. Best $25 I've ever spent.", stars: 5 },
-              { name: "Devon K.", location: "Chicago, IL", text: "Was skeptical at first but the links came instantly and every supplier checked out. Flipped $300 profit first month.", stars: 5 },
-            ].map((review) => (
-              <div key={review.name} className="bg-white/5 border border-white/10 rounded-2xl p-6">
-                <div className="flex gap-0.5 mb-3">
-                  {Array.from({ length: review.stars }).map((_, i) => (
-                    <Star key={i} size={14} className="fill-green-400 text-green-400" />
-                  ))}
+
+          {/* Main carousel */}
+          <div className="relative max-w-2xl mx-auto mb-10">
+            <div className="relative h-72 sm:h-64">
+              {resellSlides.map((slide, i) => (
+                <div
+                  key={i}
+                  className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${slide.bg} border border-white/10 p-8 flex flex-col justify-between transition-all duration-700 ${
+                    i === slideIndex
+                      ? "opacity-100 translate-x-0 z-10"
+                      : i === (slideIndex - 1 + resellSlides.length) % resellSlides.length
+                      ? "opacity-0 -translate-x-12 z-0"
+                      : "opacity-0 translate-x-12 z-0"
+                  }`}
+                >
+                  <div className="flex items-start justify-between">
+                    <div className="flex gap-0.5">
+                      {Array.from({ length: 5 }).map((_, j) => (
+                        <Star key={j} size={14} className="fill-green-400 text-green-400" />
+                      ))}
+                    </div>
+                    <div className="text-4xl">{slide.emoji}</div>
+                  </div>
+                  <p className="text-white text-base sm:text-lg font-medium leading-relaxed">
+                    "{slide.text}"
+                  </p>
+                  <div className="flex items-end justify-between">
+                    <div>
+                      <div className="font-bold text-sm">{slide.name}</div>
+                      <div className="text-zinc-400 text-xs">{slide.location} · {slide.product}</div>
+                    </div>
+                    <div className="text-green-400 font-black text-2xl">{slide.profit}</div>
+                  </div>
                 </div>
-                <p className="text-zinc-300 text-sm leading-relaxed mb-4">"{review.text}"</p>
-                <div>
-                  <div className="font-semibold text-sm">{review.name}</div>
-                  <div className="text-zinc-500 text-xs">{review.location}</div>
+              ))}
+            </div>
+
+            {/* Dot indicators */}
+            <div className="flex justify-center gap-2 mt-6">
+              {resellSlides.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setSlideIndex(i)}
+                  className={`rounded-full transition-all duration-300 ${
+                    i === slideIndex ? "bg-green-400 w-6 h-2" : "bg-white/20 w-2 h-2 hover:bg-white/40"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Scrolling proof strip below */}
+          <div className="overflow-hidden mt-4">
+            <div className="flex animate-ticker gap-4">
+              {[...resellSlides, ...resellSlides].map((slide, i) => (
+                <div
+                  key={i}
+                  className="flex-shrink-0 bg-white/5 border border-white/10 rounded-2xl px-5 py-4 flex items-center gap-4 min-w-[260px]"
+                >
+                  <span className="text-3xl">{slide.emoji}</span>
+                  <div>
+                    <div className="font-bold text-sm text-white">{slide.name}</div>
+                    <div className="text-green-400 font-black text-lg">{slide.profit}</div>
+                    <div className="text-zinc-500 text-xs">{slide.product}</div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
