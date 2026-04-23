@@ -95,7 +95,7 @@ const products = [
     gradient: "from-zinc-800/60 to-neutral-800/60",
     description: "Wireless earbuds & audio accessories at wholesale prices.",
     tags: ["Earbuds", "Audio", "Tech"],
-    shopifyUrl: null,
+    shopifyUrl: `${BASE}/other-example-product-1`,
   },
   {
     id: 8,
@@ -121,7 +121,7 @@ const products = [
     gradient: "from-green-900/40 to-emerald-900/40",
     description: "Luxury & designer bag suppliers. High-margin handbag resale with premium sourcing.",
     tags: ["Louis Vuitton", "Gucci", "Prada", "Wholesale"],
-    shopifyUrl: null,
+    shopifyUrl: `${BASE}/other-example-product-2`,
   },
   {
     id: 10,
@@ -173,7 +173,7 @@ const products = [
     gradient: "from-green-900/40 to-emerald-900/40",
     description: "AirPods & wireless earbud suppliers at wholesale pricing. Our exclusive LazzzyPodz source.",
     tags: ["AirPods", "Wireless", "Exclusive"],
-    shopifyUrl: null,
+    shopifyUrl: `${BASE}/other-example-product-3`,
   },
 ];
 
