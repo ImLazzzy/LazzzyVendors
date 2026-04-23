@@ -14,3 +14,9 @@
  GET /?_cb=1776941468984 200 in 3084ms
  GET /?_cb=1776941506476 200 in 161ms
  GET /?_cb=1776941610277 200 in 146ms
+ GET /?_cb=1776941705915 200 in 142ms
+ GET / 200 in 152ms
+ ○ Compiling /favicon.ico ...
+ ✓ Compiled /favicon.ico in 598ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 881ms
+ GET /?_cb=1776941801650 200 in 131ms
