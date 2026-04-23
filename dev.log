@@ -26,3 +26,5 @@
  GET /favicon.ico 200 in 223ms
  GET / 200 in 141ms
  GET /?_cb=1776951644762 200 in 204ms
+ GET / 200 in 200ms
+ GET / 200 in 167ms
