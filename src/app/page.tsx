@@ -249,7 +249,7 @@ const products = [
     badgeColor: "",
     regularPrice: 20.00,
     salePrice: 14.99,
-    emoji: "COLOGNE",
+    emoji: "🧴",
     gradient: "from-zinc-800/60 to-neutral-800/60",
     description: "Designer & niche fragrance suppliers. Cologne resale is booming — get in early.",
     tags: ["Designer", "Niche", "Fragrance"],
@@ -551,10 +551,8 @@ export default function Home() {
                       {p.badge}
                     </div>
                   )}
-                  <div className="flex items-center justify-center h-44 bg-black/40">
-                    <div className="w-28 h-28">
-                      <ProductIcon id={p.id} />
-                    </div>
+                  <div className="flex items-center justify-center h-44 text-7xl bg-black/30">
+                    {p.emoji}
                   </div>
                   <div className="p-5">
                     <h3 className="font-bold text-base leading-tight mb-1">{p.name}</h3>
@@ -884,8 +882,8 @@ export default function Home() {
                 </button>
               </div>
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 flex-shrink-0 bg-black/30 rounded-2xl overflow-hidden">
-                  <ProductIcon id={detailProduct.id} />
+                <div className="text-5xl w-16 h-16 flex items-center justify-center bg-black/30 rounded-2xl flex-shrink-0">
+                  {detailProduct.emoji}
                 </div>
                 <div>
                   <h2 className="text-xl font-black text-white">{detailProduct.name}</h2>
