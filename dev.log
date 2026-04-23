@@ -12,3 +12,11 @@
  ○ Compiling / ...
  ✓ Compiled / in 2.9s
  GET /?_cb=1776956899053 200 in 3177ms
+ GET /?_cb=1776956932590 200 in 216ms
+ GET /?_cb=1776956933521 200 in 164ms
+ GET /?_cb=1776956934292 200 in 175ms
+ GET /?_cb=1776956935075 200 in 179ms
+ GET / 200 in 171ms
+ ○ Compiling /favicon.ico ...
+ ✓ Compiled /favicon.ico in 504ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 782ms
