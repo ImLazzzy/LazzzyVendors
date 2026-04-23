@@ -3,8 +3,10 @@
 import { useState } from "react";
 import { ShoppingCart, X, Plus, Minus, Zap, Shield, Star, ChevronRight, Package, TrendingUp, Award } from "lucide-react";
 
-const BASE = "https://lazzzyresells.myshopify.com/products";
+const SHOPIFY_STORE = "lazzzyresells.myshopify.com";
+const BASE = `https://${SHOPIFY_STORE}/products`;
 
+// To find a variant ID: Shopify Admin → Products → click product → click variant → copy the number from the URL
 const products = [
   {
     id: 1,
@@ -18,6 +20,7 @@ const products = [
     description: "Every category covered — clothes, shoes, jewelry, belts, handbags & more. Instant email delivery.",
     tags: ["Clothes", "Shoes", "Jewelry", "Handbags", "Belts"],
     shopifyUrl: `${BASE}/2026`,
+    variantId: null, // ← replace with your Shopify variant ID e.g. 12345678901234
   },
   {
     id: 2,
@@ -31,6 +34,7 @@ const products = [
     description: "The ultimate bundle — all individual suppliers in one package at the lowest price possible.",
     tags: ["All Categories", "Best Value", "Exclusive"],
     shopifyUrl: `${BASE}/all`,
+    variantId: null,
   },
   {
     id: 3,
@@ -44,6 +48,7 @@ const products = [
     description: "Wholesale sneaker & footwear suppliers. Name brands at fraction of retail cost.",
     tags: ["Sneakers", "Boots", "Sandals"],
     shopifyUrl: `${BASE}/shoes`,
+    variantId: null,
   },
   {
     id: 4,
@@ -57,6 +62,7 @@ const products = [
     description: "Luxury and fashion watch suppliers. High-margin resale opportunity.",
     tags: ["Luxury", "Fashion", "Wholesale"],
     shopifyUrl: `${BASE}/other-example-product-4`,
+    variantId: null,
   },
   {
     id: 5,
@@ -70,6 +76,7 @@ const products = [
     description: "Earrings, rings & watches. Moissanite jewelry at wholesale pricing.",
     tags: ["Earrings", "Rings", "Watches"],
     shopifyUrl: `${BASE}/jewelry`,
+    variantId: null,
   },
   {
     id: 6,
@@ -83,6 +90,7 @@ const products = [
     description: "Trending spy/tactical hoodies. High demand streetwear niche.",
     tags: ["Hoodies", "Streetwear", "Tactical"],
     shopifyUrl: `${BASE}/spider-t`,
+    variantId: null,
   },
   {
     id: 7,
@@ -96,6 +104,7 @@ const products = [
     description: "Wireless earbuds & audio accessories at wholesale prices.",
     tags: ["Earbuds", "Audio", "Tech"],
     shopifyUrl: `${BASE}/other-example-product-1`,
+    variantId: null,
   },
   {
     id: 8,
@@ -109,6 +118,7 @@ const products = [
     description: "Women's fashion & boutique clothing at competitive wholesale prices.",
     tags: ["Women's", "Fashion", "Boutique"],
     shopifyUrl: `${BASE}/lulu`,
+    variantId: null,
   },
   {
     id: 9,
@@ -122,6 +132,7 @@ const products = [
     description: "Luxury & designer bag suppliers. High-margin handbag resale with premium sourcing.",
     tags: ["Louis Vuitton", "Gucci", "Prada", "Wholesale"],
     shopifyUrl: `${BASE}/other-example-product-2`,
+    variantId: null,
   },
   {
     id: 10,
@@ -135,6 +146,7 @@ const products = [
     description: "Rare & bulk Lego set suppliers. One of the highest resale margins in the toy niche.",
     tags: ["Rare Sets", "Bulk", "Retired"],
     shopifyUrl: `${BASE}/cologne`,
+    variantId: null,
   },
   {
     id: 11,
@@ -148,6 +160,7 @@ const products = [
     description: "Wholesale clothing suppliers for all styles. Streetwear, basics, and boutique fits.",
     tags: ["Streetwear", "Basics", "Boutique"],
     shopifyUrl: `${BASE}/clothing`,
+    variantId: null,
   },
   {
     id: 12,
@@ -161,6 +174,7 @@ const products = [
     description: "Designer & niche fragrance suppliers. Cologne resale is booming — get in early.",
     tags: ["Designer", "Niche", "Fragrance"],
     shopifyUrl: `${BASE}/cologne`,
+    variantId: null,
   },
   {
     id: 13,
@@ -174,8 +188,20 @@ const products = [
     description: "AirPods & wireless earbud suppliers at wholesale pricing. Our exclusive LazzzyPodz source.",
     tags: ["AirPods", "Wireless", "Exclusive"],
     shopifyUrl: `${BASE}/other-example-product-3`,
+    variantId: null,
   },
 ];
+
+// Builds a Shopify cart permalink with all items pre-loaded, then redirects to checkout
+function buildShopifyCheckoutUrl(cartItems: { variantId: string | null; qty: number; shopifyUrl: string }[]): string {
+  const itemsWithVariant = cartItems.filter((i) => i.variantId);
+  if (itemsWithVariant.length === 0) {
+    // Fallback: open the first item's product page if no variant IDs are set yet
+    return cartItems[0]?.shopifyUrl ?? `https://${SHOPIFY_STORE}`;
+  }
+  const cartParam = itemsWithVariant.map((i) => `${i.variantId}:${i.qty}`).join(",");
+  return `https://${SHOPIFY_STORE}/cart/${cartParam}`;
+}
 
 interface CartItem {
   id: number;
@@ -183,6 +209,8 @@ interface CartItem {
   price: number;
   emoji: string;
   qty: number;
+  variantId: string | null;
+  shopifyUrl: string;
 }
 
 export default function Home() {
@@ -195,7 +223,7 @@ export default function Home() {
       if (existing) {
         return prev.map((i) => i.id === product.id ? { ...i, qty: i.qty + 1 } : i);
       }
-      return [...prev, { id: product.id, name: product.name, price: product.salePrice, emoji: product.emoji, qty: 1 }];
+      return [...prev, { id: product.id, name: product.name, price: product.salePrice, emoji: product.emoji, qty: 1, variantId: product.variantId ?? null, shopifyUrl: product.shopifyUrl }];
     });
     setCartOpen(true);
   };
