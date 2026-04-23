@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { ShoppingCart, X, Plus, Minus, Zap, Shield, Star, ChevronRight, Package, TrendingUp, Award } from "lucide-react";
 
+const BASE = "https://lazzzyresells.myshopify.com/products";
+
 const products = [
   {
     id: 1,
@@ -11,11 +13,11 @@ const products = [
     badgeColor: "bg-green-400 text-black",
     regularPrice: 34.99,
     salePrice: 24.99,
-    image: null,
     emoji: "🏆",
     gradient: "from-green-900/40 to-emerald-900/40",
     description: "Every category covered — clothes, shoes, jewelry, belts, handbags & more. Instant email delivery.",
     tags: ["Clothes", "Shoes", "Jewelry", "Handbags", "Belts"],
+    shopifyUrl: `${BASE}/2026`,
   },
   {
     id: 2,
@@ -24,11 +26,11 @@ const products = [
     badgeColor: "bg-red-500 text-white",
     regularPrice: 80.00,
     salePrice: 39.99,
-    image: null,
     emoji: "💎",
     gradient: "from-emerald-900/40 to-teal-900/40",
     description: "The ultimate bundle — all individual suppliers in one package at the lowest price possible.",
     tags: ["All Categories", "Best Value", "Exclusive"],
+    shopifyUrl: `${BASE}/all`,
   },
   {
     id: 3,
@@ -37,11 +39,11 @@ const products = [
     badgeColor: "bg-orange-500 text-white",
     regularPrice: 20.00,
     salePrice: 14.99,
-    image: null,
     emoji: "👟",
     gradient: "from-green-900/30 to-lime-900/30",
     description: "Wholesale sneaker & footwear suppliers. Name brands at fraction of retail cost.",
     tags: ["Sneakers", "Boots", "Sandals"],
+    shopifyUrl: `${BASE}/shoes`,
   },
   {
     id: 4,
@@ -50,11 +52,11 @@ const products = [
     badgeColor: "bg-green-500 text-white",
     regularPrice: 20.00,
     salePrice: 14.99,
-    image: null,
     emoji: "⌚",
     gradient: "from-green-900/40 to-emerald-900/40",
     description: "Luxury and fashion watch suppliers. High-margin resale opportunity.",
     tags: ["Luxury", "Fashion", "Wholesale"],
+    shopifyUrl: `${BASE}/other-example-product-4`,
   },
   {
     id: 5,
@@ -63,11 +65,11 @@ const products = [
     badgeColor: "bg-emerald-500 text-white",
     regularPrice: 20.00,
     salePrice: 14.99,
-    image: null,
     emoji: "💍",
     gradient: "from-teal-900/40 to-green-900/40",
     description: "Earrings, rings & watches. Moissanite jewelry at wholesale pricing.",
     tags: ["Earrings", "Rings", "Watches"],
+    shopifyUrl: `${BASE}/jewelry`,
   },
   {
     id: 6,
@@ -76,11 +78,11 @@ const products = [
     badgeColor: "",
     regularPrice: 20.00,
     salePrice: 14.99,
-    image: null,
     emoji: "🧥",
     gradient: "from-zinc-800/60 to-neutral-800/60",
     description: "Trending spy/tactical hoodies. High demand streetwear niche.",
     tags: ["Hoodies", "Streetwear", "Tactical"],
+    shopifyUrl: `${BASE}/spider-t`,
   },
   {
     id: 7,
@@ -89,11 +91,11 @@ const products = [
     badgeColor: "",
     regularPrice: 20.00,
     salePrice: 14.99,
-    image: null,
     emoji: "🎧",
     gradient: "from-zinc-800/60 to-neutral-800/60",
     description: "Wireless earbuds & audio accessories at wholesale prices.",
     tags: ["Earbuds", "Audio", "Tech"],
+    shopifyUrl: null,
   },
   {
     id: 8,
@@ -102,11 +104,11 @@ const products = [
     badgeColor: "",
     regularPrice: 20.00,
     salePrice: 14.99,
-    image: null,
     emoji: "👗",
     gradient: "from-zinc-800/60 to-neutral-800/60",
     description: "Women's fashion & boutique clothing at competitive wholesale prices.",
     tags: ["Women's", "Fashion", "Boutique"],
+    shopifyUrl: `${BASE}/lulu`,
   },
   {
     id: 9,
@@ -115,11 +117,11 @@ const products = [
     badgeColor: "bg-orange-500 text-white",
     regularPrice: 20.00,
     salePrice: 14.99,
-    image: null,
     emoji: "👜",
     gradient: "from-green-900/40 to-emerald-900/40",
     description: "Luxury & designer bag suppliers. High-margin handbag resale with premium sourcing.",
     tags: ["Louis Vuitton", "Gucci", "Prada", "Wholesale"],
+    shopifyUrl: null,
   },
   {
     id: 10,
@@ -128,11 +130,11 @@ const products = [
     badgeColor: "bg-green-500 text-white",
     regularPrice: 20.00,
     salePrice: 14.99,
-    image: null,
     emoji: "🧱",
     gradient: "from-emerald-900/40 to-teal-900/40",
     description: "Rare & bulk Lego set suppliers. One of the highest resale margins in the toy niche.",
     tags: ["Rare Sets", "Bulk", "Retired"],
+    shopifyUrl: `${BASE}/cologne`,
   },
   {
     id: 11,
@@ -141,11 +143,11 @@ const products = [
     badgeColor: "bg-emerald-500 text-white",
     regularPrice: 20.00,
     salePrice: 14.99,
-    image: null,
     emoji: "👕",
     gradient: "from-green-900/30 to-lime-900/30",
     description: "Wholesale clothing suppliers for all styles. Streetwear, basics, and boutique fits.",
     tags: ["Streetwear", "Basics", "Boutique"],
+    shopifyUrl: `${BASE}/clothing`,
   },
   {
     id: 12,
@@ -154,11 +156,11 @@ const products = [
     badgeColor: "",
     regularPrice: 20.00,
     salePrice: 14.99,
-    image: null,
     emoji: "COLOGNE",
     gradient: "from-zinc-800/60 to-neutral-800/60",
     description: "Designer & niche fragrance suppliers. Cologne resale is booming — get in early.",
     tags: ["Designer", "Niche", "Fragrance"],
+    shopifyUrl: `${BASE}/cologne`,
   },
   {
     id: 13,
@@ -167,11 +169,11 @@ const products = [
     badgeColor: "bg-green-400 text-black",
     regularPrice: 20.00,
     salePrice: 14.99,
-    image: null,
     emoji: "🎵",
     gradient: "from-green-900/40 to-emerald-900/40",
     description: "AirPods & wireless earbud suppliers at wholesale pricing. Our exclusive LazzzyPodz source.",
     tags: ["AirPods", "Wireless", "Exclusive"],
+    shopifyUrl: null,
   },
 ];
 
@@ -385,12 +387,23 @@ export default function Home() {
                         -{discount}%
                       </span>
                     </div>
-                    <button
-                      onClick={() => addToCart(p)}
-                      className="w-full bg-green-500 hover:bg-green-400 text-black font-black py-2.5 rounded-xl text-sm transition-all hover:scale-[1.02] active:scale-95"
-                    >
-                      Add to Cart
-                    </button>
+                    {p.shopifyUrl ? (
+                      <a
+                        href={p.shopifyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full block text-center bg-green-500 hover:bg-green-400 text-black font-black py-2.5 rounded-xl text-sm transition-all hover:scale-[1.02] active:scale-95"
+                      >
+                        Buy Now
+                      </a>
+                    ) : (
+                      <button
+                        disabled
+                        className="w-full bg-zinc-700 text-zinc-400 font-black py-2.5 rounded-xl text-sm cursor-not-allowed"
+                      >
+                        Coming Soon
+                      </button>
+                    )}
                   </div>
                 </div>
               );
