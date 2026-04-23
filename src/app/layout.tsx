@@ -18,6 +18,28 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "LazzzyVendors — Start Your Reselling Journey",
   description: "Access premium supplier directories. Source products at wholesale, sell at retail. Instant digital delivery.",
+  metadataBase: new URL("https://lazzzyvendors.com"),
+  openGraph: {
+    title: "LazzzyVendors — Start Your Reselling Journey",
+    description: "Get access to premium supplier lists. Shoes, bags, jewelry, cologne & more. Instant digital delivery. Start flipping today.",
+    url: "https://lazzzyvendors.com",
+    siteName: "LazzzyVendors",
+    images: [
+      {
+        url: "/lazzzy-vendors-pfp.svg",
+        width: 1000,
+        height: 1000,
+        alt: "LazzzyVendors — Reseller Suppliers",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LazzzyVendors — Start Your Reselling Journey",
+    description: "Get access to premium supplier lists. Shoes, bags, jewelry, cologne & more. Instant digital delivery.",
+    images: ["/lazzzy-vendors-pfp.svg"],
+  },
 };
 
 export default function RootLayout({
