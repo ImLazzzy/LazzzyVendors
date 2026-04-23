@@ -23,7 +23,7 @@ const products = [
     gradient: "from-green-900/40 to-emerald-900/40",
     description: "Every category covered — clothes, shoes, jewelry, belts, handbags & more. Instant email delivery.",
     tags: ["Clothes", "Shoes", "Jewelry", "Handbags", "Belts"],
-    shopifyUrl: `${BASE}/2026`,
+    shopifyUrl: `${CHECKOUT}/53352382562622:1`,
     variantId: "53352382562622",
     details: {
       whatYouGet: ["Clothing suppliers (50+ sources)", "Shoe & sneaker wholesalers", "Jewelry & accessory suppliers", "Handbag & belt sources", "Instant email delivery after purchase"],
@@ -43,7 +43,7 @@ const products = [
     gradient: "from-emerald-900/40 to-teal-900/40",
     description: "The ultimate bundle — all individual suppliers in one package at the lowest price possible.",
     tags: ["All Categories", "Best Value", "Exclusive"],
-    shopifyUrl: `${BASE}/all`,
+    shopifyUrl: `${CHECKOUT}/53352541913406:1`,
     variantId: "53352541913406",
     details: {
       whatYouGet: ["Every individual supplier list included", "13 categories in one purchase", "Unlimited access — no expiry", "Priority support", "Instant email delivery after purchase"],
@@ -63,7 +63,7 @@ const products = [
     gradient: "from-green-900/30 to-lime-900/30",
     description: "Wholesale sneaker & footwear suppliers. Name brands at fraction of retail cost.",
     tags: ["Sneakers", "Boots", "Sandals"],
-    shopifyUrl: `${BASE}/shoes`,
+    shopifyUrl: `${CHECKOUT}/53352384233790:1`,
     variantId: "53352384233790",
     details: {
       whatYouGet: ["Name-brand sneaker wholesalers", "Boots & casual footwear sources", "Sandal & seasonal suppliers", "Instant email delivery after purchase"],
@@ -83,7 +83,7 @@ const products = [
     gradient: "from-green-900/40 to-emerald-900/40",
     description: "Luxury and fashion watch suppliers. High-margin resale opportunity.",
     tags: ["Luxury", "Fashion", "Wholesale"],
-    shopifyUrl: `${BASE}/other-example-product-4`,
+    shopifyUrl: `${CHECKOUT}/53342887084350:1`,
     variantId: "53342887084350",
     details: {
       whatYouGet: ["Luxury watch wholesalers", "Fashion & casual watch sources", "High-margin resale contacts", "Instant email delivery after purchase"],
@@ -103,7 +103,7 @@ const products = [
     gradient: "from-teal-900/40 to-green-900/40",
     description: "Earrings, rings & watches. Moissanite jewelry at wholesale pricing.",
     tags: ["Earrings", "Rings", "Watches"],
-    shopifyUrl: `${BASE}/jewelry`,
+    shopifyUrl: `${CHECKOUT}/53352384790846:1`,
     variantId: "53352384790846",
     details: {
       whatYouGet: ["Moissanite ring suppliers", "Earring wholesalers", "Watch & bracelet sources", "Instant email delivery after purchase"],
@@ -123,7 +123,7 @@ const products = [
     gradient: "from-zinc-800/60 to-neutral-800/60",
     description: "Trending spy/tactical hoodies. High demand streetwear niche.",
     tags: ["Hoodies", "Streetwear", "Tactical"],
-    shopifyUrl: `${BASE}/spider-t`,
+    shopifyUrl: `${CHECKOUT}/53352380662078:1`,
     variantId: "53352380662078",
     details: {
       whatYouGet: ["Spy/tactical hoodie wholesalers", "Trending streetwear sources", "TikTok-viral style suppliers", "Instant email delivery after purchase"],
@@ -143,7 +143,7 @@ const products = [
     gradient: "from-zinc-800/60 to-neutral-800/60",
     description: "Wireless earbuds & audio accessories at wholesale prices.",
     tags: ["Earbuds", "Audio", "Tech"],
-    shopifyUrl: `${BASE}/other-example-product-1`,
+    shopifyUrl: `${CHECKOUT}/53342886854974:1`,
     variantId: "53342886854974",
     details: {
       whatYouGet: ["Wireless earbud wholesalers", "Audio accessory suppliers", "Budget to mid-range sources", "Instant email delivery after purchase"],
@@ -163,7 +163,7 @@ const products = [
     gradient: "from-zinc-800/60 to-neutral-800/60",
     description: "Women's fashion & boutique clothing at competitive wholesale prices.",
     tags: ["Women's", "Fashion", "Boutique"],
-    shopifyUrl: `${BASE}/lulu`,
+    shopifyUrl: `${CHECKOUT}/53352387772734:1`,
     variantId: "53352387772734",
     details: {
       whatYouGet: ["Women's fashion wholesalers", "Boutique clothing sources", "Seasonal trend suppliers", "Instant email delivery after purchase"],
@@ -183,7 +183,7 @@ const products = [
     gradient: "from-green-900/40 to-emerald-900/40",
     description: "Luxury & designer bag suppliers. High-margin handbag resale with premium sourcing.",
     tags: ["Louis Vuitton", "Gucci", "Prada", "Wholesale"],
-    shopifyUrl: `${BASE}/other-example-product-2`,
+    shopifyUrl: `${CHECKOUT}/53342886920510:1`,
     variantId: "53342886920510",
     details: {
       whatYouGet: ["Louis Vuitton-style bag wholesalers", "Gucci & Prada-inspired sources", "Premium handbag suppliers", "Instant email delivery after purchase"],
@@ -203,7 +203,7 @@ const products = [
     gradient: "from-emerald-900/40 to-teal-900/40",
     description: "Rare & bulk Lego set suppliers. One of the highest resale margins in the toy niche.",
     tags: ["Rare Sets", "Bulk", "Retired"],
-    shopifyUrl: `${BASE}/cologne`,
+    shopifyUrl: `${CHECKOUT}/53352373420350:1`,
     variantId: "53352373420350",
     details: {
       whatYouGet: ["Rare & retired set suppliers", "Bulk Lego wholesalers", "Collector-focused sources", "Instant email delivery after purchase"],
@@ -223,7 +223,7 @@ const products = [
     gradient: "from-green-900/30 to-lime-900/30",
     description: "Wholesale clothing suppliers for all styles. Streetwear, basics, and boutique fits.",
     tags: ["Streetwear", "Basics", "Boutique"],
-    shopifyUrl: `${BASE}/clothing`,
+    shopifyUrl: `${CHECKOUT}/53352387281214:1`,
     variantId: "53352387281214",
     details: {
       whatYouGet: ["Streetwear wholesalers", "Basic & essential clothing sources", "Boutique style suppliers", "Instant email delivery after purchase"],
@@ -243,7 +243,7 @@ const products = [
     gradient: "from-zinc-800/60 to-neutral-800/60",
     description: "Designer & niche fragrance suppliers. Cologne resale is booming — get in early.",
     tags: ["Designer", "Niche", "Fragrance"],
-    shopifyUrl: `${BASE}/cologne`,
+    shopifyUrl: `${CHECKOUT}/53352373420350:1`,
     variantId: "53352373420350",
     details: {
       whatYouGet: ["Designer fragrance wholesalers", "Niche & indie perfume sources", "High-margin cologne suppliers", "Instant email delivery after purchase"],
@@ -263,7 +263,7 @@ const products = [
     gradient: "from-green-900/40 to-emerald-900/40",
     description: "AirPods & wireless earbud suppliers at wholesale pricing. Our exclusive LazzzyPodz source.",
     tags: ["AirPods", "Wireless", "Exclusive"],
-    shopifyUrl: `${BASE}/other-example-product-3`,
+    shopifyUrl: `${CHECKOUT}/53342886986046:1`,
     variantId: "53342886986046",
     details: {
       whatYouGet: ["AirPods-compatible wholesalers", "Wireless earbud suppliers", "Exclusive LazzzyPodz source access", "Instant email delivery after purchase"],
