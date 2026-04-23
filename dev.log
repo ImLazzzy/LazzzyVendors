@@ -11,3 +11,9 @@
  ○ Compiling / ...
  ✓ Compiled / in 2.9s
  GET / 200 in 3204ms
+ GET /?_cb=1776969474826 200 in 118ms
+ GET /?_cb=1776969607793 200 in 164ms
+ GET /?_cb=1776969608466 200 in 180ms
+ GET /?_cb=1776969609033 200 in 149ms
+ GET /?_cb=1776969751810 200 in 149ms
+ GET /?_cb=1776969752837 200 in 174ms
