@@ -18,7 +18,7 @@ const products = [
     badgeColor: "bg-green-400 text-black",
     regularPrice: 34.99,
     salePrice: 24.99,
-    emoji: "🏆",
+    Icon: AllInOneIcon,
     gradient: "from-green-900/40 to-emerald-900/40",
     description: "Every category covered — clothes, shoes, jewelry, belts, handbags & more. Instant email delivery.",
     tags: ["Clothes", "Shoes", "Jewelry", "Handbags", "Belts"],
@@ -38,7 +38,7 @@ const products = [
     badgeColor: "bg-red-500 text-white",
     regularPrice: 80.00,
     salePrice: 39.99,
-    emoji: "💎",
+    Icon: BundleIcon,
     gradient: "from-emerald-900/40 to-teal-900/40",
     description: "The ultimate bundle — all individual suppliers in one package at the lowest price possible.",
     tags: ["All Categories", "Best Value", "Exclusive"],
@@ -58,7 +58,7 @@ const products = [
     badgeColor: "bg-orange-500 text-white",
     regularPrice: 20.00,
     salePrice: 14.99,
-    emoji: "👟",
+    Icon: ShoeIcon,
     gradient: "from-green-900/30 to-lime-900/30",
     description: "Wholesale sneaker & footwear suppliers. Name brands at fraction of retail cost.",
     tags: ["Sneakers", "Boots", "Sandals"],
@@ -78,7 +78,7 @@ const products = [
     badgeColor: "bg-green-500 text-white",
     regularPrice: 20.00,
     salePrice: 14.99,
-    emoji: "⌚",
+    Icon: WatchIcon,
     gradient: "from-green-900/40 to-emerald-900/40",
     description: "Luxury and fashion watch suppliers. High-margin resale opportunity.",
     tags: ["Luxury", "Fashion", "Wholesale"],
@@ -98,7 +98,7 @@ const products = [
     badgeColor: "bg-emerald-500 text-white",
     regularPrice: 20.00,
     salePrice: 14.99,
-    emoji: "💍",
+    Icon: JewelryIcon,
     gradient: "from-teal-900/40 to-green-900/40",
     description: "Earrings, rings & watches. Moissanite jewelry at wholesale pricing.",
     tags: ["Earrings", "Rings", "Watches"],
@@ -118,7 +118,7 @@ const products = [
     badgeColor: "",
     regularPrice: 20.00,
     salePrice: 14.99,
-    emoji: "🧥",
+    Icon: HoodieIcon,
     gradient: "from-zinc-800/60 to-neutral-800/60",
     description: "Trending spy/tactical hoodies. High demand streetwear niche.",
     tags: ["Hoodies", "Streetwear", "Tactical"],
@@ -138,7 +138,7 @@ const products = [
     badgeColor: "",
     regularPrice: 20.00,
     salePrice: 14.99,
-    emoji: "🎧",
+    Icon: EarbudsIcon,
     gradient: "from-zinc-800/60 to-neutral-800/60",
     description: "Wireless earbuds & audio accessories at wholesale prices.",
     tags: ["Earbuds", "Audio", "Tech"],
@@ -158,7 +158,7 @@ const products = [
     badgeColor: "",
     regularPrice: 20.00,
     salePrice: 14.99,
-    emoji: "👗",
+    Icon: DressIcon,
     gradient: "from-zinc-800/60 to-neutral-800/60",
     description: "Women's fashion & boutique clothing at competitive wholesale prices.",
     tags: ["Women's", "Fashion", "Boutique"],
@@ -178,7 +178,7 @@ const products = [
     badgeColor: "bg-orange-500 text-white",
     regularPrice: 20.00,
     salePrice: 14.99,
-    emoji: "👜",
+    Icon: HandbagIcon,
     gradient: "from-green-900/40 to-emerald-900/40",
     description: "Luxury & designer bag suppliers. High-margin handbag resale with premium sourcing.",
     tags: ["Louis Vuitton", "Gucci", "Prada", "Wholesale"],
@@ -198,7 +198,7 @@ const products = [
     badgeColor: "bg-green-500 text-white",
     regularPrice: 20.00,
     salePrice: 14.99,
-    emoji: "🧱",
+    Icon: LegoIcon,
     gradient: "from-emerald-900/40 to-teal-900/40",
     description: "Rare & bulk Lego set suppliers. One of the highest resale margins in the toy niche.",
     tags: ["Rare Sets", "Bulk", "Retired"],
@@ -218,7 +218,7 @@ const products = [
     badgeColor: "bg-emerald-500 text-white",
     regularPrice: 20.00,
     salePrice: 14.99,
-    emoji: "👕",
+    Icon: ShirtIcon,
     gradient: "from-green-900/30 to-lime-900/30",
     description: "Wholesale clothing suppliers for all styles. Streetwear, basics, and boutique fits.",
     tags: ["Streetwear", "Basics", "Boutique"],
@@ -238,7 +238,7 @@ const products = [
     badgeColor: "",
     regularPrice: 20.00,
     salePrice: 14.99,
-    emoji: "COLOGNE",
+    Icon: CologneIconSVG,
     gradient: "from-zinc-800/60 to-neutral-800/60",
     description: "Designer & niche fragrance suppliers. Cologne resale is booming — get in early.",
     tags: ["Designer", "Niche", "Fragrance"],
@@ -258,7 +258,7 @@ const products = [
     badgeColor: "bg-green-400 text-black",
     regularPrice: 20.00,
     salePrice: 14.99,
-    emoji: "🎵",
+    Icon: PodsIcon,
     gradient: "from-green-900/40 to-emerald-900/40",
     description: "AirPods & wireless earbud suppliers at wholesale pricing. Our exclusive LazzzyPodz source.",
     tags: ["AirPods", "Wireless", "Exclusive"],
@@ -540,30 +540,10 @@ export default function Home() {
                       {p.badge}
                     </div>
                   )}
-                  <div className="flex items-center justify-center h-44 text-7xl bg-black/30">
-                    {p.emoji === "COLOGNE" ? (
-                      <svg width="72" height="88" viewBox="0 0 72 88" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        {/* cap */}
-                        <rect x="26" y="2" width="20" height="10" rx="3" fill="#4ade80" />
-                        {/* neck */}
-                        <rect x="30" y="12" width="12" height="8" rx="2" fill="#86efac" />
-                        {/* spray nozzle */}
-                        <rect x="42" y="14" width="10" height="4" rx="2" fill="#4ade80" />
-                        {/* body */}
-                        <rect x="18" y="20" width="36" height="56" rx="8" fill="#166534" />
-                        {/* shine */}
-                        <rect x="24" y="28" width="6" height="24" rx="3" fill="#4ade80" opacity="0.3" />
-                        {/* label */}
-                        <rect x="22" y="38" width="28" height="22" rx="4" fill="#14532d" />
-                        <rect x="24" y="41" width="24" height="2" rx="1" fill="#4ade80" opacity="0.7" />
-                        <rect x="26" y="46" width="20" height="1.5" rx="1" fill="#4ade80" opacity="0.4" />
-                        <rect x="26" y="50" width="16" height="1.5" rx="1" fill="#4ade80" opacity="0.4" />
-                        {/* base */}
-                        <rect x="20" y="74" width="32" height="4" rx="2" fill="#15803d" />
-                      </svg>
-                    ) : (
-                      p.emoji
-                    )}
+                  <div className="flex items-center justify-center h-44 bg-black/30 p-4">
+                    <div className="w-28 h-28">
+                      <p.Icon />
+                    </div>
                   </div>
                   <div className="p-5">
                     <h3 className="font-bold text-base leading-tight mb-1">{p.name}</h3>
