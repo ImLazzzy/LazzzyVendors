@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { ShoppingCart, X, Plus, Minus, Zap, Shield, Star, ChevronRight, Package, TrendingUp, Award, Info } from "lucide-react";
 
 const SHOPIFY_STORE = "lazzzyresells.myshopify.com";
-const CHECKOUT = `https://${SHOPIFY_STORE}/cart`;
+const BASE = `https://${SHOPIFY_STORE}/products`;
 const products = [
   {
     id: 1,
@@ -17,7 +17,7 @@ const products = [
     gradient: "from-green-900/40 to-emerald-900/40",
     description: "Every category covered — clothes, shoes, jewelry, belts, handbags & more. Instant email delivery.",
     tags: ["Clothes", "Shoes", "Jewelry", "Handbags", "Belts"],
-    shopifyUrl: `${CHECKOUT}/53352382562622:1`,
+    shopifyUrl: `${BASE}/2026`,
     variantId: "53352382562622",
     details: {
       whatYouGet: ["Clothing suppliers (50+ sources)", "Shoe & sneaker wholesalers", "Jewelry & accessory suppliers", "Handbag & belt sources", "Instant email delivery after purchase"],
@@ -37,7 +37,7 @@ const products = [
     gradient: "from-emerald-900/40 to-teal-900/40",
     description: "The ultimate bundle — all individual suppliers in one package at the lowest price possible.",
     tags: ["All Categories", "Best Value", "Exclusive"],
-    shopifyUrl: `${CHECKOUT}/53352541913406:1`,
+    shopifyUrl: `${BASE}/all`,
     variantId: "53352541913406",
     details: {
       whatYouGet: ["Every individual supplier list included", "13 categories in one purchase", "Unlimited access — no expiry", "Priority support", "Instant email delivery after purchase"],
@@ -57,7 +57,7 @@ const products = [
     gradient: "from-green-900/30 to-lime-900/30",
     description: "Wholesale sneaker & footwear suppliers. Name brands at fraction of retail cost.",
     tags: ["Sneakers", "Boots", "Sandals"],
-    shopifyUrl: `${CHECKOUT}/53352384233790:1`,
+    shopifyUrl: `${BASE}/shoes`,
     variantId: "53352384233790",
     details: {
       whatYouGet: ["Name-brand sneaker wholesalers", "Boots & casual footwear sources", "Sandal & seasonal suppliers", "Instant email delivery after purchase"],
