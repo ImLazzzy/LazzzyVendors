@@ -1,129 +1,153 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000">
   <defs>
-    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#0d1f0d"/>
-      <stop offset="100%" stop-color="#050a05"/>
+    <!-- Deep black bg -->
+    <radialGradient id="bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#020f02"/>
+      <stop offset="100%" stop-color="#000000"/>
     </radialGradient>
-    <radialGradient id="glowGrad" cx="50%" cy="40%" r="50%">
-      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.15"/>
-      <stop offset="100%" stop-color="#22c55e" stop-opacity="0"/>
+    <!-- Neon green center glow -->
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00ff41" stop-opacity="0.25"/>
+      <stop offset="60%" stop-color="#00ff41" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#00ff41" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#4ade80"/>
-      <stop offset="100%" stop-color="#16a34a"/>
+    <!-- Top glow burst -->
+    <radialGradient id="topGlow" cx="50%" cy="0%" r="60%">
+      <stop offset="0%" stop-color="#00ff41" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#00ff41" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Green text gradient -->
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00ff41"/>
+      <stop offset="100%" stop-color="#00b32c"/>
     </linearGradient>
-    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#4ade80" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#4ade80"/>
-      <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
+    <!-- Horizontal fade for lines -->
+    <linearGradient id="lineFade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00ff41" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#00ff41" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#00ff41" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#00ff41" stop-opacity="0"/>
     </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+    <!-- Neon glow filter -->
+    <filter id="neon" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur1"/>
+      <feGaussianBlur stdDeviation="12" result="blur2"/>
       <feMerge>
-        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-    <filter id="softGlow">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+    <!-- Soft glow filter -->
+    <filter id="softNeon" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
       <feMerge>
-        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-    <clipPath id="circle">
+    <clipPath id="circ">
       <circle cx="500" cy="500" r="500"/>
     </clipPath>
   </defs>
 
-  <!-- Background circle -->
-  <circle cx="500" cy="500" r="500" fill="url(#bgGrad)"/>
+  <!-- Black base -->
+  <circle cx="500" cy="500" r="500" fill="url(#bg)"/>
 
-  <!-- Glow overlay -->
-  <circle cx="500" cy="500" r="500" fill="url(#glowGrad)"/>
+  <!-- Center glow -->
+  <circle cx="500" cy="500" r="500" fill="url(#centerGlow)"/>
 
-  <!-- Outer ring -->
-  <circle cx="500" cy="500" r="478" fill="none" stroke="#22c55e" stroke-width="3" opacity="0.4"/>
+  <!-- Top burst glow -->
+  <circle cx="500" cy="500" r="500" fill="url(#topGlow)"/>
 
-  <!-- Inner ring -->
-  <circle cx="500" cy="500" r="460" fill="none" stroke="#22c55e" stroke-width="1" opacity="0.2"/>
+  <!-- Outer neon ring -->
+  <circle cx="500" cy="500" r="476" fill="none" stroke="#00ff41" stroke-width="4" opacity="0.9" filter="url(#neon)"/>
 
-  <!-- Corner decorative arcs -->
-  <path d="M 500 60 A 440 440 0 0 1 820 240" fill="none" stroke="#4ade80" stroke-width="2" opacity="0.3"/>
-  <path d="M 500 940 A 440 440 0 0 1 180 760" fill="none" stroke="#4ade80" stroke-width="2" opacity="0.3"/>
+  <!-- Second inner ring -->
+  <circle cx="500" cy="500" r="458" fill="none" stroke="#00ff41" stroke-width="1" opacity="0.3"/>
 
-  <!-- Top accent line -->
-  <rect x="200" y="310" width="600" height="2" rx="1" fill="url(#accentGrad)" opacity="0.6"/>
+  <!-- Diagonal slash accent top-left -->
+  <line x1="120" y1="280" x2="300" y2="140" stroke="#00ff41" stroke-width="2" opacity="0.4"/>
+  <line x1="130" y1="310" x2="310" y2="170" stroke="#00ff41" stroke-width="1" opacity="0.2"/>
 
-  <!-- Bottom accent line -->
-  <rect x="200" y="688" width="600" height="2" rx="1" fill="url(#accentGrad)" opacity="0.6"/>
+  <!-- Diagonal slash accent bottom-right -->
+  <line x1="700" y1="860" x2="880" y2="720" stroke="#00ff41" stroke-width="2" opacity="0.4"/>
+  <line x1="690" y1="830" x2="870" y2="690" stroke="#00ff41" stroke-width="1" opacity="0.2"/>
 
-  <!-- LV monogram background shape -->
-  <circle cx="500" cy="390" r="110" fill="#22c55e" opacity="0.08"/>
-  <circle cx="500" cy="390" r="90" fill="none" stroke="#22c55e" stroke-width="1.5" opacity="0.3"/>
+  <!-- Big green filled arc behind text — bottom half -->
+  <path d="M 80 500 A 420 420 0 0 0 920 500 L 920 600 A 420 280 0 0 1 80 600 Z" fill="#00ff41" opacity="0.04"/>
 
-  <!-- LV Monogram -->
+  <!-- Horizontal separator lines -->
+  <rect x="150" y="372" width="700" height="3" rx="1.5" fill="url(#lineFade)"/>
+  <rect x="150" y="628" width="700" height="3" rx="1.5" fill="url(#lineFade)"/>
+
+  <!-- GREEN FILLED block behind VENDORS -->
+  <rect x="100" y="540" width="800" height="120" rx="0" fill="#00ff41" opacity="0.08"/>
+
+  <!-- Corner brackets top-left -->
+  <path d="M 160 200 L 160 260 L 220 260" fill="none" stroke="#00ff41" stroke-width="3" opacity="0.7"/>
+  <!-- Corner brackets top-right -->
+  <path d="M 840 200 L 840 260 L 780 260" fill="none" stroke="#00ff41" stroke-width="3" opacity="0.7"/>
+  <!-- Corner brackets bottom-left -->
+  <path d="M 160 800 L 160 740 L 220 740" fill="none" stroke="#00ff41" stroke-width="3" opacity="0.7"/>
+  <!-- Corner brackets bottom-right -->
+  <path d="M 840 800 L 840 740 L 780 740" fill="none" stroke="#00ff41" stroke-width="3" opacity="0.7"/>
+
+  <!-- Top label -->
   <text
-    x="500"
-    y="430"
+    x="500" y="350"
     text-anchor="middle"
-    font-family="Georgia, 'Times New Roman', serif"
-    font-size="110"
-    font-weight="700"
-    fill="url(#textGrad)"
-    filter="url(#glow)"
-    letter-spacing="-4"
-  >LV</text>
+    font-family="'Courier New', Courier, monospace"
+    font-size="26"
+    fill="#00ff41"
+    opacity="0.8"
+    letter-spacing="10"
+    filter="url(#softNeon)"
+  >◆ OFFICIAL ◆</text>
 
-  <!-- Main brand name: Lazzzy -->
+  <!-- LAZZZY — white bold -->
   <text
-    x="500"
-    y="570"
+    x="500" y="510"
     text-anchor="middle"
-    font-family="Arial Black, 'Arial Bold', sans-serif"
-    font-size="96"
+    font-family="'Arial Black', 'Arial Bold', Impact, sans-serif"
+    font-size="152"
     font-weight="900"
     fill="#ffffff"
-    filter="url(#softGlow)"
-    letter-spacing="-1"
-  >Lazzzy</text>
+    filter="url(#softNeon)"
+    letter-spacing="-3"
+  >LAZZZY</text>
 
-  <!-- Main brand name: Vendors -->
+  <!-- VENDORS — neon green bold -->
   <text
-    x="500"
-    y="660"
+    x="500" y="640"
     text-anchor="middle"
-    font-family="Arial Black, 'Arial Bold', sans-serif"
-    font-size="96"
+    font-family="'Arial Black', 'Arial Bold', Impact, sans-serif"
+    font-size="152"
     font-weight="900"
-    fill="url(#textGrad)"
-    filter="url(#softGlow)"
-    letter-spacing="2"
-  >Vendors</text>
+    fill="url(#greenGrad)"
+    filter="url(#neon)"
+    letter-spacing="0"
+  >VENDORS</text>
 
-  <!-- Tagline -->
+  <!-- Bottom label -->
   <text
-    x="500"
-    y="730"
+    x="500" y="730"
     text-anchor="middle"
-    font-family="Arial, sans-serif"
-    font-size="28"
-    font-weight="400"
-    fill="#4ade80"
+    font-family="'Courier New', Courier, monospace"
+    font-size="24"
+    fill="#00ff41"
     opacity="0.7"
-    letter-spacing="6"
+    letter-spacing="8"
+    filter="url(#softNeon)"
   >RESELLER SUPPLIERS</text>
 
-  <!-- Decorative dots row -->
-  <circle cx="380" cy="768" r="3" fill="#4ade80" opacity="0.5"/>
-  <circle cx="400" cy="768" r="3" fill="#4ade80" opacity="0.5"/>
-  <circle cx="420" cy="768" r="3" fill="#4ade80" opacity="0.5"/>
-  <circle cx="500" cy="768" r="5" fill="#4ade80" opacity="0.9"/>
-  <circle cx="580" cy="768" r="3" fill="#4ade80" opacity="0.5"/>
-  <circle cx="600" cy="768" r="3" fill="#4ade80" opacity="0.5"/>
-  <circle cx="620" cy="768" r="3" fill="#4ade80" opacity="0.5"/>
+  <!-- Dot row -->
+  <circle cx="430" cy="778" r="3.5" fill="#00ff41" opacity="0.4"/>
+  <circle cx="460" cy="778" r="3.5" fill="#00ff41" opacity="0.5"/>
+  <circle cx="490" cy="778" r="3.5" fill="#00ff41" opacity="0.6"/>
+  <circle cx="500" cy="778" r="5" fill="#00ff41" opacity="1" filter="url(#softNeon)"/>
+  <circle cx="510" cy="778" r="3.5" fill="#00ff41" opacity="0.6"/>
+  <circle cx="540" cy="778" r="3.5" fill="#00ff41" opacity="0.5"/>
+  <circle cx="570" cy="778" r="3.5" fill="#00ff41" opacity="0.4"/>
 
-  <!-- Subtle corner hex marks -->
-  <text x="152" y="510" text-anchor="middle" font-family="monospace" font-size="18" fill="#22c55e" opacity="0.25">◆</text>
-  <text x="848" y="510" text-anchor="middle" font-family="monospace" font-size="18" fill="#22c55e" opacity="0.25">◆</text>
 </svg>
