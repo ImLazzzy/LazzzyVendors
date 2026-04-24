@@ -307,64 +307,64 @@ interface CartItem {
 
 const proofSlides = [
   {
-    img: "/haul-cologne.jpeg",
-    label: "Cologne Haul",
-    caption: "Valentino, Chanel, YSL, Creed, Dior & more",
+    img: "/haul-tech.jpeg",
+    label: "Tech & Electronics Haul",
+    caption: "AirPods, headphones & more — bulk lot",
     name: "Marcus T.",
     location: "Atlanta, GA",
+    profit: "+$2,000+",
+    niche: "Electronics Supplier",
+    quote: "Whole room covered in boxes. AirPods Max alone go for $300+ each. This supplier is insane.",
+  },
+  {
+    img: "/haul-sneakers.jpeg",
+    label: "Sneaker Haul",
+    caption: "Dior, ASICS, New Balance — wholesale",
+    name: "Trey M.",
+    location: "Dallas, TX",
+    profit: "+$1,400+",
+    niche: "Shoe Supplier",
+    quote: "9 pairs of heat came through. Dior B22s, ASICS, New Balance. Flipped every single one.",
+  },
+  {
+    img: "/haul-jewelry.jpeg",
+    label: "Van Cleef Jewelry Haul",
+    caption: "8 Van Cleef & Arpels pieces, boxed",
+    name: "Aaliyah S.",
+    location: "Miami, FL",
+    profit: "+$1,800+",
+    niche: "Moissanite Supplier",
+    quote: "Van Cleef bracelets with auth cards and bags. Sold all 8 pieces in under a week.",
+  },
+  {
+    img: "/haul-cologne.jpeg",
+    label: "Designer Cologne Haul",
+    caption: "Valentino, Chanel, YSL, Creed, Dior & more",
+    name: "Devon K.",
+    location: "Chicago, IL",
     profit: "+$1,500+",
     niche: "Cologne Supplier",
-    quote: "Package came in and I already knew. Valentino alone flipped for $80 each. Made my money back day one.",
+    quote: "Valentino alone flipped for $80 each. Made my money back day one off this cologne haul.",
   },
   {
     img: "/haul-bags.webp",
     label: "Designer Bag Haul",
-    caption: "12 Coach bags, ready to flip",
+    caption: "12 Coach bags, boxed & ready to flip",
     name: "Jasmine R.",
     location: "Houston, TX",
     profit: "+$850",
     niche: "Designer Bag Supplier",
-    quote: "Got 12 Coach bags in the mail. Listed same day, sold 8 within 48 hours. The bag supplier is crazy.",
+    quote: "Got 12 Coach bags in the mail. Listed same day, sold 8 within 48 hours.",
   },
   {
     img: "/haul-hoodies.jpeg",
     label: "SP5DER Hoodie Haul",
-    caption: "Bulk SP5DER hoodies, resale ready",
-    name: "Devon K.",
-    location: "Chicago, IL",
-    profit: "+$600+",
-    niche: "Spy Hoodie Supplier",
-    quote: "3 hoodies came through, flipped all 3 in one weekend on IG. The hoodie supplier is the real deal.",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?fm=jpg&q=80&w=900&auto=format&fit=crop",
-    label: "Sneaker Haul",
-    caption: "Jordan collection, wholesale pricing",
-    name: "Trey M.",
-    location: "Dallas, TX",
-    profit: "+$920",
-    niche: "Shoe Supplier",
-    quote: "Buying Jordans at cost, flipping for $100-$150+ each. The shoe supplier is the plug fr.",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1515168746408-0f924dbb5c39?fm=jpg&q=80&w=900&auto=format&fit=crop",
-    label: "Jewelry Haul",
-    caption: "Rings & moissanite pieces, wholesale lot",
-    name: "Aaliyah S.",
-    location: "Miami, FL",
-    profit: "+$1,100",
-    niche: "Moissanite Supplier",
-    quote: "Jewelry resale is insane right now. Doing $1k+ months just on moissanite rings alone.",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1700121182313-2d574b6b5658?fm=jpg&q=80&w=900&auto=format&fit=crop",
-    label: "Jewelry & Accessories",
-    caption: "Chains, bracelets & rings — bulk lot",
+    caption: "Bulk SP5DER hoodies — resale ready",
     name: "Jordan P.",
     location: "New York, NY",
-    profit: "+$740",
-    niche: "Moissanite Supplier",
-    quote: "Sold out my first jewelry order in 4 days. People sleep on this niche — margins are crazy.",
+    profit: "+$600+",
+    niche: "Spy Hoodie Supplier",
+    quote: "Flipped all 3 hoodies in one weekend on Instagram. The hoodie supplier is the real deal.",
   },
 ];
 
@@ -664,120 +664,99 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Reseller Proof — Phone Frame Haul Photos */}
-      <section className="py-20 border-t border-white/10 bg-white/[0.02] overflow-hidden">
+      {/* Reseller Proof — 4-Phone Haul Slideshow */}
+      <section className="py-20 border-t border-white/10 overflow-hidden" style={{ background: "#000" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-black mb-3">What Our Customers Receive</h2>
-            <p className="text-zinc-400">Real haul photos from resellers who bought our supplier lists</p>
+            <h2 className="text-3xl sm:text-4xl font-black mb-3">What Our Customers Say</h2>
+            <p className="text-zinc-400">Real haul photos from resellers using our supplier lists</p>
           </div>
 
-          {/* Phone carousel */}
-          <div className="relative flex items-center justify-center gap-4 sm:gap-6">
-            {/* Prev button */}
-            <button
-              onClick={() => setSlideIndex((p) => (p - 1 + proofSlides.length) % proofSlides.length)}
-              className="flex-shrink-0 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white text-2xl transition-all z-10"
-            >‹</button>
-
-            {/* Three phones: prev (faded) | active (tall) | next (faded) */}
-            <div className="flex items-end justify-center gap-3 sm:gap-5 flex-1 min-w-0">
-              {[-1, 0, 1].map((offset) => {
-                const idx = (slideIndex + offset + proofSlides.length) % proofSlides.length;
-                const slide = proofSlides[idx];
-                const isCenter = offset === 0;
-                return (
-                  <div
-                    key={offset}
-                    onClick={() => setSlideIndex(idx)}
-                    className="flex-shrink-0 cursor-pointer transition-all duration-500"
-                    style={{
-                      width: isCenter ? "min(260px, 55vw)" : "min(160px, 28vw)",
-                      opacity: isCenter ? 1 : 0.45,
-                      transform: isCenter ? "scale(1)" : "scale(0.88)",
-                    }}
-                  >
-                    {/* Phone shell */}
+          {/* 4-phone row — slides as a group */}
+          <div className="relative">
+            <div className="overflow-hidden">
+              <div
+                className="flex gap-4 sm:gap-6 transition-transform duration-700 ease-in-out"
+                style={{ transform: `translateX(calc(-${slideIndex} * (100% / 4 + 6px)))` }}
+              >
+                {/* Render all slides, 4 visible at a time on desktop */}
+                {proofSlides.map((slide, i) => {
+                  const isActive = i === slideIndex || i === slideIndex + 1 || i === slideIndex + 2 || i === slideIndex + 3;
+                  return (
                     <div
-                      className="relative overflow-hidden shadow-2xl"
-                      style={{
-                        borderRadius: "2.5rem",
-                        border: "3px solid #3a3a3c",
-                        background: "#000",
-                        aspectRatio: "9/19.5",
-                      }}
+                      key={i}
+                      onClick={() => setSlideIndex(i)}
+                      className="flex-shrink-0 cursor-pointer transition-all duration-500"
+                      style={{ width: "calc(25% - 18px)", minWidth: "200px" }}
                     >
-                      {/* Dynamic island / notch */}
-                      <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-5 bg-black rounded-full z-20" />
-
-                      {/* Status bar */}
-                      <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-5 pt-3 pb-1 z-10" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.8), transparent)" }}>
-                        <span className="text-white text-[10px] font-bold">9:41</span>
-                        <div className="flex items-center gap-1">
-                          <div className="flex gap-[2px] items-end">
-                            {[3,5,7,9].map((h, j) => <div key={j} className="w-[3px] bg-white rounded-sm" style={{ height: `${h}px` }} />)}
+                      {/* Phone shell */}
+                      <div
+                        className="relative overflow-hidden shadow-2xl mx-auto"
+                        style={{
+                          borderRadius: "2.8rem",
+                          border: "3px solid #2a2a2a",
+                          background: "#0a0a0a",
+                          aspectRatio: "9/19",
+                          maxWidth: "220px",
+                          opacity: isActive ? 1 : 0.3,
+                        }}
+                      >
+                        {/* Dynamic island */}
+                        <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-[72px] h-[22px] bg-black rounded-full z-20" />
+                        {/* Status bar */}
+                        <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-5 pt-3 z-10">
+                          <span className="text-white text-[10px] font-semibold">9:41</span>
+                          <div className="flex items-center gap-1">
+                            <div className="flex gap-[2px] items-end">
+                              {[3,5,7,9].map((h,j) => <div key={j} className="w-[3px] bg-white rounded-sm" style={{height:`${h}px`}} />)}
+                            </div>
+                            <svg viewBox="0 0 24 24" className="w-[11px] h-[11px] fill-white"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3a4.237 4.237 0 00-6 0zm-4-4l2 2a7.074 7.074 0 0110 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
+                            <div className="w-5 h-2.5 border border-white/50 rounded-sm flex items-center px-[2px]"><div className="bg-white h-[7px] rounded-sm" style={{width:"70%"}} /></div>
                           </div>
-                          <svg viewBox="0 0 24 24" className="w-3 h-3 fill-white"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3a4.237 4.237 0 00-6 0zm-4-4l2 2a7.074 7.074 0 0110 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
-                          <div className="w-5 h-2.5 border border-white/60 rounded-sm flex items-center px-[2px]"><div className="bg-white h-[7px] rounded-sm w-[70%]" /></div>
                         </div>
-                      </div>
 
-                      {/* Full-bleed haul photo */}
-                      <img
-                        src={slide.img}
-                        alt={slide.label}
-                        className="absolute inset-0 w-full h-full object-cover"
-                      />
+                        {/* Haul photo fills screen */}
+                        <img src={slide.img} alt={slide.label} className="absolute inset-0 w-full h-full object-cover" />
 
-                      {/* Bottom gradient + info */}
-                      <div className="absolute inset-x-0 bottom-0 z-10" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.92) 60%, transparent)" }}>
-                        <div className="px-3 pb-4 pt-8">
-                          {isCenter && (
-                            <>
-                              <div className="text-green-400 font-black text-xl mb-0.5">{slide.profit}</div>
-                              <div className="text-white font-bold text-[11px] leading-tight mb-1">{slide.label}</div>
-                              <div className="text-zinc-400 text-[10px] leading-tight">{slide.caption}</div>
-                            </>
-                          )}
-                          {!isCenter && (
-                            <div className="text-green-400 font-black text-sm">{slide.profit}</div>
-                          )}
+                        {/* Gradient overlay bottom */}
+                        <div className="absolute inset-x-0 bottom-0 z-10" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.95) 50%, transparent)" }}>
+                          <div className="px-3 pb-5 pt-10">
+                            <div className="text-green-400 font-black text-lg leading-none mb-1">{slide.profit}</div>
+                            <div className="text-white font-bold text-[11px] leading-tight">{slide.label}</div>
+                            <div className="text-zinc-500 text-[10px] mt-0.5 leading-tight">{slide.caption}</div>
+                          </div>
                         </div>
-                      </div>
 
-                      {/* Profit pill top-right (center only) */}
-                      {isCenter && (
-                        <div className="absolute top-10 right-3 z-10 bg-green-400 text-black text-[10px] font-black px-2 py-0.5 rounded-full shadow-lg">
+                        {/* "REAL HAUL" badge top right */}
+                        <div className="absolute top-9 right-2.5 z-20 bg-green-400 text-black text-[9px] font-black px-2 py-0.5 rounded-full">
                           REAL HAUL
                         </div>
-                      )}
-                    </div>
-
-                    {/* Quote card below center phone only */}
-                    {isCenter && (
-                      <div className="mt-4 bg-white/5 border border-white/10 rounded-2xl p-4">
-                        <div className="flex gap-0.5 mb-2">
-                          {Array.from({ length: 5 }).map((_, j) => <Star key={j} size={11} className="fill-green-400 text-green-400" />)}
-                        </div>
-                        <p className="text-white text-xs leading-relaxed mb-2">"{slide.quote}"</p>
-                        <div className="flex items-center justify-between">
-                          <div>
-                            <div className="text-white font-bold text-xs">{slide.name}</div>
-                            <div className="text-zinc-500 text-[10px]">{slide.location} · {slide.niche}</div>
-                          </div>
-                          <div className="text-green-400 font-black text-sm">{slide.profit}</div>
-                        </div>
                       </div>
-                    )}
-                  </div>
-                );
-              })}
+
+                      {/* Name + stars below each phone */}
+                      <div className="mt-3 text-center px-2">
+                        <div className="flex justify-center gap-0.5 mb-1">
+                          {Array.from({length:5}).map((_,j) => <Star key={j} size={10} className="fill-green-400 text-green-400" />)}
+                        </div>
+                        <div className="text-white font-bold text-xs">{slide.name}</div>
+                        <div className="text-zinc-500 text-[10px]">{slide.location}</div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
 
-            {/* Next button */}
+            {/* Arrow buttons */}
             <button
-              onClick={() => setSlideIndex((p) => (p + 1) % proofSlides.length)}
-              className="flex-shrink-0 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white text-2xl transition-all z-10"
+              onClick={() => setSlideIndex((p) => Math.max(0, p - 1))}
+              disabled={slideIndex === 0}
+              className="absolute -left-4 top-1/3 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white text-2xl transition-all disabled:opacity-20 z-10"
+            >‹</button>
+            <button
+              onClick={() => setSlideIndex((p) => Math.min(proofSlides.length - 1, p + 1))}
+              disabled={slideIndex >= proofSlides.length - 1}
+              className="absolute -right-4 top-1/3 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white text-2xl transition-all disabled:opacity-20 z-10"
             >›</button>
           </div>
 
