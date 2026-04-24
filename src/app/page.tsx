@@ -313,50 +313,13 @@ const dmSlides = [
     avatar: "V",
     profit: "+$1,000+",
     vendorTag: "COLOGNE VENDOR",
-    productImg: "🧴",
+    productImg: "https://images.unsplash.com/photo-1505239034653-abfc95288b6c?fm=jpg&q=80&w=600&auto=format&fit=crop",
     messages: [
       { side: "left", text: "BIG COLOGNE PACKAGES COMING THRU, BRO FLIPPED THIS FOR ATLEAST $1000 😤" },
       { side: "left", text: "Big package came thru 🙏" },
-      { side: "right", text: "hell yea" },
-      { side: "right", text: "ts looks good" },
       { side: "right", text: "atleast a 1.5k there if sold correctly" },
     ],
     reactions: ["hell yea", "ts looks 🔥", "good"],
-  },
-  {
-    handle: "Vouches IIII",
-    date: "May 16",
-    avatarBg: "#7c3aed",
-    avatar: "V",
-    profit: "+$600+",
-    vendorTag: "SP5DER VENDOR",
-    productImg: "🧥",
-    messages: [
-      { side: "left", text: "Yoo I just got 3 hoodies" },
-      { side: "left", text: "10/10 QUALITY FROM MY SP5DER VENDOR! 🟩" },
-      { side: "right", text: "it's what asap" },
-      { side: "right", text: "10/10 Quality bro" },
-      { side: "left", text: "yessir" },
-    ],
-    reactions: ["🔥🔥", "W vendor", "10/10"],
-  },
-  {
-    handle: "Vouches IIII",
-    date: "August 18",
-    avatarBg: "#7c3aed",
-    avatar: "V",
-    profit: "+$800+",
-    vendorTag: "WATCH VENDOR",
-    productImg: "⌚",
-    messages: [
-      { side: "left", text: "THAT WATCH VENDOR DO NOT PLAY AROUND, BRO GOT THAT AP 🤯" },
-      { side: "right", text: "omggg" },
-      { side: "right", text: "that's tuff asf" },
-      { side: "left", text: "Yea" },
-      { side: "right", text: "from my vendor?" },
-      { side: "left", text: "shit tuff asf" },
-    ],
-    reactions: ["W", "omggg 🔥", "tuff asf"],
   },
   {
     handle: "Vouches IIII",
@@ -365,32 +328,28 @@ const dmSlides = [
     avatar: "V",
     profit: "+$500+",
     vendorTag: "SHOE VENDOR",
-    productImg: "👟",
+    productImg: "https://images.unsplash.com/photo-1678266622946-668ede09af9a?fm=jpg&q=80&w=600&auto=format&fit=crop",
     messages: [
       { side: "left", text: "bro the shoe vendor just hit different 🔥" },
-      { side: "left", text: "got 4 pairs came in today, flipping all of em" },
-      { side: "right", text: "how much you pay per pair?" },
-      { side: "left", text: "like $30 selling for $120+ each" },
+      { side: "left", text: "got 4 pairs, flipping all of em" },
       { side: "right", text: "THAT'S CRAZY W vendor no cap" },
     ],
     reactions: ["W vendor 🙌", "need this", "facts"],
   },
   {
     handle: "Vouches IIII",
-    date: "April 3",
+    date: "August 18",
     avatarBg: "#7c3aed",
     avatar: "V",
-    profit: "+$1,100",
-    vendorTag: "JEWELRY VENDOR",
-    productImg: "💍",
+    profit: "+$800+",
+    vendorTag: "WATCH VENDOR",
+    productImg: "https://images.pexels.com/photos/35991499/pexels-photo-35991499.jpeg?cs=srgb&fm=jpg&w=600&fit=crop",
     messages: [
-      { side: "left", text: "moissanite jewelry vendor is INSANE bro" },
-      { side: "left", text: "sold 6 rings this week alone 😭" },
-      { side: "right", text: "how much profit?" },
-      { side: "left", text: "like $1,100 on the week not even capping" },
-      { side: "right", text: "bro that vendor a goldmine fr" },
+      { side: "left", text: "THAT WATCH VENDOR DO NOT PLAY AROUND 🤯" },
+      { side: "right", text: "omggg that's tuff asf" },
+      { side: "left", text: "shit tuff asf fr" },
     ],
-    reactions: ["no cap 💎", "W", "need the link"],
+    reactions: ["W", "omggg 🔥", "tuff asf"],
   },
   {
     handle: "Vouches IIII",
@@ -399,15 +358,43 @@ const dmSlides = [
     avatar: "V",
     profit: "+$850",
     vendorTag: "BAG VENDOR",
-    productImg: "👜",
+    productImg: "https://images.unsplash.com/photo-1758499537503-315ca95c010b?fm=jpg&q=80&w=600&auto=format&fit=crop",
     messages: [
       { side: "left", text: "designer bag vendor just dropped 🔥🔥" },
-      { side: "left", text: "people going CRAZY for these on depop" },
-      { side: "right", text: "how fast they moving?" },
       { side: "left", text: "listed 5 bags, 4 sold same day bro" },
       { side: "right", text: "that vendor is crazy W" },
     ],
     reactions: ["same day 🤯", "W vendor", "🔥🔥"],
+  },
+  {
+    handle: "Vouches IIII",
+    date: "April 3",
+    avatarBg: "#7c3aed",
+    avatar: "V",
+    profit: "+$1,100",
+    vendorTag: "JEWELRY VENDOR",
+    productImg: "https://plus.unsplash.com/premium_photo-1661645433820-24c8604e4db5?fm=jpg&q=80&w=600&auto=format&fit=crop",
+    messages: [
+      { side: "left", text: "moissanite jewelry vendor is INSANE bro" },
+      { side: "left", text: "like $1,100 on the week not even capping" },
+      { side: "right", text: "bro that vendor a goldmine fr" },
+    ],
+    reactions: ["no cap 💎", "W", "need the link"],
+  },
+  {
+    handle: "Vouches IIII",
+    date: "February 7",
+    avatarBg: "#7c3aed",
+    avatar: "V",
+    profit: "+$600+",
+    vendorTag: "SHOE VENDOR",
+    productImg: "https://images.unsplash.com/photo-1603035945286-e2570c150971?fm=jpg&q=80&w=600&auto=format&fit=crop",
+    messages: [
+      { side: "left", text: "shoe rack just came in 📦" },
+      { side: "left", text: "flipping every pair this weekend" },
+      { side: "right", text: "THAT SHOE VENDOR IS CRAZY W" },
+    ],
+    reactions: ["📦🔥", "W vendor", "need that link"],
   },
 ];
 
@@ -781,14 +768,14 @@ export default function Home() {
                               </div>
                             </div>
                           ))}
-                          {/* Product emoji "photo" */}
+                          {/* Real product photo */}
                           <div className="flex justify-start mt-1">
-                            <div
-                              className="rounded-xl w-16 h-14 flex items-center justify-center text-4xl"
-                              style={{ background: "#1a1a1a", border: "1px solid #333" }}
-                            >
-                              {slide.productImg}
-                            </div>
+                            <img
+                              src={slide.productImg}
+                              alt={slide.vendorTag}
+                              className="rounded-xl object-cover"
+                              style={{ width: "80%", height: "90px" }}
+                            />
                           </div>
                           {/* Vendor tag pill */}
                           <div className="flex justify-center mt-1.5">
@@ -846,9 +833,13 @@ export default function Home() {
           <div className="overflow-hidden mt-12">
             <div className="flex animate-ticker gap-4">
               {[...dmSlides, ...dmSlides].map((slide, i) => (
-                <div key={i} className="flex-shrink-0 bg-white/5 border border-white/10 rounded-2xl px-5 py-4 flex items-center gap-4 min-w-[220px]">
-                  <span className="text-3xl">{slide.productImg}</span>
-                  <div>
+                <div key={i} className="flex-shrink-0 bg-white/5 border border-white/10 rounded-2xl overflow-hidden flex items-center gap-0 min-w-[240px]">
+                  <img
+                    src={slide.productImg}
+                    alt={slide.vendorTag}
+                    className="w-16 h-16 object-cover flex-shrink-0"
+                  />
+                  <div className="px-4 py-3">
                     <div className="font-bold text-sm text-white">{slide.handle}</div>
                     <div className="text-green-400 font-black text-base">{slide.profit}</div>
                     <div className="text-zinc-500 text-xs">{slide.vendorTag}</div>
