@@ -544,32 +544,42 @@ export default function Home() {
               return (
                 <div
                   key={p.id}
-                  className={`relative bg-gradient-to-br ${p.gradient} border border-white/10 rounded-2xl overflow-hidden hover:border-green-500/40 transition-all hover:-translate-y-1 group`}
+                  className="relative rounded-2xl overflow-hidden hover:-translate-y-1 transition-all duration-300 group"
+                  style={{ background: "#0d0d0d", border: "1px solid #1a1a1a", boxShadow: "0 4px 24px rgba(0,0,0,0.5)" }}
                 >
-                  {p.badge && (
-                    <div className={`absolute top-3 left-3 z-10 ${p.badgeColor} text-xs font-black px-2.5 py-1 rounded-full`}>
-                      {p.badge}
-                    </div>
-                  )}
-                  <div className="flex items-center justify-center h-44 text-7xl bg-black/30">
-                    {p.emoji}
+                  {/* Top banner with product name */}
+                  <div className="relative px-4 pt-4 pb-2"
+                    style={{
+                      background: "radial-gradient(ellipse at top, #0f2010 0%, #050505 70%)",
+                      backgroundImage: "radial-gradient(ellipse at top, #0f2010 0%, #050505 70%), repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(255,255,255,0.015) 4px, rgba(255,255,255,0.015) 5px)",
+                    }}
+                  >
+                    <h3 className="text-center font-black uppercase text-green-400 text-lg tracking-wide leading-tight drop-shadow-lg"
+                      style={{ textShadow: "0 0 20px rgba(74,222,128,0.5)" }}>
+                      {p.name}
+                    </h3>
                   </div>
-                  <div className="p-5">
-                    <h3 className="font-bold text-base leading-tight mb-1">{p.name}</h3>
-                    <p className="text-zinc-400 text-xs leading-relaxed mb-3">{p.description}</p>
-                    <div className="flex flex-wrap gap-1 mb-4">
-                      {p.tags.map((tag) => (
-                        <span key={tag} className="bg-white/5 border border-white/10 text-zinc-400 text-[10px] font-medium px-2 py-0.5 rounded-full">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-2xl font-black text-green-400">${p.salePrice.toFixed(2)}</span>
-                        <span className="text-zinc-500 text-sm line-through">${p.regularPrice.toFixed(2)}</span>
+
+                  {/* Emoji icon area */}
+                  <div className="flex items-center justify-center py-6 text-8xl"
+                    style={{
+                      background: "repeating-linear-gradient(45deg, #0a0a0a, #0a0a0a 4px, #0d0d0d 4px, #0d0d0d 8px)",
+                    }}
+                  >
+                    {p.badge && (
+                      <div className={`absolute top-12 right-3 z-10 ${p.badgeColor} text-xs font-black px-2.5 py-1 rounded-full shadow-lg`}>
+                        {p.badge}
                       </div>
-                      <span className="bg-red-500/20 text-red-400 text-xs font-bold px-2 py-0.5 rounded-full">
+                    )}
+                    <span className="drop-shadow-2xl">{p.emoji}</span>
+                  </div>
+
+                  {/* Bottom info */}
+                  <div className="p-4" style={{ background: "#0d0d0d" }}>
+                    <div className="flex items-baseline gap-2 mb-3">
+                      <span className="text-2xl font-black text-green-400">${p.salePrice.toFixed(2)}</span>
+                      <span className="text-zinc-500 text-sm line-through">${p.regularPrice.toFixed(2)}</span>
+                      <span className="ml-auto bg-red-500 text-white text-xs font-black px-2 py-0.5 rounded-md">
                         -{discount}%
                       </span>
                     </div>
@@ -579,24 +589,23 @@ export default function Home() {
                           href={p.shopifyUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex-1 block text-center bg-green-500 hover:bg-green-400 text-black font-black py-2.5 rounded-xl text-sm transition-all hover:scale-[1.02] active:scale-95"
+                          className="flex-1 block text-center font-black py-3 rounded-xl text-sm transition-all hover:brightness-110 active:scale-95 uppercase tracking-wide"
+                          style={{ background: "linear-gradient(135deg, #22c55e, #16a34a)", color: "#000", boxShadow: "0 2px 12px rgba(34,197,94,0.35)" }}
                         >
-                          Buy Now
+                          Get Access
                         </a>
                       ) : (
-                        <button
-                          disabled
-                          className="flex-1 bg-zinc-700 text-zinc-400 font-black py-2.5 rounded-xl text-sm cursor-not-allowed"
-                        >
+                        <button disabled className="flex-1 bg-zinc-800 text-zinc-500 font-black py-3 rounded-xl text-sm cursor-not-allowed uppercase">
                           Coming Soon
                         </button>
                       )}
                       <button
                         onClick={() => setDetailProduct(p)}
-                        className="flex items-center justify-center gap-1.5 border border-white/20 hover:border-green-500/60 hover:text-green-400 text-zinc-400 font-semibold px-3 py-2.5 rounded-xl text-sm transition-all"
+                        className="flex items-center justify-center w-12 rounded-xl transition-all hover:brightness-125"
+                        style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
                         title="View details"
                       >
-                        <Info size={15} />
+                        <Info size={16} className="text-zinc-400" />
                       </button>
                     </div>
                   </div>
