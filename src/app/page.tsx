@@ -9,7 +9,7 @@ import {
 } from "@/components/NeonProductIcons";
 
 const iconMap: Record<number, () => React.ReactElement> = {
-  2: BundleIcon, 3: ShoeIcon, 4: WatchIcon,
+  1: AllInOneIcon, 2: BundleIcon, 3: ShoeIcon, 4: WatchIcon,
   5: JewelryIcon, 6: HoodieIcon, 8: DressIcon,
   9: HandbagIcon, 10: LegoIcon, 11: ShirtIcon, 12: CologneIconSVG, 13: PodsIcon,
 };
@@ -22,6 +22,26 @@ const SHOPIFY_STORE = "lazzzyresells.myshopify.com";
 const BASE = `https://${SHOPIFY_STORE}/products`;
 const CHECKOUT = `https://${SHOPIFY_STORE}/cart`;
 const products = [
+  {
+    id: 1,
+    name: "2026 All-In-One Supplier",
+    badge: "BEST SELLER",
+    badgeColor: "bg-green-400 text-black",
+    regularPrice: 34.99,
+    salePrice: 24.99,
+    emoji: "🏆",
+    gradient: "from-green-900/40 to-emerald-900/40",
+    description: "Every category covered — clothes, shoes, jewelry, belts, handbags & more. Instant email delivery.",
+    tags: ["Clothes", "Shoes", "Jewelry", "Handbags", "Belts"],
+    shopifyUrl: `${CHECKOUT}/53352382562622:1`,
+    variantId: "53352382562622",
+    details: {
+      whatYouGet: ["Clothing suppliers (50+ sources)", "Shoe & sneaker wholesalers", "Jewelry & accessory suppliers", "Handbag & belt sources", "Instant email delivery after purchase"],
+      bestFor: "Resellers who want to cover multiple niches from day one.",
+      avgProfit: "$200–$600/mo per category",
+      delivery: "Instant — links sent to your email within seconds",
+    },
+  },
   {
     id: 2,
     name: "Elite Supplier Bundle",
