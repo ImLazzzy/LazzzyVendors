@@ -538,75 +538,84 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl font-black mb-3">Supplier Packages</h2>
             <p className="text-zinc-400">Digital delivery — access within seconds of purchase</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4">
             {products.map((p) => {
-              const discount = Math.round((1 - p.salePrice / p.regularPrice) * 100);
               return (
                 <div
                   key={p.id}
-                  className="relative rounded-2xl overflow-hidden hover:-translate-y-1 transition-all duration-300 group"
-                  style={{ background: "#0d0d0d", border: "1px solid #1a1a1a", boxShadow: "0 4px 24px rgba(0,0,0,0.5)" }}
+                  className="relative rounded-2xl overflow-hidden hover:-translate-y-1 transition-all duration-300 flex flex-col"
+                  style={{ background: "#111", border: "1px solid #222", boxShadow: "0 4px 20px rgba(0,0,0,0.6)" }}
                 >
-                  {/* Top banner with product name */}
-                  <div className="relative px-4 pt-4 pb-2"
+                  {/* Top banner — bold italic name like Shopify store */}
+                  <div
+                    className="px-3 pt-3 pb-2 text-center"
                     style={{
-                      background: "radial-gradient(ellipse at top, #0f2010 0%, #050505 70%)",
-                      backgroundImage: "radial-gradient(ellipse at top, #0f2010 0%, #050505 70%), repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(255,255,255,0.015) 4px, rgba(255,255,255,0.015) 5px)",
+                      background: "repeating-linear-gradient(45deg,#0a0a0a,#0a0a0a 3px,#0e0e0e 3px,#0e0e0e 6px)",
                     }}
                   >
-                    <h3 className="text-center font-black uppercase text-green-400 text-lg tracking-wide leading-tight drop-shadow-lg"
-                      style={{ textShadow: "0 0 20px rgba(74,222,128,0.5)" }}>
-                      {p.name}
-                    </h3>
+                    <span
+                      className="font-black uppercase italic text-green-400 leading-tight block"
+                      style={{ fontSize: "clamp(0.7rem, 2.5vw, 1rem)", textShadow: "0 0 12px rgba(74,222,128,0.6)", lineHeight: 1.15 }}
+                    >
+                      {p.name.split(" ").slice(0, Math.ceil(p.name.split(" ").length / 2)).join(" ")}
+                    </span>
+                    <span
+                      className="font-black uppercase italic text-white leading-tight block"
+                      style={{ fontSize: "clamp(0.75rem, 2.8vw, 1.05rem)", lineHeight: 1.15 }}
+                    >
+                      {p.name.split(" ").slice(Math.ceil(p.name.split(" ").length / 2)).join(" ")}
+                    </span>
                   </div>
 
-                  {/* Emoji icon area */}
-                  <div className="flex items-center justify-center py-6 text-8xl"
+                  {/* Emoji + SALE badge */}
+                  <div
+                    className="relative flex items-center justify-center py-4 text-6xl sm:text-7xl"
                     style={{
-                      background: "repeating-linear-gradient(45deg, #0a0a0a, #0a0a0a 4px, #0d0d0d 4px, #0d0d0d 8px)",
+                      background: "repeating-linear-gradient(45deg,#0a0a0a,#0a0a0a 3px,#0e0e0e 3px,#0e0e0e 6px)",
+                      minHeight: "110px",
                     }}
                   >
+                    <span className="drop-shadow-xl">{p.emoji}</span>
                     {p.badge && (
-                      <div className={`absolute top-12 right-3 z-10 ${p.badgeColor} text-xs font-black px-2.5 py-1 rounded-full shadow-lg`}>
+                      <div className="absolute bottom-2 right-2 bg-green-400 text-black text-[10px] font-black px-2 py-0.5 rounded-md shadow">
                         {p.badge}
                       </div>
                     )}
-                    <span className="drop-shadow-2xl">{p.emoji}</span>
                   </div>
 
-                  {/* Bottom info */}
-                  <div className="p-4" style={{ background: "#0d0d0d" }}>
-                    <div className="flex items-baseline gap-2 mb-3">
-                      <span className="text-2xl font-black text-green-400">${p.salePrice.toFixed(2)}</span>
-                      <span className="text-zinc-500 text-sm line-through">${p.regularPrice.toFixed(2)}</span>
-                      <span className="ml-auto bg-red-500 text-white text-xs font-black px-2 py-0.5 rounded-md">
-                        -{discount}%
-                      </span>
+                  {/* Info */}
+                  <div className="p-3 flex flex-col gap-2 flex-1" style={{ background: "#111" }}>
+                    <p className="font-black uppercase text-white text-xs sm:text-sm leading-tight">
+                      {p.name}
+                    </p>
+                    <div className="flex items-baseline gap-1.5">
+                      <span className="font-black text-green-400 text-base sm:text-lg">${p.salePrice.toFixed(2)}</span>
+                      <span className="text-zinc-500 text-xs line-through">${p.regularPrice.toFixed(2)}</span>
                     </div>
-                    <div className="flex gap-2">
+                    <div className="flex gap-1.5 mt-auto">
+                      <button
+                        onClick={() => setDetailProduct(p)}
+                        className="flex items-center justify-center rounded-lg transition-all hover:brightness-125 shrink-0"
+                        style={{ background: "#222", border: "1px solid #333", width: "36px", height: "36px" }}
+                        title="View details"
+                      >
+                        <ShoppingCart size={14} className="text-zinc-300" />
+                      </button>
                       {p.shopifyUrl ? (
                         <a
                           href={p.shopifyUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex-1 block text-center font-black py-3 rounded-xl text-sm transition-all hover:brightness-110 active:scale-95 uppercase tracking-wide"
-                          style={{ background: "linear-gradient(135deg, #22c55e, #16a34a)", color: "#000", boxShadow: "0 2px 12px rgba(34,197,94,0.35)" }}
+                          className="flex-1 block text-center font-black py-2 rounded-lg text-xs sm:text-sm transition-all hover:brightness-110 active:scale-95 uppercase tracking-wide"
+                          style={{ background: "linear-gradient(135deg,#22c55e,#16a34a)", color: "#000", boxShadow: "0 2px 10px rgba(34,197,94,0.3)" }}
                         >
                           Get Access
                         </a>
                       ) : (
-                        <button disabled className="flex-1 bg-zinc-800 text-zinc-500 font-black py-3 rounded-xl text-sm cursor-not-allowed uppercase">
+                        <button disabled className="flex-1 bg-zinc-800 text-zinc-500 font-black py-2 rounded-lg text-xs uppercase cursor-not-allowed">
                           Coming Soon
                         </button>
                       )}
-                      <button
-                        onClick={() => setDetailProduct(p)}
-                        className="flex items-center justify-center w-12 rounded-xl transition-all hover:brightness-125"
-                        style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
-                        title="View details"
-                      >
-                        <Info size={16} className="text-zinc-400" />
-                      </button>
                     </div>
                   </div>
                 </div>
