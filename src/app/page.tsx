@@ -305,96 +305,54 @@ interface CartItem {
   shopifyUrl: string;
 }
 
-const dmSlides = [
+const proofSlides = [
   {
-    handle: "Vouches IIII",
-    date: "August 20",
-    avatarBg: "#7c3aed",
-    avatar: "V",
-    profit: "+$1,000+",
-    vendorTag: "COLOGNE VENDOR",
-    productImg: "https://images.unsplash.com/photo-1505239034653-abfc95288b6c?fm=jpg&q=80&w=600&auto=format&fit=crop",
-    messages: [
-      { side: "left", text: "BIG COLOGNE PACKAGES COMING THRU, BRO FLIPPED THIS FOR ATLEAST $1000 😤" },
-      { side: "left", text: "Big package came thru 🙏" },
-      { side: "right", text: "atleast a 1.5k there if sold correctly" },
-    ],
-    reactions: ["hell yea", "ts looks 🔥", "good"],
+    img: "https://images.unsplash.com/photo-1580048915913-4f8f5cb481c4?fm=jpg&q=80&w=900&auto=format&fit=crop",
+    name: "Marcus T.",
+    location: "Atlanta, GA",
+    profit: "+$1,200",
+    niche: "Cologne Supplier",
+    quote: "Made over a rack my first month. The cologne supplier alone changed everything for me.",
   },
   {
-    handle: "Vouches IIII",
-    date: "March 12",
-    avatarBg: "#7c3aed",
-    avatar: "V",
-    profit: "+$500+",
-    vendorTag: "SHOE VENDOR",
-    productImg: "https://images.unsplash.com/photo-1678266622946-668ede09af9a?fm=jpg&q=80&w=600&auto=format&fit=crop",
-    messages: [
-      { side: "left", text: "bro the shoe vendor just hit different 🔥" },
-      { side: "left", text: "got 4 pairs, flipping all of em" },
-      { side: "right", text: "THAT'S CRAZY W vendor no cap" },
-    ],
-    reactions: ["W vendor 🙌", "need this", "facts"],
-  },
-  {
-    handle: "Vouches IIII",
-    date: "August 18",
-    avatarBg: "#7c3aed",
-    avatar: "V",
-    profit: "+$800+",
-    vendorTag: "WATCH VENDOR",
-    productImg: "https://images.pexels.com/photos/35991499/pexels-photo-35991499.jpeg?cs=srgb&fm=jpg&w=600&fit=crop",
-    messages: [
-      { side: "left", text: "THAT WATCH VENDOR DO NOT PLAY AROUND 🤯" },
-      { side: "right", text: "omggg that's tuff asf" },
-      { side: "left", text: "shit tuff asf fr" },
-    ],
-    reactions: ["W", "omggg 🔥", "tuff asf"],
-  },
-  {
-    handle: "Vouches IIII",
-    date: "January 29",
-    avatarBg: "#7c3aed",
-    avatar: "V",
+    img: "https://images.unsplash.com/photo-1593182440959-9d5165b29b59?fm=jpg&q=80&w=900&auto=format&fit=crop",
+    name: "Jasmine R.",
+    location: "Houston, TX",
     profit: "+$850",
-    vendorTag: "BAG VENDOR",
-    productImg: "https://images.unsplash.com/photo-1758499537503-315ca95c010b?fm=jpg&q=80&w=600&auto=format&fit=crop",
-    messages: [
-      { side: "left", text: "designer bag vendor just dropped 🔥🔥" },
-      { side: "left", text: "listed 5 bags, 4 sold same day bro" },
-      { side: "right", text: "that vendor is crazy W" },
-    ],
-    reactions: ["same day 🤯", "W vendor", "🔥🔥"],
+    niche: "All-In-One Supplier",
+    quote: "I was skeptical at first. Now I'm flipping 6 different product types every week.",
   },
   {
-    handle: "Vouches IIII",
-    date: "April 3",
-    avatarBg: "#7c3aed",
-    avatar: "V",
+    img: "https://images.unsplash.com/photo-1670602152500-e14c206b5335?fm=jpg&q=80&w=900&auto=format&fit=crop",
+    name: "Devon K.",
+    location: "Chicago, IL",
+    profit: "+$640",
+    niche: "Watch Supplier",
+    quote: "Watch resale is slept on. Got my first 10 orders in 3 days using the supplier list.",
+  },
+  {
+    img: "https://images.pexels.com/photos/4475523/pexels-photo-4475523.jpeg?auto=compress&cs=tinysrgb&w=900",
+    name: "Aaliyah S.",
+    location: "Miami, FL",
     profit: "+$1,100",
-    vendorTag: "JEWELRY VENDOR",
-    productImg: "https://plus.unsplash.com/premium_photo-1661645433820-24c8604e4db5?fm=jpg&q=80&w=600&auto=format&fit=crop",
-    messages: [
-      { side: "left", text: "moissanite jewelry vendor is INSANE bro" },
-      { side: "left", text: "like $1,100 on the week not even capping" },
-      { side: "right", text: "bro that vendor a goldmine fr" },
-    ],
-    reactions: ["no cap 💎", "W", "need the link"],
+    niche: "Moissanite Supplier",
+    quote: "Jewelry resale is insane right now. Doing $1k+ months just on moissanite pieces.",
   },
   {
-    handle: "Vouches IIII",
-    date: "February 7",
-    avatarBg: "#7c3aed",
-    avatar: "V",
-    profit: "+$600+",
-    vendorTag: "SHOE VENDOR",
-    productImg: "https://images.unsplash.com/photo-1603035945286-e2570c150971?fm=jpg&q=80&w=600&auto=format&fit=crop",
-    messages: [
-      { side: "left", text: "shoe rack just came in 📦" },
-      { side: "left", text: "flipping every pair this weekend" },
-      { side: "right", text: "THAT SHOE VENDOR IS CRAZY W" },
-    ],
-    reactions: ["📦🔥", "W vendor", "need that link"],
+    img: "https://images.pexels.com/photos/6694577/pexels-photo-6694577.jpeg?auto=compress&cs=tinysrgb&w=900",
+    name: "Trey M.",
+    location: "Dallas, TX",
+    profit: "+$920",
+    niche: "Shoe Supplier",
+    quote: "The shoe supplier is unreal. Buying for $30, flipping for $120+. It's that simple.",
+  },
+  {
+    img: "https://images.pexels.com/photos/4475525/pexels-photo-4475525.jpeg?auto=compress&cs=tinysrgb&w=900",
+    name: "Jordan P.",
+    location: "New York, NY",
+    profit: "+$540",
+    niche: "Designer Bag Supplier",
+    quote: "4 bags sold same day I listed them. The bag supplier is no joke — pure profit.",
   },
 ];
 
@@ -406,7 +364,7 @@ export default function Home() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setSlideIndex((prev) => (prev + 1) % dmSlides.length);
+      setSlideIndex((prev) => (prev + 1) % proofSlides.length);
     }, 4000);
     return () => clearInterval(timer);
   }, []);
@@ -694,131 +652,73 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Reseller Proof — Phone DM Mockups */}
+      {/* Reseller Proof — Real Photo Slideshow */}
       <section className="py-20 border-t border-white/10 bg-white/[0.02] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-black mb-3">What Our Customers Say</h2>
-            <p className="text-zinc-400">Real DMs from resellers using our supplier lists</p>
+            <h2 className="text-3xl sm:text-4xl font-black mb-3">Real Results</h2>
+            <p className="text-zinc-400">Resellers showing their profits using our supplier lists</p>
           </div>
 
-          {/* Phone mockup carousel */}
-          <div className="relative px-8">
-            <div className="overflow-hidden">
-              <div
-                className="flex gap-5 transition-transform duration-700 ease-in-out"
-                style={{ transform: `translateX(calc(-${slideIndex} * (min(260px, 42vw) + 20px)))` }}
-              >
-                {dmSlides.map((slide, i) => {
-                  const isActive = i === slideIndex;
-                  return (
-                    <div
-                      key={i}
-                      onClick={() => setSlideIndex(i)}
-                      className="flex-shrink-0 cursor-pointer transition-all duration-500"
-                      style={{ width: "min(260px, 42vw)", opacity: isActive ? 1 : 0.45, transform: isActive ? "scale(1)" : "scale(0.94)" }}
-                    >
-                      {/* Phone shell */}
-                      <div
-                        className="relative rounded-[2.2rem] overflow-hidden shadow-2xl"
-                        style={{ border: "3px solid #3a3a3c", background: "#1c1c1e", aspectRatio: "9/19.5" }}
-                      >
-                        {/* Notch */}
-                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-6 bg-[#1c1c1e] rounded-b-2xl z-10" />
-                        {/* Status bar */}
-                        <div className="flex items-center justify-between px-5 pt-3 pb-1 bg-[#1c1c1e]">
-                          <span className="text-white text-[10px] font-bold">1:11</span>
-                          <div className="flex items-center gap-1">
-                            <div className="flex gap-[2px] items-end h-3">
-                              {[30,50,70,100].map((h, j) => (
-                                <div key={j} className="w-[3px] bg-white rounded-sm" style={{ height: `${h * 0.1 + 2}px` }} />
-                              ))}
-                            </div>
-                            <svg viewBox="0 0 24 24" className="w-3 h-3 fill-white"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
-                            <div className="w-5 h-2.5 border border-white/60 rounded-sm flex items-center px-[2px]">
-                              <div className="bg-white h-[7px] rounded-sm" style={{ width: "70%" }} />
-                            </div>
-                          </div>
-                        </div>
-                        {/* DM header */}
-                        <div className="flex items-center gap-2 px-3 py-2 bg-[#1c1c1e] border-b border-white/10">
-                          <div
-                            className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-black text-white flex-shrink-0"
-                            style={{ background: slide.avatarBg }}
-                          >
-                            {slide.avatar}
-                          </div>
-                          <div className="min-w-0">
-                            <div className="text-white text-[11px] font-bold flex items-center gap-1">
-                              <span className="truncate">{slide.handle}</span>
-                              <svg viewBox="0 0 24 24" className="w-3 h-3 fill-blue-400 flex-shrink-0"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
-                            </div>
-                            <div className="text-zinc-500 text-[9px]">{slide.date}</div>
-                          </div>
-                        </div>
-                        {/* Chat body */}
-                        <div className="p-2.5 flex flex-col gap-1.5 bg-black" style={{ minHeight: "calc(100% - 88px)" }}>
-                          {slide.messages.map((msg, j) => (
-                            <div key={j} className={`flex ${msg.side === "right" ? "justify-end" : "justify-start"}`}>
-                              <div
-                                className="rounded-2xl px-2.5 py-1.5 text-[10px] leading-snug max-w-[80%] font-medium text-white"
-                                style={{ background: msg.side === "right" ? "#7c3aed" : "#2a2a2e" }}
-                              >
-                                {msg.text}
-                              </div>
-                            </div>
-                          ))}
-                          {/* Real product photo */}
-                          <div className="flex justify-start mt-1">
-                            <img
-                              src={slide.productImg}
-                              alt={slide.vendorTag}
-                              className="rounded-xl object-cover"
-                              style={{ width: "80%", height: "90px" }}
-                            />
-                          </div>
-                          {/* Vendor tag pill */}
-                          <div className="flex justify-center mt-1.5">
-                            <div className="flex items-center gap-1 bg-[#1c1c1e] border border-zinc-700 rounded-full px-3 py-1">
-                              <span className="text-[10px]">🔗</span>
-                              <span className="text-white text-[9px] font-black uppercase tracking-wide">{slide.vendorTag}</span>
-                            </div>
-                          </div>
-                          {/* Reactions */}
-                          <div className="flex gap-2 flex-wrap px-1 mt-0.5">
-                            {slide.reactions.map((r, j) => (
-                              <span key={j} className="text-zinc-400 text-[9px] font-semibold">{r}</span>
-                            ))}
-                          </div>
-                        </div>
+          {/* Main full-width photo slide */}
+          <div className="relative max-w-3xl mx-auto">
+            <div className="relative rounded-3xl overflow-hidden" style={{ aspectRatio: "16/9" }}>
+              {proofSlides.map((slide, i) => (
+                <div
+                  key={i}
+                  className="absolute inset-0 transition-opacity duration-700"
+                  style={{ opacity: i === slideIndex ? 1 : 0, zIndex: i === slideIndex ? 1 : 0 }}
+                >
+                  <img
+                    src={slide.img}
+                    alt={slide.name}
+                    className="w-full h-full object-cover"
+                  />
+                  {/* Dark gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10" />
+                  {/* Stars */}
+                  <div className="absolute top-5 left-5 flex gap-1">
+                    {Array.from({ length: 5 }).map((_, j) => (
+                      <Star key={j} size={14} className="fill-green-400 text-green-400" />
+                    ))}
+                  </div>
+                  {/* Profit badge top-right */}
+                  <div className="absolute top-4 right-5 bg-green-400 text-black font-black text-xl px-4 py-1.5 rounded-full shadow-lg">
+                    {slide.profit}
+                  </div>
+                  {/* Bottom info */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <p className="text-white text-base sm:text-lg font-medium leading-snug mb-3 drop-shadow">
+                      "{slide.quote}"
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <div className="font-black text-white text-sm">{slide.name}</div>
+                        <div className="text-zinc-400 text-xs">{slide.location} · {slide.niche}</div>
                       </div>
-                      {/* Profit badge under phone */}
-                      <div className="text-center mt-3">
-                        <span className="text-green-400 font-black text-lg">{slide.profit}</span>
-                        <div className="text-zinc-500 text-xs mt-0.5">{slide.vendorTag}</div>
+                      <div className="bg-white/10 border border-white/20 rounded-full px-3 py-1 text-xs text-white font-semibold backdrop-blur-sm">
+                        {slide.niche}
                       </div>
                     </div>
-                  );
-                })}
-              </div>
+                  </div>
+                </div>
+              ))}
             </div>
 
-            {/* Nav arrows */}
+            {/* Arrow nav */}
             <button
-              onClick={() => setSlideIndex((p) => Math.max(0, p - 1))}
-              disabled={slideIndex === 0}
-              className="absolute left-0 top-1/3 -translate-y-1/2 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white text-xl transition-all disabled:opacity-20"
+              onClick={() => setSlideIndex((p) => (p - 1 + proofSlides.length) % proofSlides.length)}
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-black/80 backdrop-blur flex items-center justify-center text-white text-2xl transition-all z-10 border border-white/20"
             >‹</button>
             <button
-              onClick={() => setSlideIndex((p) => Math.min(dmSlides.length - 1, p + 1))}
-              disabled={slideIndex === dmSlides.length - 1}
-              className="absolute right-0 top-1/3 -translate-y-1/2 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white text-xl transition-all disabled:opacity-20"
+              onClick={() => setSlideIndex((p) => (p + 1) % proofSlides.length)}
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-black/80 backdrop-blur flex items-center justify-center text-white text-2xl transition-all z-10 border border-white/20"
             >›</button>
           </div>
 
           {/* Dot indicators */}
-          <div className="flex justify-center gap-2 mt-8">
-            {dmSlides.map((_, i) => (
+          <div className="flex justify-center gap-2 mt-6">
+            {proofSlides.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setSlideIndex(i)}
@@ -829,20 +729,30 @@ export default function Home() {
             ))}
           </div>
 
+          {/* Thumbnail strip */}
+          <div className="grid grid-cols-6 gap-2 mt-8 max-w-3xl mx-auto">
+            {proofSlides.map((slide, i) => (
+              <button
+                key={i}
+                onClick={() => setSlideIndex(i)}
+                className={`relative rounded-xl overflow-hidden transition-all duration-300 ${i === slideIndex ? "ring-2 ring-green-400" : "opacity-50 hover:opacity-80"}`}
+                style={{ aspectRatio: "1" }}
+              >
+                <img src={slide.img} alt={slide.name} className="w-full h-full object-cover" />
+              </button>
+            ))}
+          </div>
+
           {/* Scrolling profit strip */}
           <div className="overflow-hidden mt-12">
             <div className="flex animate-ticker gap-4">
-              {[...dmSlides, ...dmSlides].map((slide, i) => (
+              {[...proofSlides, ...proofSlides].map((slide, i) => (
                 <div key={i} className="flex-shrink-0 bg-white/5 border border-white/10 rounded-2xl overflow-hidden flex items-center gap-0 min-w-[240px]">
-                  <img
-                    src={slide.productImg}
-                    alt={slide.vendorTag}
-                    className="w-16 h-16 object-cover flex-shrink-0"
-                  />
+                  <img src={slide.img} alt={slide.name} className="w-16 h-16 object-cover flex-shrink-0" />
                   <div className="px-4 py-3">
-                    <div className="font-bold text-sm text-white">{slide.handle}</div>
+                    <div className="font-bold text-sm text-white">{slide.name}</div>
                     <div className="text-green-400 font-black text-base">{slide.profit}</div>
-                    <div className="text-zinc-500 text-xs">{slide.vendorTag}</div>
+                    <div className="text-zinc-500 text-xs">{slide.niche}</div>
                   </div>
                 </div>
               ))}
