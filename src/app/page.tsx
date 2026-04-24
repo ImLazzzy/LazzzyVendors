@@ -791,6 +791,88 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Policy Section */}
+      <section id="policy" className="py-20 border-t border-white/10 bg-white/[0.01]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-black mb-3">Policies</h2>
+            <p className="text-zinc-400">Please read before purchasing</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            {/* What You're Buying */}
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center text-green-400">📦</div>
+                <h3 className="font-black text-base">What You're Purchasing</h3>
+              </div>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                All products sold on LazzzyVendors are <span className="text-white font-semibold">digital supplier directories</span> — lists of vetted wholesale supplier links, contacts, and sourcing resources delivered electronically. You are not purchasing physical goods, inventory, or guaranteed profit. You are purchasing access to supplier information.
+              </p>
+            </div>
+
+            {/* Delivery Policy */}
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center text-green-400">⚡</div>
+                <h3 className="font-black text-base">Digital Delivery</h3>
+              </div>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                All supplier links are delivered <span className="text-white font-semibold">instantly via email</span> to the address provided at checkout — typically within seconds of payment confirmation. Please check your spam/junk folder if not received within 5 minutes. LazzzyVendors is not responsible for delivery failures due to incorrect email addresses entered at checkout.
+              </p>
+            </div>
+
+            {/* Refund Policy */}
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-8 bg-red-500/20 rounded-lg flex items-center justify-center text-red-400">🚫</div>
+                <h3 className="font-black text-base">No Refund Policy</h3>
+              </div>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                Due to the <span className="text-white font-semibold">instant digital nature</span> of our products, <span className="text-white font-semibold">all sales are final</span>. No refunds, exchanges, or chargebacks will be issued once supplier links have been delivered. By completing a purchase you acknowledge that you have read and agree to this policy. If you experience a technical issue with your order, contact us and we will resolve it promptly.
+              </p>
+            </div>
+
+            {/* Usage Policy */}
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center text-green-400">✅</div>
+                <h3 className="font-black text-base">Permitted Use</h3>
+              </div>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                Supplier directories are for <span className="text-white font-semibold">personal reselling use only</span>. You may not redistribute, resell, share, or publicly publish the supplier links or information provided. Each purchase is licensed to one individual buyer. Violations may result in permanent account termination and legal action.
+              </p>
+            </div>
+
+            {/* Results Disclaimer */}
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-8 bg-yellow-500/20 rounded-lg flex items-center justify-center text-yellow-400">⚠️</div>
+                <h3 className="font-black text-base">Results Disclaimer</h3>
+              </div>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                Profit figures and testimonials shown are examples of real customer results and are not guarantees. Individual results will vary based on effort, market conditions, and business decisions. LazzzyVendors provides supplier access only — <span className="text-white font-semibold">your results depend entirely on how you use the information</span>.
+              </p>
+            </div>
+
+            {/* Contact */}
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center text-green-400">💬</div>
+                <h3 className="font-black text-base">Support & Contact</h3>
+              </div>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                For order issues, missing links, or questions about your purchase, reach out via our support channel. We aim to respond within <span className="text-white font-semibold">24 hours</span>. Please include your order number and the email used at checkout. We stand behind every supplier list and will make it right if something isn't working.
+              </p>
+            </div>
+
+          </div>
+          <p className="text-center text-zinc-600 text-xs mt-10">
+            By purchasing from LazzzyVendors you confirm you are 18+ and agree to all policies listed above. Last updated April 2026.
+          </p>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="border-t border-white/10 py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -799,9 +881,9 @@ export default function Home() {
           </div>
           <p className="text-zinc-600 text-sm">© 2026 LazzzyVendors. All rights reserved.</p>
           <div className="flex gap-6 text-zinc-500 text-sm">
-            <a href="#" className="hover:text-white transition-colors">Terms</a>
-            <a href="#" className="hover:text-white transition-colors">Privacy</a>
-            <a href="#" className="hover:text-white transition-colors">Contact</a>
+            <a href="#policy" className="hover:text-white transition-colors">Terms</a>
+            <a href="#policy" className="hover:text-white transition-colors">Privacy</a>
+            <a href="#policy" className="hover:text-white transition-colors">Contact</a>
           </div>
         </div>
       </footer>
