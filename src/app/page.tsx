@@ -10,7 +10,7 @@ import {
 
 const iconMap: Record<number, () => React.ReactElement> = {
   1: AllInOneIcon, 2: BundleIcon, 3: ShoeIcon, 4: WatchIcon,
-  5: JewelryIcon, 6: HoodieIcon, 7: EarbudsIcon, 8: DressIcon,
+  5: JewelryIcon, 6: HoodieIcon, 8: DressIcon,
   9: HandbagIcon, 10: LegoIcon, 11: ShirtIcon, 12: CologneIconSVG, 13: PodsIcon,
 };
 function ProductIcon({ id }: { id: number }) {
@@ -139,26 +139,6 @@ const products = [
       whatYouGet: ["Spy/tactical hoodie wholesalers", "Trending streetwear sources", "TikTok-viral style suppliers", "Instant email delivery after purchase"],
       bestFor: "Resellers targeting streetwear & viral fashion trends.",
       avgProfit: "$150–$350/mo",
-      delivery: "Instant — links sent to your email within seconds",
-    },
-  },
-  {
-    id: 7,
-    name: "Earbudz Supplier",
-    badge: null,
-    badgeColor: "",
-    regularPrice: 20.00,
-    salePrice: 14.99,
-    emoji: "🎧",
-    gradient: "from-zinc-800/60 to-neutral-800/60",
-    description: "Wireless earbuds & audio accessories at wholesale prices.",
-    tags: ["Earbuds", "Audio", "Tech"],
-    shopifyUrl: `${CHECKOUT}/53342886854974:1`,
-    variantId: "53342886854974",
-    details: {
-      whatYouGet: ["Wireless earbud wholesalers", "Audio accessory suppliers", "Budget to mid-range sources", "Instant email delivery after purchase"],
-      bestFor: "Resellers in tech accessories — fast-moving, repeat buyers.",
-      avgProfit: "$100–$300/mo",
       delivery: "Instant — links sent to your email within seconds",
     },
   },
