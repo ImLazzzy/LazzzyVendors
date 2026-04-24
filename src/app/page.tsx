@@ -307,52 +307,64 @@ interface CartItem {
 
 const proofSlides = [
   {
-    img: "https://images.unsplash.com/photo-1580048915913-4f8f5cb481c4?fm=jpg&q=80&w=900&auto=format&fit=crop",
+    img: "/haul-cologne.jpeg",
+    label: "Cologne Haul",
+    caption: "Valentino, Chanel, YSL, Creed, Dior & more",
     name: "Marcus T.",
     location: "Atlanta, GA",
-    profit: "+$1,200",
+    profit: "+$1,500+",
     niche: "Cologne Supplier",
-    quote: "Made over a rack my first month. The cologne supplier alone changed everything for me.",
+    quote: "Package came in and I already knew. Valentino alone flipped for $80 each. Made my money back day one.",
   },
   {
-    img: "https://images.unsplash.com/photo-1593182440959-9d5165b29b59?fm=jpg&q=80&w=900&auto=format&fit=crop",
+    img: "/haul-bags.webp",
+    label: "Designer Bag Haul",
+    caption: "12 Coach bags, ready to flip",
     name: "Jasmine R.",
     location: "Houston, TX",
     profit: "+$850",
-    niche: "All-In-One Supplier",
-    quote: "I was skeptical at first. Now I'm flipping 6 different product types every week.",
+    niche: "Designer Bag Supplier",
+    quote: "Got 12 Coach bags in the mail. Listed same day, sold 8 within 48 hours. The bag supplier is crazy.",
   },
   {
-    img: "https://images.unsplash.com/photo-1670602152500-e14c206b5335?fm=jpg&q=80&w=900&auto=format&fit=crop",
+    img: "/haul-hoodies.jpeg",
+    label: "SP5DER Hoodie Haul",
+    caption: "Bulk SP5DER hoodies, resale ready",
     name: "Devon K.",
     location: "Chicago, IL",
-    profit: "+$640",
-    niche: "Watch Supplier",
-    quote: "Watch resale is slept on. Got my first 10 orders in 3 days using the supplier list.",
+    profit: "+$600+",
+    niche: "Spy Hoodie Supplier",
+    quote: "3 hoodies came through, flipped all 3 in one weekend on IG. The hoodie supplier is the real deal.",
   },
   {
-    img: "https://images.pexels.com/photos/4475523/pexels-photo-4475523.jpeg?auto=compress&cs=tinysrgb&w=900",
-    name: "Aaliyah S.",
-    location: "Miami, FL",
-    profit: "+$1,100",
-    niche: "Moissanite Supplier",
-    quote: "Jewelry resale is insane right now. Doing $1k+ months just on moissanite pieces.",
-  },
-  {
-    img: "https://images.pexels.com/photos/6694577/pexels-photo-6694577.jpeg?auto=compress&cs=tinysrgb&w=900",
+    img: "https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?fm=jpg&q=80&w=900&auto=format&fit=crop",
+    label: "Sneaker Haul",
+    caption: "Jordan collection, wholesale pricing",
     name: "Trey M.",
     location: "Dallas, TX",
     profit: "+$920",
     niche: "Shoe Supplier",
-    quote: "The shoe supplier is unreal. Buying for $30, flipping for $120+. It's that simple.",
+    quote: "Buying Jordans at cost, flipping for $100-$150+ each. The shoe supplier is the plug fr.",
   },
   {
-    img: "https://images.pexels.com/photos/4475525/pexels-photo-4475525.jpeg?auto=compress&cs=tinysrgb&w=900",
+    img: "https://images.unsplash.com/photo-1515168746408-0f924dbb5c39?fm=jpg&q=80&w=900&auto=format&fit=crop",
+    label: "Jewelry Haul",
+    caption: "Rings & moissanite pieces, wholesale lot",
+    name: "Aaliyah S.",
+    location: "Miami, FL",
+    profit: "+$1,100",
+    niche: "Moissanite Supplier",
+    quote: "Jewelry resale is insane right now. Doing $1k+ months just on moissanite rings alone.",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1700121182313-2d574b6b5658?fm=jpg&q=80&w=900&auto=format&fit=crop",
+    label: "Jewelry & Accessories",
+    caption: "Chains, bracelets & rings — bulk lot",
     name: "Jordan P.",
     location: "New York, NY",
-    profit: "+$540",
-    niche: "Designer Bag Supplier",
-    quote: "4 bags sold same day I listed them. The bag supplier is no joke — pure profit.",
+    profit: "+$740",
+    niche: "Moissanite Supplier",
+    quote: "Sold out my first jewelry order in 4 days. People sleep on this niche — margins are crazy.",
   },
 ];
 
@@ -652,107 +664,144 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Reseller Proof — Real Photo Slideshow */}
+      {/* Reseller Proof — Phone Frame Haul Photos */}
       <section className="py-20 border-t border-white/10 bg-white/[0.02] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-black mb-3">Real Results</h2>
-            <p className="text-zinc-400">Resellers showing their profits using our supplier lists</p>
+            <h2 className="text-3xl sm:text-4xl font-black mb-3">What Our Customers Receive</h2>
+            <p className="text-zinc-400">Real haul photos from resellers who bought our supplier lists</p>
           </div>
 
-          {/* Main full-width photo slide */}
-          <div className="relative max-w-3xl mx-auto">
-            <div className="relative rounded-3xl overflow-hidden" style={{ aspectRatio: "16/9" }}>
-              {proofSlides.map((slide, i) => (
-                <div
-                  key={i}
-                  className="absolute inset-0 transition-opacity duration-700"
-                  style={{ opacity: i === slideIndex ? 1 : 0, zIndex: i === slideIndex ? 1 : 0 }}
-                >
-                  <img
-                    src={slide.img}
-                    alt={slide.name}
-                    className="w-full h-full object-cover"
-                  />
-                  {/* Dark gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10" />
-                  {/* Stars */}
-                  <div className="absolute top-5 left-5 flex gap-1">
-                    {Array.from({ length: 5 }).map((_, j) => (
-                      <Star key={j} size={14} className="fill-green-400 text-green-400" />
-                    ))}
-                  </div>
-                  {/* Profit badge top-right */}
-                  <div className="absolute top-4 right-5 bg-green-400 text-black font-black text-xl px-4 py-1.5 rounded-full shadow-lg">
-                    {slide.profit}
-                  </div>
-                  {/* Bottom info */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <p className="text-white text-base sm:text-lg font-medium leading-snug mb-3 drop-shadow">
-                      "{slide.quote}"
-                    </p>
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <div className="font-black text-white text-sm">{slide.name}</div>
-                        <div className="text-zinc-400 text-xs">{slide.location} · {slide.niche}</div>
-                      </div>
-                      <div className="bg-white/10 border border-white/20 rounded-full px-3 py-1 text-xs text-white font-semibold backdrop-blur-sm">
-                        {slide.niche}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Arrow nav */}
+          {/* Phone carousel */}
+          <div className="relative flex items-center justify-center gap-4 sm:gap-6">
+            {/* Prev button */}
             <button
               onClick={() => setSlideIndex((p) => (p - 1 + proofSlides.length) % proofSlides.length)}
-              className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-black/80 backdrop-blur flex items-center justify-center text-white text-2xl transition-all z-10 border border-white/20"
+              className="flex-shrink-0 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white text-2xl transition-all z-10"
             >‹</button>
+
+            {/* Three phones: prev (faded) | active (tall) | next (faded) */}
+            <div className="flex items-end justify-center gap-3 sm:gap-5 flex-1 min-w-0">
+              {[-1, 0, 1].map((offset) => {
+                const idx = (slideIndex + offset + proofSlides.length) % proofSlides.length;
+                const slide = proofSlides[idx];
+                const isCenter = offset === 0;
+                return (
+                  <div
+                    key={offset}
+                    onClick={() => setSlideIndex(idx)}
+                    className="flex-shrink-0 cursor-pointer transition-all duration-500"
+                    style={{
+                      width: isCenter ? "min(260px, 55vw)" : "min(160px, 28vw)",
+                      opacity: isCenter ? 1 : 0.45,
+                      transform: isCenter ? "scale(1)" : "scale(0.88)",
+                    }}
+                  >
+                    {/* Phone shell */}
+                    <div
+                      className="relative overflow-hidden shadow-2xl"
+                      style={{
+                        borderRadius: "2.5rem",
+                        border: "3px solid #3a3a3c",
+                        background: "#000",
+                        aspectRatio: "9/19.5",
+                      }}
+                    >
+                      {/* Dynamic island / notch */}
+                      <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-5 bg-black rounded-full z-20" />
+
+                      {/* Status bar */}
+                      <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-5 pt-3 pb-1 z-10" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.8), transparent)" }}>
+                        <span className="text-white text-[10px] font-bold">9:41</span>
+                        <div className="flex items-center gap-1">
+                          <div className="flex gap-[2px] items-end">
+                            {[3,5,7,9].map((h, j) => <div key={j} className="w-[3px] bg-white rounded-sm" style={{ height: `${h}px` }} />)}
+                          </div>
+                          <svg viewBox="0 0 24 24" className="w-3 h-3 fill-white"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3a4.237 4.237 0 00-6 0zm-4-4l2 2a7.074 7.074 0 0110 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
+                          <div className="w-5 h-2.5 border border-white/60 rounded-sm flex items-center px-[2px]"><div className="bg-white h-[7px] rounded-sm w-[70%]" /></div>
+                        </div>
+                      </div>
+
+                      {/* Full-bleed haul photo */}
+                      <img
+                        src={slide.img}
+                        alt={slide.label}
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+
+                      {/* Bottom gradient + info */}
+                      <div className="absolute inset-x-0 bottom-0 z-10" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.92) 60%, transparent)" }}>
+                        <div className="px-3 pb-4 pt-8">
+                          {isCenter && (
+                            <>
+                              <div className="text-green-400 font-black text-xl mb-0.5">{slide.profit}</div>
+                              <div className="text-white font-bold text-[11px] leading-tight mb-1">{slide.label}</div>
+                              <div className="text-zinc-400 text-[10px] leading-tight">{slide.caption}</div>
+                            </>
+                          )}
+                          {!isCenter && (
+                            <div className="text-green-400 font-black text-sm">{slide.profit}</div>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Profit pill top-right (center only) */}
+                      {isCenter && (
+                        <div className="absolute top-10 right-3 z-10 bg-green-400 text-black text-[10px] font-black px-2 py-0.5 rounded-full shadow-lg">
+                          REAL HAUL
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Quote card below center phone only */}
+                    {isCenter && (
+                      <div className="mt-4 bg-white/5 border border-white/10 rounded-2xl p-4">
+                        <div className="flex gap-0.5 mb-2">
+                          {Array.from({ length: 5 }).map((_, j) => <Star key={j} size={11} className="fill-green-400 text-green-400" />)}
+                        </div>
+                        <p className="text-white text-xs leading-relaxed mb-2">"{slide.quote}"</p>
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <div className="text-white font-bold text-xs">{slide.name}</div>
+                            <div className="text-zinc-500 text-[10px]">{slide.location} · {slide.niche}</div>
+                          </div>
+                          <div className="text-green-400 font-black text-sm">{slide.profit}</div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Next button */}
             <button
               onClick={() => setSlideIndex((p) => (p + 1) % proofSlides.length)}
-              className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-black/80 backdrop-blur flex items-center justify-center text-white text-2xl transition-all z-10 border border-white/20"
+              className="flex-shrink-0 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white text-2xl transition-all z-10"
             >›</button>
           </div>
 
           {/* Dot indicators */}
-          <div className="flex justify-center gap-2 mt-6">
+          <div className="flex justify-center gap-2 mt-8">
             {proofSlides.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setSlideIndex(i)}
-                className={`rounded-full transition-all duration-300 ${
-                  i === slideIndex ? "bg-green-400 w-6 h-2" : "bg-white/20 w-2 h-2 hover:bg-white/40"
-                }`}
+                className={`rounded-full transition-all duration-300 ${i === slideIndex ? "bg-green-400 w-6 h-2" : "bg-white/20 w-2 h-2 hover:bg-white/40"}`}
               />
             ))}
           </div>
 
-          {/* Thumbnail strip */}
-          <div className="grid grid-cols-6 gap-2 mt-8 max-w-3xl mx-auto">
-            {proofSlides.map((slide, i) => (
-              <button
-                key={i}
-                onClick={() => setSlideIndex(i)}
-                className={`relative rounded-xl overflow-hidden transition-all duration-300 ${i === slideIndex ? "ring-2 ring-green-400" : "opacity-50 hover:opacity-80"}`}
-                style={{ aspectRatio: "1" }}
-              >
-                <img src={slide.img} alt={slide.name} className="w-full h-full object-cover" />
-              </button>
-            ))}
-          </div>
-
-          {/* Scrolling profit strip */}
+          {/* Scrolling haul strip */}
           <div className="overflow-hidden mt-12">
             <div className="flex animate-ticker gap-4">
               {[...proofSlides, ...proofSlides].map((slide, i) => (
-                <div key={i} className="flex-shrink-0 bg-white/5 border border-white/10 rounded-2xl overflow-hidden flex items-center gap-0 min-w-[240px]">
-                  <img src={slide.img} alt={slide.name} className="w-16 h-16 object-cover flex-shrink-0" />
+                <div key={i} className="flex-shrink-0 bg-white/5 border border-white/10 rounded-2xl overflow-hidden flex items-center min-w-[240px]">
+                  <img src={slide.img} alt={slide.label} className="w-16 h-16 object-cover flex-shrink-0" />
                   <div className="px-4 py-3">
-                    <div className="font-bold text-sm text-white">{slide.name}</div>
+                    <div className="font-bold text-xs text-white">{slide.label}</div>
                     <div className="text-green-400 font-black text-base">{slide.profit}</div>
-                    <div className="text-zinc-500 text-xs">{slide.niche}</div>
+                    <div className="text-zinc-500 text-[10px]">{slide.niche}</div>
                   </div>
                 </div>
               ))}
