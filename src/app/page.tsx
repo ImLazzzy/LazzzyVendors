@@ -305,60 +305,109 @@ interface CartItem {
   shopifyUrl: string;
 }
 
-const resellSlides = [
+const dmSlides = [
   {
-    emoji: "👟",
-    name: "Marcus T.",
-    location: "Atlanta, GA",
-    profit: "+$400",
-    product: "Shoe Supplier",
-    text: "Made back the cost of the bundle in my first week. The shoe supplier alone was worth it.",
-    bg: "from-green-900/60 to-emerald-900/40",
+    handle: "Vouches IIII",
+    date: "August 20",
+    avatarBg: "#7c3aed",
+    avatar: "V",
+    profit: "+$1,000+",
+    vendorTag: "COLOGNE VENDOR",
+    productImg: "🧴",
+    messages: [
+      { side: "left", text: "BIG COLOGNE PACKAGES COMING THRU, BRO FLIPPED THIS FOR ATLEAST $1000 😤" },
+      { side: "left", text: "Big package came thru 🙏" },
+      { side: "right", text: "hell yea" },
+      { side: "right", text: "ts looks good" },
+      { side: "right", text: "atleast a 1.5k there if sold correctly" },
+    ],
+    reactions: ["hell yea", "ts looks 🔥", "good"],
   },
   {
-    emoji: "👗",
-    name: "Jasmine R.",
-    location: "Houston, TX",
-    profit: "+$850",
-    product: "All-In-One Supplier",
-    text: "The all-in-one supplier changed everything. I'm sourcing 6 different product types now.",
-    bg: "from-teal-900/60 to-green-900/40",
+    handle: "Vouches IIII",
+    date: "May 16",
+    avatarBg: "#7c3aed",
+    avatar: "V",
+    profit: "+$600+",
+    vendorTag: "SP5DER VENDOR",
+    productImg: "🧥",
+    messages: [
+      { side: "left", text: "Yoo I just got 3 hoodies" },
+      { side: "left", text: "10/10 QUALITY FROM MY SP5DER VENDOR! 🟩" },
+      { side: "right", text: "it's what asap" },
+      { side: "right", text: "10/10 Quality bro" },
+      { side: "left", text: "yessir" },
+    ],
+    reactions: ["🔥🔥", "W vendor", "10/10"],
   },
   {
-    emoji: "👜",
-    name: "Devon K.",
-    location: "Chicago, IL",
-    profit: "+$300",
-    product: "Designer Bag Supplier",
-    text: "Was skeptical at first but every supplier checked out. Flipped $300 profit first month.",
-    bg: "from-emerald-900/60 to-lime-900/40",
+    handle: "Vouches IIII",
+    date: "August 18",
+    avatarBg: "#7c3aed",
+    avatar: "V",
+    profit: "+$800+",
+    vendorTag: "WATCH VENDOR",
+    productImg: "⌚",
+    messages: [
+      { side: "left", text: "THAT WATCH VENDOR DO NOT PLAY AROUND, BRO GOT THAT AP 🤯" },
+      { side: "right", text: "omggg" },
+      { side: "right", text: "that's tuff asf" },
+      { side: "left", text: "Yea" },
+      { side: "right", text: "from my vendor?" },
+      { side: "left", text: "shit tuff asf" },
+    ],
+    reactions: ["W", "omggg 🔥", "tuff asf"],
   },
   {
-    emoji: "⌚",
-    name: "Trey M.",
-    location: "Dallas, TX",
-    profit: "+$620",
-    product: "Watch Supplier",
-    text: "Watch resale is underrated. Got my first 10 orders within 3 days using the supplier list.",
-    bg: "from-green-900/60 to-teal-900/40",
+    handle: "Vouches IIII",
+    date: "March 12",
+    avatarBg: "#7c3aed",
+    avatar: "V",
+    profit: "+$500+",
+    vendorTag: "SHOE VENDOR",
+    productImg: "👟",
+    messages: [
+      { side: "left", text: "bro the shoe vendor just hit different 🔥" },
+      { side: "left", text: "got 4 pairs came in today, flipping all of em" },
+      { side: "right", text: "how much you pay per pair?" },
+      { side: "left", text: "like $30 selling for $120+ each" },
+      { side: "right", text: "THAT'S CRAZY W vendor no cap" },
+    ],
+    reactions: ["W vendor 🙌", "need this", "facts"],
   },
   {
-    emoji: "💍",
-    name: "Aaliyah S.",
-    location: "Miami, FL",
+    handle: "Vouches IIII",
+    date: "April 3",
+    avatarBg: "#7c3aed",
+    avatar: "V",
     profit: "+$1,100",
-    product: "Moissanite Supplier",
-    text: "Jewelry resale is insane right now. I'm doing $1k+ months just on moissanite pieces.",
-    bg: "from-lime-900/50 to-emerald-900/50",
+    vendorTag: "JEWELRY VENDOR",
+    productImg: "💍",
+    messages: [
+      { side: "left", text: "moissanite jewelry vendor is INSANE bro" },
+      { side: "left", text: "sold 6 rings this week alone 😭" },
+      { side: "right", text: "how much profit?" },
+      { side: "left", text: "like $1,100 on the week not even capping" },
+      { side: "right", text: "bro that vendor a goldmine fr" },
+    ],
+    reactions: ["no cap 💎", "W", "need the link"],
   },
   {
-    emoji: "🧥",
-    name: "Jordan P.",
-    location: "New York, NY",
-    profit: "+$540",
-    product: "Spy Hoodie Supplier",
-    text: "The spy hoodie niche is blowing up on TikTok. This supplier list is the real deal.",
-    bg: "from-zinc-800/70 to-green-900/40",
+    handle: "Vouches IIII",
+    date: "January 29",
+    avatarBg: "#7c3aed",
+    avatar: "V",
+    profit: "+$850",
+    vendorTag: "BAG VENDOR",
+    productImg: "👜",
+    messages: [
+      { side: "left", text: "designer bag vendor just dropped 🔥🔥" },
+      { side: "left", text: "people going CRAZY for these on depop" },
+      { side: "right", text: "how fast they moving?" },
+      { side: "left", text: "listed 5 bags, 4 sold same day bro" },
+      { side: "right", text: "that vendor is crazy W" },
+    ],
+    reactions: ["same day 🤯", "W vendor", "🔥🔥"],
   },
 ];
 
@@ -370,7 +419,7 @@ export default function Home() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setSlideIndex((prev) => (prev + 1) % resellSlides.length);
+      setSlideIndex((prev) => (prev + 1) % dmSlides.length);
     }, 4000);
     return () => clearInterval(timer);
   }, []);
@@ -658,77 +707,151 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Reseller Proof Carousel */}
+      {/* Reseller Proof — Phone DM Mockups */}
       <section className="py-20 border-t border-white/10 bg-white/[0.02] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-black mb-3">Real Results</h2>
-            <p className="text-zinc-400">Resellers flipping right now with our supplier lists</p>
+          <div className="text-center mb-14">
+            <h2 className="text-3xl sm:text-4xl font-black mb-3">What Our Customers Say</h2>
+            <p className="text-zinc-400">Real DMs from resellers using our supplier lists</p>
           </div>
 
-          {/* Main carousel */}
-          <div className="relative max-w-2xl mx-auto mb-10">
-            <div className="relative h-72 sm:h-64">
-              {resellSlides.map((slide, i) => (
-                <div
-                  key={i}
-                  className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${slide.bg} border border-white/10 p-8 flex flex-col justify-between transition-all duration-700 ${
-                    i === slideIndex
-                      ? "opacity-100 translate-x-0 z-10"
-                      : i === (slideIndex - 1 + resellSlides.length) % resellSlides.length
-                      ? "opacity-0 -translate-x-12 z-0"
-                      : "opacity-0 translate-x-12 z-0"
-                  }`}
-                >
-                  <div className="flex items-start justify-between">
-                    <div className="flex gap-0.5">
-                      {Array.from({ length: 5 }).map((_, j) => (
-                        <Star key={j} size={14} className="fill-green-400 text-green-400" />
-                      ))}
+          {/* Phone mockup carousel */}
+          <div className="relative px-8">
+            <div className="overflow-hidden">
+              <div
+                className="flex gap-5 transition-transform duration-700 ease-in-out"
+                style={{ transform: `translateX(calc(-${slideIndex} * (min(260px, 42vw) + 20px)))` }}
+              >
+                {dmSlides.map((slide, i) => {
+                  const isActive = i === slideIndex;
+                  return (
+                    <div
+                      key={i}
+                      onClick={() => setSlideIndex(i)}
+                      className="flex-shrink-0 cursor-pointer transition-all duration-500"
+                      style={{ width: "min(260px, 42vw)", opacity: isActive ? 1 : 0.45, transform: isActive ? "scale(1)" : "scale(0.94)" }}
+                    >
+                      {/* Phone shell */}
+                      <div
+                        className="relative rounded-[2.2rem] overflow-hidden shadow-2xl"
+                        style={{ border: "3px solid #3a3a3c", background: "#1c1c1e", aspectRatio: "9/19.5" }}
+                      >
+                        {/* Notch */}
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-6 bg-[#1c1c1e] rounded-b-2xl z-10" />
+                        {/* Status bar */}
+                        <div className="flex items-center justify-between px-5 pt-3 pb-1 bg-[#1c1c1e]">
+                          <span className="text-white text-[10px] font-bold">1:11</span>
+                          <div className="flex items-center gap-1">
+                            <div className="flex gap-[2px] items-end h-3">
+                              {[30,50,70,100].map((h, j) => (
+                                <div key={j} className="w-[3px] bg-white rounded-sm" style={{ height: `${h * 0.1 + 2}px` }} />
+                              ))}
+                            </div>
+                            <svg viewBox="0 0 24 24" className="w-3 h-3 fill-white"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
+                            <div className="w-5 h-2.5 border border-white/60 rounded-sm flex items-center px-[2px]">
+                              <div className="bg-white h-[7px] rounded-sm" style={{ width: "70%" }} />
+                            </div>
+                          </div>
+                        </div>
+                        {/* DM header */}
+                        <div className="flex items-center gap-2 px-3 py-2 bg-[#1c1c1e] border-b border-white/10">
+                          <div
+                            className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-black text-white flex-shrink-0"
+                            style={{ background: slide.avatarBg }}
+                          >
+                            {slide.avatar}
+                          </div>
+                          <div className="min-w-0">
+                            <div className="text-white text-[11px] font-bold flex items-center gap-1">
+                              <span className="truncate">{slide.handle}</span>
+                              <svg viewBox="0 0 24 24" className="w-3 h-3 fill-blue-400 flex-shrink-0"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+                            </div>
+                            <div className="text-zinc-500 text-[9px]">{slide.date}</div>
+                          </div>
+                        </div>
+                        {/* Chat body */}
+                        <div className="p-2.5 flex flex-col gap-1.5 bg-black" style={{ minHeight: "calc(100% - 88px)" }}>
+                          {slide.messages.map((msg, j) => (
+                            <div key={j} className={`flex ${msg.side === "right" ? "justify-end" : "justify-start"}`}>
+                              <div
+                                className="rounded-2xl px-2.5 py-1.5 text-[10px] leading-snug max-w-[80%] font-medium text-white"
+                                style={{ background: msg.side === "right" ? "#7c3aed" : "#2a2a2e" }}
+                              >
+                                {msg.text}
+                              </div>
+                            </div>
+                          ))}
+                          {/* Product emoji "photo" */}
+                          <div className="flex justify-start mt-1">
+                            <div
+                              className="rounded-xl w-16 h-14 flex items-center justify-center text-4xl"
+                              style={{ background: "#1a1a1a", border: "1px solid #333" }}
+                            >
+                              {slide.productImg}
+                            </div>
+                          </div>
+                          {/* Vendor tag pill */}
+                          <div className="flex justify-center mt-1.5">
+                            <div className="flex items-center gap-1 bg-[#1c1c1e] border border-zinc-700 rounded-full px-3 py-1">
+                              <span className="text-[10px]">🔗</span>
+                              <span className="text-white text-[9px] font-black uppercase tracking-wide">{slide.vendorTag}</span>
+                            </div>
+                          </div>
+                          {/* Reactions */}
+                          <div className="flex gap-2 flex-wrap px-1 mt-0.5">
+                            {slide.reactions.map((r, j) => (
+                              <span key={j} className="text-zinc-400 text-[9px] font-semibold">{r}</span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                      {/* Profit badge under phone */}
+                      <div className="text-center mt-3">
+                        <span className="text-green-400 font-black text-lg">{slide.profit}</span>
+                        <div className="text-zinc-500 text-xs mt-0.5">{slide.vendorTag}</div>
+                      </div>
                     </div>
-                    <div className="text-4xl">{slide.emoji}</div>
-                  </div>
-                  <p className="text-white text-base sm:text-lg font-medium leading-relaxed">
-                    "{slide.text}"
-                  </p>
-                  <div className="flex items-end justify-between">
-                    <div>
-                      <div className="font-bold text-sm">{slide.name}</div>
-                      <div className="text-zinc-400 text-xs">{slide.location} · {slide.product}</div>
-                    </div>
-                    <div className="text-green-400 font-black text-2xl">{slide.profit}</div>
-                  </div>
-                </div>
-              ))}
+                  );
+                })}
+              </div>
             </div>
 
-            {/* Dot indicators */}
-            <div className="flex justify-center gap-2 mt-6">
-              {resellSlides.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setSlideIndex(i)}
-                  className={`rounded-full transition-all duration-300 ${
-                    i === slideIndex ? "bg-green-400 w-6 h-2" : "bg-white/20 w-2 h-2 hover:bg-white/40"
-                  }`}
-                />
-              ))}
-            </div>
+            {/* Nav arrows */}
+            <button
+              onClick={() => setSlideIndex((p) => Math.max(0, p - 1))}
+              disabled={slideIndex === 0}
+              className="absolute left-0 top-1/3 -translate-y-1/2 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white text-xl transition-all disabled:opacity-20"
+            >‹</button>
+            <button
+              onClick={() => setSlideIndex((p) => Math.min(dmSlides.length - 1, p + 1))}
+              disabled={slideIndex === dmSlides.length - 1}
+              className="absolute right-0 top-1/3 -translate-y-1/2 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white text-xl transition-all disabled:opacity-20"
+            >›</button>
           </div>
 
-          {/* Scrolling proof strip below */}
-          <div className="overflow-hidden mt-4">
+          {/* Dot indicators */}
+          <div className="flex justify-center gap-2 mt-8">
+            {dmSlides.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setSlideIndex(i)}
+                className={`rounded-full transition-all duration-300 ${
+                  i === slideIndex ? "bg-green-400 w-6 h-2" : "bg-white/20 w-2 h-2 hover:bg-white/40"
+                }`}
+              />
+            ))}
+          </div>
+
+          {/* Scrolling profit strip */}
+          <div className="overflow-hidden mt-12">
             <div className="flex animate-ticker gap-4">
-              {[...resellSlides, ...resellSlides].map((slide, i) => (
-                <div
-                  key={i}
-                  className="flex-shrink-0 bg-white/5 border border-white/10 rounded-2xl px-5 py-4 flex items-center gap-4 min-w-[260px]"
-                >
-                  <span className="text-3xl">{slide.emoji}</span>
+              {[...dmSlides, ...dmSlides].map((slide, i) => (
+                <div key={i} className="flex-shrink-0 bg-white/5 border border-white/10 rounded-2xl px-5 py-4 flex items-center gap-4 min-w-[220px]">
+                  <span className="text-3xl">{slide.productImg}</span>
                   <div>
-                    <div className="font-bold text-sm text-white">{slide.name}</div>
-                    <div className="text-green-400 font-black text-lg">{slide.profit}</div>
-                    <div className="text-zinc-500 text-xs">{slide.product}</div>
+                    <div className="font-bold text-sm text-white">{slide.handle}</div>
+                    <div className="text-green-400 font-black text-base">{slide.profit}</div>
+                    <div className="text-zinc-500 text-xs">{slide.vendorTag}</div>
                   </div>
                 </div>
               ))}
