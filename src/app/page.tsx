@@ -4,13 +4,13 @@ import { useState, useEffect } from "react";
 import { ShoppingCart, X, Plus, Minus, Zap, Shield, Star, ChevronRight, Package, TrendingUp, Award, Info } from "lucide-react";
 import {
   AllInOneIcon, BundleIcon, ShoeIcon, WatchIcon, JewelryIcon,
-  HoodieIcon, EarbudsIcon, DressIcon, HandbagIcon, LegoIcon,
+  EarbudsIcon, DressIcon, HandbagIcon, LegoIcon,
   ShirtIcon, CologneIconSVG, PodsIcon,
 } from "@/components/NeonProductIcons";
 
 const iconMap: Record<number, () => React.ReactElement> = {
   1: AllInOneIcon, 2: BundleIcon, 3: ShoeIcon, 4: WatchIcon,
-  5: JewelryIcon, 6: HoodieIcon, 8: DressIcon,
+  5: JewelryIcon, 8: DressIcon,
   9: HandbagIcon, 10: LegoIcon, 11: ShirtIcon, 12: CologneIconSVG, 13: PodsIcon,
 };
 function ProductIcon({ id }: { id: number }) {
@@ -124,21 +124,21 @@ const products = [
   },
   {
     id: 6,
-    name: "Spy Hoodie Supplier",
+    name: "Glasses Supplier",
     badge: null,
     badgeColor: "",
     regularPrice: 20.00,
     salePrice: 14.99,
-    emoji: "🧥",
+    emoji: "🕶️",
     gradient: "from-zinc-800/60 to-neutral-800/60",
-    description: "Trending spy/tactical hoodies. High demand streetwear niche.",
-    tags: ["Hoodies", "Streetwear", "Tactical"],
+    description: "Designer & fashion eyewear suppliers. Sunglasses & frames at wholesale pricing.",
+    tags: ["Sunglasses", "Designer", "Eyewear"],
     shopifyUrl: `${CHECKOUT}/53352380662078:1`,
     variantId: "53352380662078",
     details: {
-      whatYouGet: ["Spy/tactical hoodie wholesalers", "Trending streetwear sources", "TikTok-viral style suppliers", "Instant email delivery after purchase"],
-      bestFor: "Resellers targeting streetwear & viral fashion trends.",
-      avgProfit: "$150–$350/mo",
+      whatYouGet: ["Designer sunglasses wholesalers", "Fashion frames & eyewear sources", "Brand-inspired style suppliers", "Instant email delivery after purchase"],
+      bestFor: "Resellers targeting accessories — eyewear sells year-round with high margins.",
+      avgProfit: "$150–$400/mo",
       delivery: "Instant — links sent to your email within seconds",
     },
   },
