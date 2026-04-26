@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     siteName: "LazzzyVendors",
     images: [
       {
-        url: "/lazzzy-vendors-pfp.svg",
-        width: 1000,
-        height: 1000,
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
         alt: "LazzzyVendors — Reseller Suppliers",
       },
     ],
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "LazzzyVendors — Start Your Reselling Journey",
     description: "Get access to premium supplier lists. Shoes, bags, jewelry, cologne & more. Instant digital delivery.",
-    images: ["/lazzzy-vendors-pfp.svg"],
+    images: ["/og-image.png"],
   },
 };
 
