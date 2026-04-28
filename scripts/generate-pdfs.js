@@ -11,13 +11,13 @@ const vendors = [
   { slug: "watch-supplier",      title: "MY WATCH VENDOR",      type: "phone", contact: "+86 136 0600 9364" },
   { slug: "shoe-supplier",       title: "MY SHOE VENDOR",       type: "phone", contact: "+86 134 8926 7454" },
   { slug: "cologne-supplier",    title: "MY COLOGNE VENDOR",    type: "phone", contact: "+86 189 6517 5019" },
-  { slug: "clothing-supplier",   title: "MY CLOTHING VENDOR",   type: "phone", contact: "+86 134 8928 1265" },
+  { slug: "clothing-supplier",   title: "MY CLOTHING VENDOR",   type: "url",   contact: "goldfish-supply.x.yupoo.com/albums/" },
   { slug: "airpods-supplier",    title: "MY AIRPOD VENDOR",     type: "phone", contact: "+86 158 0501 8192" },
   { slug: "looloo-supplier",     title: "MY LOOLOO VENDOR",     type: "phone", contact: "+1 (541) 675-7934" },
   { slug: "lego-supplier",       title: "MY LEGO VENDOR",       type: "phone", contact: "+351 935 556 574" },
   { slug: "glasses-supplier",    title: "MY GLASSES VENDOR",    type: "phone", contact: "+86 158 0238 0240", url: "x.yupoo.com/category/4876037" },
   { slug: "moissanite-supplier", title: "MY JEWELRY VENDOR",    type: "url",   contact: "moissap.com" },
-  { slug: "all-in-one-supplier", title: "MY ALL-IN-ONE VENDOR", type: "url",   contact: "goldfish-supply.x.yupoo.com/albums/" },
+  { slug: "all-in-one-supplier", title: "MY ALL-IN-ONE VENDOR", type: "phone", contact: "+86 134 8928 1265" },
 ];
 
 // All suppliers for the elite bundle
@@ -26,13 +26,13 @@ const eliteEntries = [
   { emoji: "⌚", label: "WATCH VENDOR",      type: "phone", contact: "+86 136 0600 9364" },
   { emoji: "👟", label: "SHOE VENDOR",       type: "phone", contact: "+86 134 8926 7454" },
   { emoji: "🧴", label: "COLOGNE VENDOR",    type: "phone", contact: "+86 189 6517 5019" },
-  { emoji: "👕", label: "CLOTHING VENDOR",   type: "phone", contact: "+86 134 8928 1265" },
+  { emoji: "👕", label: "CLOTHING VENDOR",   type: "url",   contact: "goldfish-supply.x.yupoo.com/albums/" },
   { emoji: "🎵", label: "AIRPOD VENDOR",     type: "phone", contact: "+86 158 0501 8192" },
   { emoji: "👗", label: "LOOLOO VENDOR",     type: "phone", contact: "+1 (541) 675-7934" },
   { emoji: "🧱", label: "LEGO VENDOR",       type: "phone", contact: "+351 935 556 574" },
   { emoji: "🕶️", label: "GLASSES VENDOR",    type: "phone", contact: "+86 158 0238 0240" },
   { emoji: "💍", label: "JEWELRY VENDOR",    type: "url",   contact: "moissap.com" },
-  { emoji: "🏆", label: "ALL-IN-ONE VENDOR", type: "url",   contact: "goldfish-supply.x.yupoo.com/albums/" },
+  { emoji: "🏆", label: "ALL-IN-ONE VENDOR", type: "phone", contact: "+86 134 8928 1265" },
 ];
 
 function drawBackground(doc, W, H) {
