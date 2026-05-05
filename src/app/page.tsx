@@ -72,7 +72,7 @@ const products = [
   {
     id: 6, name: "Glasses Supplier", badge: null,
     badgeColor: "", regularPrice: 20.00, salePrice: 14.99,
-    emoji: "🕶️", image: "/glasses-product.png", tags: ["Sunglasses","Designer","Eyewear"],
+    emoji: "🕶️", image: "/glasses-product.png?v=2", tags: ["Sunglasses","Designer","Eyewear"],
     shopifyUrl: `${CHECKOUT}/53352380662078:1`, variantId: "53352380662078",
     description: "Designer & fashion eyewear. Sunglasses & frames at wholesale pricing.",
     details: {
