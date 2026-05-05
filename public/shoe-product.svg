@@ -1,0 +1,34 @@
+<svg viewBox="0 0 500 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="300" fill="#000"/>
+  <defs>
+    <filter id="glow-s">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <g filter="url(#glow-s)" stroke="white" fill="none">
+    <!-- Left sneaker - AF1 style -->
+    <path d="M40 195 Q44 210 90 215 Q136 218 165 210 Q172 202 168 196 L152 190 L48 190 Z" stroke-width="2"/>
+    <path d="M48 190 L45 174 Q42 158 58 148 Q74 138 94 136 L128 135 Q148 136 162 143 Q172 152 170 168 L168 190 Z" stroke-width="2"/>
+    <path d="M94 136 Q104 130 116 135 L114 148 Q104 144 96 148 Z" stroke-width="1.5"/>
+    <line x1="97" y1="150" x2="113" y2="150" stroke-width="1.5"/>
+    <line x1="95" y1="157" x2="115" y2="157" stroke-width="1.5"/>
+    <line x1="95" y1="164" x2="115" y2="164" stroke-width="1.5"/>
+    <line x1="95" y1="171" x2="115" y2="171" stroke-width="1.5"/>
+    <path d="M62 178 Q84 168 148 178" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M45 174 Q40 162 50 153 Q60 145 74 142" stroke-width="1.5" opacity="0.6"/>
+
+    <!-- Right sneaker - chunky sole style -->
+    <path d="M290 200 Q295 215 345 218 Q395 221 425 213 Q432 205 428 199 L410 194 L298 194 Z" stroke-width="2"/>
+    <path d="M298 194 L295 176 Q292 160 310 150 Q328 140 350 138 L382 137 Q402 138 416 147 Q428 158 426 174 L424 194 Z" stroke-width="2"/>
+    <path d="M350 138 Q362 131 374 137 L372 150 Q362 146 352 150 Z" stroke-width="1.5"/>
+    <line x1="354" y1="152" x2="371" y2="152" stroke-width="1.5"/>
+    <line x1="352" y1="159" x2="373" y2="159" stroke-width="1.5"/>
+    <line x1="352" y1="166" x2="373" y2="166" stroke-width="1.5"/>
+    <line x1="352" y1="173" x2="373" y2="173" stroke-width="1.5"/>
+    <path d="M314 180 Q340 170 408 180" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Chunky midsole detail -->
+    <path d="M295 194 Q296 204 310 207 Q360 210 408 207 Q420 204 424 194" stroke-width="1.5" opacity="0.7"/>
+    <path d="M300 201 L306 201 M316 202 L322 202 M332 203 L338 203 M348 203 L354 203 M364 203 L370 203 M380 202 L386 202 M396 201 L402 201 M412 200 L416 200" stroke-width="1.2" opacity="0.5"/>
+  </g>
+</svg>

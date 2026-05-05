@@ -1,0 +1,52 @@
+<svg viewBox="0 0 500 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="300" fill="#000"/>
+  <defs>
+    <filter id="glow-c">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <g filter="url(#glow-c)" stroke="white" fill="none">
+    <!-- Left bottle - square/rectangular -->
+    <rect x="72" y="26" width="30" height="18" rx="3" stroke-width="2"/>
+    <rect x="78" y="19" width="18" height="9" rx="2" stroke-width="1.8"/>
+    <rect x="82" y="13" width="10" height="8" rx="1.5" stroke-width="1.5"/>
+    <rect x="65" y="44" width="44" height="16" rx="3" stroke-width="2"/>
+    <rect x="58" y="60" width="58" height="102" rx="5" stroke-width="2.2"/>
+    <line x1="64" y1="100" x2="110" y2="100" stroke-width="1.2" opacity="0.5"/>
+    <line x1="64" y1="115" x2="110" y2="115" stroke-width="1" opacity="0.35"/>
+    <line x1="64" y1="128" x2="110" y2="128" stroke-width="1" opacity="0.3"/>
+    <rect x="64" y="65" width="8" height="92" rx="3" stroke-width="0" fill="white" fill-opacity="0.04"/>
+
+    <!-- Center bottle - torso style (tallest) -->
+    <rect x="227" y="10" width="20" height="12" rx="3" stroke-width="2"/>
+    <rect x="230" y="6" width="14" height="6" rx="2" stroke-width="1.5"/>
+    <rect x="222" y="22" width="30" height="6" rx="1.5" stroke-width="1.8"/>
+    <rect x="224" y="28" width="26" height="6" rx="1" stroke-width="1.5"/>
+    <!-- Shoulders -->
+    <path d="M210 46 Q210 36 237 34 Q264 36 264 46 L264 48 Q264 42 237 40 Q210 42 210 48Z" stroke-width="2"/>
+    <!-- Chest -->
+    <path d="M210 48 Q206 62 204 80 L270 80 Q268 62 264 48 Q264 42 237 40 Q210 42 210 48Z" stroke-width="2"/>
+    <!-- Waist -->
+    <path d="M204 80 Q210 88 212 100 L262 100 Q264 88 270 80Z" stroke-width="1.8"/>
+    <!-- Lower body -->
+    <path d="M212 100 L210 180 Q210 190 237 190 Q264 190 264 180 L262 100Z" stroke-width="2"/>
+    <!-- Torso horizontal stripes -->
+    <line x1="208" y1="55" x2="266" y2="55" stroke-width="1" opacity="0.4"/>
+    <line x1="206" y1="64" x2="268" y2="64" stroke-width="1" opacity="0.35"/>
+    <line x1="205" y1="72" x2="269" y2="72" stroke-width="1" opacity="0.3"/>
+    <line x1="205" y1="88" x2="269" y2="88" stroke-width="1" opacity="0.3"/>
+
+    <!-- Right bottle - rectangular with ridged cap -->
+    <rect x="348" y="32" width="22" height="10" rx="2" stroke-width="2"/>
+    <rect x="350" y="26" width="18" height="8" rx="2" stroke-width="1.8"/>
+    <rect x="336" y="42" width="46" height="7" rx="1.5" stroke-width="1.8"/>
+    <rect x="336" y="48" width="46" height="6" rx="1" stroke-width="1.5"/>
+    <rect x="336" y="53" width="46" height="6" rx="1" stroke-width="1.5"/>
+    <rect x="336" y="59" width="46" height="5" rx="1" stroke-width="1.5"/>
+    <rect x="340" y="64" width="38" height="10" rx="2" stroke-width="1.8"/>
+    <rect x="332" y="74" width="54" height="100" rx="5" stroke-width="2.2"/>
+    <rect x="338" y="88" width="42" height="58" rx="3" stroke-width="1" opacity="0.35"/>
+    <line x1="340" y1="82" x2="340" y2="170" stroke-width="4" stroke-opacity="0.06"/>
+  </g>
+</svg>

@@ -1,0 +1,38 @@
+<svg viewBox="0 0 500 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="300" fill="#000"/>
+  <defs>
+    <filter id="glow-b">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <g filter="url(#glow-b)" stroke="white" fill="none">
+    <!-- Birkin-style bag -->
+    <!-- Handles -->
+    <path d="M190 88 Q190 55 210 52 Q230 55 230 88" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M270 88 Q270 55 290 52 Q310 55 310 88" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Main body -->
+    <rect x="148" y="86" width="204" height="162" rx="8" stroke-width="2.5"/>
+    <!-- Top flap -->
+    <path d="M148 86 Q148 115 165 120 L335 120 Q352 115 352 86" stroke-width="2"/>
+    <!-- Flap curve -->
+    <path d="M160 120 Q250 132 340 120" stroke-width="1.5" opacity="0.5"/>
+    <!-- Center clasp -->
+    <rect x="228" y="100" width="44" height="28" rx="4" stroke-width="2"/>
+    <path d="M238 114 L262 114" stroke-width="1.5"/>
+    <circle cx="250" cy="108" r="5" stroke-width="1.5"/>
+    <!-- Stitching lines on body -->
+    <rect x="155" y="126" width="190" height="115" rx="4" stroke-width="1" opacity="0.35"/>
+    <!-- Side gussets -->
+    <line x1="148" y1="110" x2="148" y2="240" stroke-width="1" opacity="0.4"/>
+    <line x1="352" y1="110" x2="352" y2="240" stroke-width="1" opacity="0.4"/>
+    <!-- Bottom studs -->
+    <circle cx="163" cy="244" r="5" stroke-width="1.5"/>
+    <circle cx="337" cy="244" r="5" stroke-width="1.5"/>
+    <circle cx="163" cy="94" r="3.5" stroke-width="1.5"/>
+    <circle cx="337" cy="94" r="3.5" stroke-width="1.5"/>
+    <!-- Horizontal body lines -->
+    <line x1="156" y1="175" x2="344" y2="175" stroke-width="1" opacity="0.3"/>
+    <line x1="156" y1="210" x2="344" y2="210" stroke-width="1" opacity="0.25"/>
+  </g>
+</svg>
