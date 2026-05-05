@@ -380,14 +380,8 @@ export default function Home() {
                       <img
                         src={p.image as string}
                         alt={p.name}
-                        className="w-full h-full object-cover"
-                        style={{
-                          objectPosition: (p as any).imgPos ?? "center center",
-                          transform: `scale(${(p as any).imgScale ?? 1})`,
-                          transformOrigin: "center top",
-                        }}
+                        className="w-full h-full object-contain p-2"
                       />
-                      <div className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/70 to-transparent pointer-events-none" />
                     </>
                   ) : (
                     <span className="text-6xl drop-shadow-xl">{p.emoji}</span>
