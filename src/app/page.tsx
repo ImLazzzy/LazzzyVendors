@@ -293,8 +293,11 @@ export default function Home() {
     <div className="min-h-screen bg-[#0a0a0a] text-white" style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}>
 
       {/* ── Announcement Bar ── */}
-      <div className="bg-green-500 text-black text-xs font-bold text-center py-2 px-4 tracking-wide">
-        ⚡ LIMITED TIME — 50% OFF THE ELITE BUNDLE &nbsp;·&nbsp; INSTANT DIGITAL DELIVERY &nbsp;·&nbsp; 10,000+ HAPPY RESELLERS
+      <div className="bg-green-500 text-black text-xs font-bold py-2 overflow-hidden whitespace-nowrap">
+        <div className="animate-ticker inline-block">
+          ⚡ LIMITED TIME — 50% OFF THE ELITE BUNDLE &nbsp;·&nbsp; INSTANT DIGITAL DELIVERY &nbsp;·&nbsp; 10,000+ HAPPY RESELLERS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          ⚡ LIMITED TIME — 50% OFF THE ELITE BUNDLE &nbsp;·&nbsp; INSTANT DIGITAL DELIVERY &nbsp;·&nbsp; 10,000+ HAPPY RESELLERS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
       </div>
 
       {/* ── Navigation ── */}
