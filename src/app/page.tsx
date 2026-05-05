@@ -215,7 +215,7 @@ function ProductModal({ product, onClose, onAddToCart }: { product: typeof produ
           <div className="flex items-center gap-4">
             <div className="w-16 h-16 flex items-center justify-center bg-black/40 rounded-2xl flex-shrink-0 overflow-hidden">
               {"image" in product && product.image
-                ? <img src={product.image as string} alt={product.name} className="w-full h-full object-cover rounded-2xl"/>
+                ? <img src={product.image as string} alt={product.name} className="w-full h-full object-cover rounded-2xl" style={{ objectPosition: "center 15%", transform: "scale(1.08)" }}/>
                 : <span className="text-5xl">{product.emoji}</span>}
             </div>
             <div>
@@ -374,9 +374,18 @@ export default function Home() {
                 </div>
 
                 {/* Product image or emoji */}
-                <div className="relative flex items-center justify-center bg-gradient-to-br from-[#161616] to-[#111] border-b border-white/5 h-36 overflow-hidden">
+                <div className="relative flex items-center justify-center bg-[#0a0a0a] border-b border-white/5 overflow-hidden" style={{ height: "160px" }}>
                   {"image" in p && p.image ? (
-                    <img src={p.image as string} alt={p.name} className="w-full h-full object-cover" style={{ objectPosition: "center top" }} />
+                    <>
+                      <img
+                        src={p.image as string}
+                        alt={p.name}
+                        className="w-full h-full object-cover"
+                        style={{ objectPosition: "center 15%", transform: "scale(1.08)" }}
+                      />
+                      {/* gradient at bottom hides any Sale badge remnants */}
+                      <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-[#0a0a0a] to-transparent pointer-events-none" />
+                    </>
                   ) : (
                     <span className="text-6xl drop-shadow-xl">{p.emoji}</span>
                   )}
