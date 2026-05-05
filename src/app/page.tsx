@@ -50,7 +50,7 @@ const products = [
   {
     id: 4, name: "Watch Supplier", badge: "NEW",
     badgeColor: "#22c55e", regularPrice: 20.00, salePrice: 14.99,
-    emoji: "⌚", image: "/watch-product.svg", tags: ["Luxury","Fashion","Wholesale"],
+    emoji: "⌚", image: "/watch-product.jpeg", tags: ["Luxury","Fashion","Wholesale"],
     shopifyUrl: `${CHECKOUT}/53342887084350:1`, variantId: "53342887084350",
     description: "Luxury and fashion watch suppliers. High-margin resale opportunity.",
     details: {
@@ -61,7 +61,7 @@ const products = [
   {
     id: 5, name: "Moissanite Supplier", badge: "POPULAR",
     badgeColor: "#10b981", regularPrice: 20.00, salePrice: 14.99,
-    emoji: "💍", tags: ["Earrings","Rings","Watches"],
+    emoji: "💍", image: "/moissanite-product.png", tags: ["Earrings","Rings","Watches"],
     shopifyUrl: `${CHECKOUT}/53352384790846:1`, variantId: "53352384790846",
     description: "Earrings, rings & watches. Moissanite jewelry at wholesale pricing.",
     details: {
@@ -105,7 +105,7 @@ const products = [
   {
     id: 10, name: "Lego Supplier", badge: "NEW",
     badgeColor: "#22c55e", regularPrice: 20.00, salePrice: 14.99,
-    emoji: "🧱", tags: ["Rare Sets","Bulk","Retired"],
+    emoji: "🧱", image: "/lego-product.png", tags: ["Rare Sets","Bulk","Retired"],
     shopifyUrl: `${CHECKOUT}/53352373420350:1`, variantId: "53352373420350",
     description: "Rare & bulk Lego set suppliers. Highest resale margins in the toy niche.",
     details: {
@@ -116,7 +116,7 @@ const products = [
   {
     id: 11, name: "Clothing Supplier", badge: "POPULAR",
     badgeColor: "#10b981", regularPrice: 20.00, salePrice: 14.99,
-    emoji: "👕", tags: ["Streetwear","Basics","Boutique"],
+    emoji: "👕", image: "/clothing-product.png", tags: ["Streetwear","Basics","Boutique"],
     shopifyUrl: `${CHECKOUT}/53352387281214:1`, variantId: "53352387281214",
     description: "Wholesale clothing suppliers for all styles. Streetwear, basics & boutique.",
     details: {
@@ -127,7 +127,7 @@ const products = [
   {
     id: 12, name: "Cologne Supplier", badge: null,
     badgeColor: "", regularPrice: 20.00, salePrice: 14.99,
-    emoji: "🧴", image: "/cologne-product.jpeg?v=2", tags: ["Designer","Niche","Fragrance"],
+    emoji: "🧴", image: "/cologne-product.png", tags: ["Designer","Niche","Fragrance"],
     shopifyUrl: `${CHECKOUT}/53352373420350:1`, variantId: "53352373420350",
     description: "Designer & niche fragrance suppliers. Cologne resale is booming.",
     details: {
@@ -138,7 +138,7 @@ const products = [
   {
     id: 13, name: "LazzzyPodz Supplier", badge: "EXCLUSIVE",
     badgeColor: "#16a34a", regularPrice: 20.00, salePrice: 14.99,
-    emoji: "🎵", image: "/podz-product.svg", tags: ["AirPods","Wireless","Exclusive"],
+    emoji: "🎵", image: "/podz-product.jpeg", tags: ["AirPods","Wireless","Exclusive"],
     shopifyUrl: `${CHECKOUT}/53342886986046:1`, variantId: "53342886986046",
     description: "AirPods & wireless earbud suppliers at wholesale pricing.",
     details: {
