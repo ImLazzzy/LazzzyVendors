@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import {
-  ShoppingCart, X, Plus, Minus, ChevronDown, ChevronLeft, ChevronRight,
+  ShoppingCart, X, Plus, Minus, ChevronDown,
   Zap, Shield, Star, Package, TrendingUp, Award, Search, Menu
 } from "lucide-react";
 
@@ -271,15 +271,6 @@ export default function Home() {
   const [cartOpen, setCartOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [detailProduct, setDetailProduct] = useState<typeof products[0] | null>(null);
-  const [slideIndex, setSlideIndex] = useState(0);
-  const [autoSlide, setAutoSlide] = useState(true);
-  const slideRef = useRef<ReturnType<typeof setInterval> | null>(null);
-
-  useEffect(() => {
-    if (!autoSlide) return;
-    slideRef.current = setInterval(() => setSlideIndex(p => (p + 1) % proofSlides.length), 4000);
-    return () => { if (slideRef.current) clearInterval(slideRef.current); };
-  }, [autoSlide]);
 
   const cartCount = cart.reduce((s, i) => s + i.qty, 0);
   const cartTotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
@@ -293,9 +284,6 @@ export default function Home() {
     setCartOpen(true);
   };
   const updateQty = (id: number, delta: number) => setCart(prev => prev.map(i => i.id === id ? { ...i, qty: Math.max(0, i.qty + delta) } : i).filter(i => i.qty > 0));
-
-  const prevSlide = () => { setAutoSlide(false); setSlideIndex(p => (p - 1 + proofSlides.length) % proofSlides.length); };
-  const nextSlide = () => { setAutoSlide(false); setSlideIndex(p => (p + 1) % proofSlides.length); };
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white" style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}>
@@ -355,87 +343,11 @@ export default function Home() {
         )}
       </nav>
 
-      {/* ── Hero ── */}
-      <section className="relative overflow-hidden bg-[#0a0a0a]">
-        {/* Background glow */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-green-500/8 rounded-full blur-[140px]" />
-        </div>
-
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-20 pb-24 text-center relative">
-          <div className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/30 rounded-full px-4 py-1.5 text-green-400 text-xs font-bold uppercase tracking-widest mb-8">
-            <Zap size={11} /> #1 Reseller Supplier Source
-          </div>
-
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[0.9] tracking-tighter mb-6 uppercase">
-            Start Your<br />
-            <span className="text-green-400">Reselling</span><br />
-            Empire Today
-          </h1>
-
-          <p className="text-zinc-400 text-base sm:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
-            Access premium supplier directories that took years to build — at a fraction of what others charge.
-            Start flipping products and making profit <span className="text-white font-semibold">this week</span>.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-16">
-            <a href="#products"
-              className="flex items-center gap-2 bg-green-500 hover:bg-green-400 text-black font-black px-8 py-4 rounded-full text-base transition-all hover:scale-105 shadow-xl shadow-green-500/25 uppercase tracking-wide">
-              Shop Suppliers
-            </a>
-            <a href="#how-it-works"
-              className="flex items-center gap-2 border border-white/20 hover:border-white/40 text-white font-semibold px-8 py-4 rounded-full text-base transition-colors uppercase tracking-wide">
-              How It Works
-            </a>
-          </div>
-
-          {/* Trust bar */}
-          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-12 pt-10 border-t border-white/10">
-            {[
-              { icon: <Package size={18} />, value: "10,000+", label: "Happy Resellers" },
-              { icon: <Zap size={18} />, value: "Instant", label: "Digital Delivery" },
-              { icon: <Shield size={18} />, value: "Secure", label: "Checkout" },
-              { icon: <Award size={18} />, value: "Vetted", label: "Suppliers Only" },
-            ].map(s => (
-              <div key={s.label} className="flex items-center gap-2 text-sm">
-                <span className="text-green-400">{s.icon}</span>
-                <span className="font-bold text-white">{s.value}</span>
-                <span className="text-zinc-500">{s.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── How It Works ── */}
-      <section id="how-it-works" className="py-20 border-t border-white/10 bg-[#0d0d0d]">
+      {/* ── Products FIRST ── */}
+      <section id="products" className="pt-10 pb-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-black uppercase mb-3">How It Works</h2>
-            <p className="text-zinc-500 text-sm">Three simple steps to start making money</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { icon: <Package size={26} />, step: "01", title: "Pick Your Niche", desc: "Choose the supplier package for the niche you want to flip. One category or all of them — your choice." },
-              { icon: <Zap size={26} />, step: "02", title: "Get Instant Access", desc: "Supplier links land in your inbox within seconds of payment. No waiting, no delays." },
-              { icon: <TrendingUp size={26} />, step: "03", title: "Source & Flip", desc: "Buy wholesale, sell at retail. You keep 100% of every dollar of profit you make." },
-            ].map(s => (
-              <div key={s.step} className="relative bg-white/[0.03] border border-white/10 rounded-2xl p-8 hover:border-green-500/40 transition-all group">
-                <div className="text-green-400/15 font-black text-7xl absolute top-3 right-5 leading-none select-none">{s.step}</div>
-                <div className="text-green-400 mb-4">{s.icon}</div>
-                <h3 className="text-lg font-black mb-2 uppercase">{s.title}</h3>
-                <p className="text-zinc-500 text-sm leading-relaxed">{s.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Products ── */}
-      <section id="products" className="py-20 border-t border-white/10">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-black uppercase mb-3">Supplier Packages</h2>
+          <div className="text-center mb-8">
+            <h2 className="text-3xl sm:text-4xl font-black uppercase mb-2">Supplier Packages</h2>
             <p className="text-zinc-500 text-sm">Digital delivery — access within seconds of purchase</p>
           </div>
 
@@ -451,6 +363,12 @@ export default function Home() {
                   </div>
                 )}
 
+                {/* Price top-right */}
+                <div className="absolute top-3 right-3 z-10 bg-black/70 backdrop-blur-sm border border-green-500/40 rounded-lg px-2 py-1 text-right">
+                  <div className="text-green-400 font-black text-sm leading-none">${p.salePrice.toFixed(2)}</div>
+                  <div className="text-zinc-500 text-[9px] line-through leading-none mt-0.5">${p.regularPrice.toFixed(2)}</div>
+                </div>
+
                 {/* Emoji area */}
                 <div className="relative flex items-center justify-center bg-gradient-to-br from-[#161616] to-[#111] border-b border-white/5 h-36">
                   <span className="text-6xl drop-shadow-xl">{p.emoji}</span>
@@ -461,12 +379,7 @@ export default function Home() {
                   <p className="font-black text-sm leading-tight text-white uppercase">{p.name}</p>
                   <p className="text-zinc-500 text-xs leading-snug line-clamp-2">{p.description}</p>
 
-                  <div className="flex items-baseline gap-1.5 mt-auto pt-2">
-                    <span className="font-black text-green-400 text-lg">${p.salePrice.toFixed(2)}</span>
-                    <span className="text-zinc-600 text-xs line-through">${p.regularPrice.toFixed(2)}</span>
-                  </div>
-
-                  <div className="flex gap-2 mt-1">
+                  <div className="flex gap-2 mt-auto pt-2">
                     <button
                       onClick={() => setDetailProduct(p)}
                       className="flex items-center justify-center w-9 h-9 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all flex-shrink-0"
@@ -491,63 +404,130 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Customer Wins (Proof) ── */}
-      <section id="proof" className="py-20 border-t border-white/10 bg-[#0d0d0d] overflow-hidden">
+      {/* ── Hero (below products) ── */}
+      <section className="relative overflow-hidden bg-[#0d0d0d] border-t border-white/10">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-green-500/6 rounded-full blur-[140px]" />
+        </div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-20 pb-24 text-center relative">
+          <div className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/30 rounded-full px-4 py-1.5 text-green-400 text-xs font-bold uppercase tracking-widest mb-8">
+            <Zap size={11} /> #1 Reseller Supplier Source
+          </div>
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-black leading-[0.9] tracking-tighter mb-6 uppercase">
+            Start Your<br />
+            <span className="text-green-400">Reselling</span><br />
+            Journey Today
+          </h1>
+          <p className="text-zinc-400 text-base sm:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
+            Access premium supplier directories that took years to build — at a fraction of what others charge.
+            Start flipping products and making profit <span className="text-white font-semibold">this week</span>.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-16">
+            <a href="#products"
+              className="flex items-center gap-2 bg-green-500 hover:bg-green-400 text-black font-black px-8 py-4 rounded-full text-base transition-all hover:scale-105 shadow-xl shadow-green-500/25 uppercase tracking-wide">
+              Shop Suppliers
+            </a>
+            <a href="#how-it-works"
+              className="flex items-center gap-2 border border-white/20 hover:border-white/40 text-white font-semibold px-8 py-4 rounded-full text-base transition-colors uppercase tracking-wide">
+              How It Works
+            </a>
+          </div>
+          {/* Trust bar */}
+          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-12 pt-10 border-t border-white/10">
+            {[
+              { icon: <Package size={18} />, value: "10,000+", label: "Happy Resellers" },
+              { icon: <Zap size={18} />, value: "Instant", label: "Digital Delivery" },
+              { icon: <Shield size={18} />, value: "Secure", label: "Checkout" },
+              { icon: <Award size={18} />, value: "Vetted", label: "Suppliers Only" },
+            ].map(s => (
+              <div key={s.label} className="flex items-center gap-2 text-sm">
+                <span className="text-green-400">{s.icon}</span>
+                <span className="font-bold text-white">{s.value}</span>
+                <span className="text-zinc-500">{s.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── How It Works ── */}
+      <section id="how-it-works" className="py-20 border-t border-white/10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-black uppercase mb-3">Customer Wins 🌎</h2>
-            <p className="text-zinc-500 text-sm">Real haul photos from resellers using our supplier lists</p>
+            <h2 className="text-3xl sm:text-4xl font-black uppercase mb-3">How It Works</h2>
+            <p className="text-zinc-500 text-sm">Three simple steps to start making money</p>
           </div>
-
-          {/* Main slide */}
-          <div className="relative max-w-4xl mx-auto">
-            <div className="relative rounded-3xl overflow-hidden bg-[#111] border border-white/10" style={{ aspectRatio: "16/7" }}>
-              <img
-                src={proofSlides[slideIndex].img}
-                alt={proofSlides[slideIndex].label}
-                className="w-full h-full object-cover transition-opacity duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-transparent" />
-              <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-10">
-                <div className="inline-flex items-center gap-1.5 bg-green-400 text-black text-[10px] font-black px-3 py-1 rounded-full w-fit mb-3 uppercase">
-                  Real Haul
-                </div>
-                <div className="text-green-400 font-black text-3xl sm:text-5xl leading-none mb-1">
-                  {proofSlides[slideIndex].profit}
-                </div>
-                <div className="text-white font-black text-lg sm:text-2xl leading-tight mb-1">
-                  {proofSlides[slideIndex].label}
-                </div>
-                <div className="text-zinc-400 text-sm mb-3 italic">"{proofSlides[slideIndex].quote}"</div>
-                <div className="flex items-center gap-2">
-                  <div className="flex gap-0.5">
-                    {Array.from({ length: 5 }).map((_, i) => <Star key={i} size={12} className="fill-green-400 text-green-400" />)}
-                  </div>
-                  <span className="text-white font-bold text-sm">{proofSlides[slideIndex].name}</span>
-                  <span className="text-zinc-500 text-xs">— {proofSlides[slideIndex].location}</span>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { icon: <Package size={26} />, step: "01", title: "Pick Your Niche", desc: "Choose the supplier package for the niche you want to flip. One category or all of them — your choice." },
+              { icon: <Zap size={26} />, step: "02", title: "Get Instant Access", desc: "Supplier links land in your inbox within seconds of payment. No waiting, no delays." },
+              { icon: <TrendingUp size={26} />, step: "03", title: "Source & Flip", desc: "Buy wholesale, sell at retail. You keep 100% of every dollar of profit you make." },
+            ].map(s => (
+              <div key={s.step} className="relative bg-white/[0.03] border border-white/10 rounded-2xl p-8 hover:border-green-500/40 transition-all group">
+                <div className="text-green-400/15 font-black text-7xl absolute top-3 right-5 leading-none select-none">{s.step}</div>
+                <div className="text-green-400 mb-4">{s.icon}</div>
+                <h3 className="text-lg font-black mb-2 uppercase">{s.title}</h3>
+                <p className="text-zinc-500 text-sm leading-relaxed">{s.desc}</p>
               </div>
-            </div>
-
-            {/* Arrows */}
-            <button onClick={prevSlide} className="absolute -left-4 sm:-left-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full flex items-center justify-center transition-all z-10">
-              <ChevronLeft size={18} />
-            </button>
-            <button onClick={nextSlide} className="absolute -right-4 sm:-right-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full flex items-center justify-center transition-all z-10">
-              <ChevronRight size={18} />
-            </button>
+            ))}
           </div>
+        </div>
+      </section>
 
-          {/* Thumbnail strip */}
-          <div className="flex gap-3 justify-center mt-6 overflow-x-auto pb-2 px-2">
-            {proofSlides.map((slide, i) => (
-              <button
+      {/* ── Customer Wins — Scrolling Photo Strip ── */}
+      <section id="proof" className="py-20 border-t border-white/10 bg-[#0d0d0d] overflow-hidden">
+        <div className="text-center mb-10 px-4">
+          <h2 className="text-3xl sm:text-4xl font-black uppercase mb-3">Customer Wins 🌎</h2>
+          <p className="text-zinc-500 text-sm">Real haul photos from resellers using our supplier lists</p>
+        </div>
+
+        {/* Row 1 — scrolls left */}
+        <div className="overflow-hidden mb-4">
+          <div className="flex animate-marquee gap-4" style={{ width: "max-content" }}>
+            {[...proofSlides, ...proofSlides].map((slide, i) => (
+              <div
                 key={i}
-                onClick={() => { setSlideIndex(i); setAutoSlide(false); }}
-                className={`flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden border-2 transition-all ${i === slideIndex ? "border-green-400 scale-105" : "border-transparent opacity-50 hover:opacity-80"}`}
+                className="relative flex-shrink-0 rounded-2xl overflow-hidden"
+                style={{ width: "280px", height: "200px" }}
               >
                 <img src={slide.img} alt={slide.label} className="w-full h-full object-cover" />
-              </button>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-3">
+                  <div className="text-green-400 font-black text-lg leading-none">{slide.profit}</div>
+                  <div className="text-white font-bold text-xs leading-tight">{slide.name} · {slide.location}</div>
+                </div>
+                <div className="absolute top-2 right-2 bg-green-400 text-black text-[9px] font-black px-2 py-0.5 rounded-full uppercase">
+                  Real Haul
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Row 2 — scrolls right (reverse) */}
+        <div className="overflow-hidden">
+          <div
+            className="flex gap-4"
+            style={{
+              width: "max-content",
+              animation: "marquee 26s linear infinite reverse",
+            }}
+          >
+            {[...proofSlides.slice().reverse(), ...proofSlides.slice().reverse()].map((slide, i) => (
+              <div
+                key={i}
+                className="relative flex-shrink-0 rounded-2xl overflow-hidden"
+                style={{ width: "280px", height: "200px" }}
+              >
+                <img src={slide.img} alt={slide.label} className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-3">
+                  <div className="flex gap-0.5 mb-1">
+                    {Array.from({ length: 5 }).map((_, j) => <Star key={j} size={10} className="fill-green-400 text-green-400" />)}
+                  </div>
+                  <div className="text-white text-xs italic leading-tight">"{slide.quote}"</div>
+                </div>
+              </div>
             ))}
           </div>
         </div>

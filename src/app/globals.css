@@ -133,7 +133,15 @@ nextjs-portal {
   100% { transform: translateX(-50%); }
 }
 .animate-ticker {
-  animation: ticker 28s linear infinite;
+  animation: ticker 18s linear infinite;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 22s linear infinite;
 }
 .animate-ticker:hover {
   animation-play-state: paused;
