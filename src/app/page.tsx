@@ -15,7 +15,7 @@ const products = [
   {
     id: 1, name: "2026 All-In-One Supplier", badge: "BEST SELLER",
     badgeColor: "#16a34a", regularPrice: 34.99, salePrice: 24.99,
-    emoji: "🏆", tags: ["Clothes","Shoes","Jewelry","Handbags","Belts"],
+    emoji: "🏆", image: "/allinone-product.png", tags: ["Clothes","Shoes","Jewelry","Handbags","Belts"],
     shopifyUrl: `${CHECKOUT}/53352382562622:1`, variantId: "53352382562622",
     description: "Every category covered — clothes, shoes, jewelry, belts, handbags & more.",
     details: {
