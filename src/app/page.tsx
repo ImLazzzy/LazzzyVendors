@@ -376,7 +376,7 @@ export default function Home() {
                 {/* Product image or emoji */}
                 <div className="relative flex items-center justify-center bg-gradient-to-br from-[#161616] to-[#111] border-b border-white/5 h-36 overflow-hidden">
                   {"image" in p && p.image ? (
-                    <img src={p.image as string} alt={p.name} className="w-full h-full object-cover" />
+                    <img src={p.image as string} alt={p.name} className="w-full h-full object-cover" style={{ objectPosition: "center 20%" }} />
                   ) : (
                     <span className="text-6xl drop-shadow-xl">{p.emoji}</span>
                   )}
