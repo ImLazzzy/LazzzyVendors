@@ -127,7 +127,7 @@ const products = [
   {
     id: 12, name: "Cologne Supplier", badge: null,
     badgeColor: "", regularPrice: 20.00, salePrice: 14.99,
-    emoji: "🧴", image: "/cologne-product.jpeg", tags: ["Designer","Niche","Fragrance"],
+    emoji: "🧴", image: "/cologne-product.jpeg?v=2", tags: ["Designer","Niche","Fragrance"],
     shopifyUrl: `${CHECKOUT}/53352373420350:1`, variantId: "53352373420350",
     description: "Designer & niche fragrance suppliers. Cologne resale is booming.",
     details: {
