@@ -127,7 +127,7 @@ const products = [
   {
     id: 12, name: "Cologne Supplier", badge: null,
     badgeColor: "", regularPrice: 20.00, salePrice: 14.99,
-    emoji: "🧴", tags: ["Designer","Niche","Fragrance"],
+    emoji: "🧴", image: "/cologne-product.jpeg", tags: ["Designer","Niche","Fragrance"],
     shopifyUrl: `${CHECKOUT}/53352373420350:1`, variantId: "53352373420350",
     description: "Designer & niche fragrance suppliers. Cologne resale is booming.",
     details: {
@@ -213,7 +213,11 @@ function ProductModal({ product, onClose, onAddToCart }: { product: typeof produ
             <button onClick={onClose} className="ml-auto text-white/50 hover:text-white"><X size={20} /></button>
           </div>
           <div className="flex items-center gap-4">
-            <div className="text-5xl w-16 h-16 flex items-center justify-center bg-black/40 rounded-2xl flex-shrink-0">{product.emoji}</div>
+            <div className="w-16 h-16 flex items-center justify-center bg-black/40 rounded-2xl flex-shrink-0 overflow-hidden">
+              {"image" in product && product.image
+                ? <img src={product.image as string} alt={product.name} className="w-full h-full object-cover rounded-2xl"/>
+                : <span className="text-5xl">{product.emoji}</span>}
+            </div>
             <div>
               <h2 className="text-xl font-black text-white">{product.name}</h2>
               <p className="text-white/60 text-sm mt-1">{product.description}</p>
@@ -369,9 +373,13 @@ export default function Home() {
                   <div className="text-zinc-500 text-[9px] line-through leading-none mt-0.5">${p.regularPrice.toFixed(2)}</div>
                 </div>
 
-                {/* Emoji area */}
-                <div className="relative flex items-center justify-center bg-gradient-to-br from-[#161616] to-[#111] border-b border-white/5 h-36">
-                  <span className="text-6xl drop-shadow-xl">{p.emoji}</span>
+                {/* Product image or emoji */}
+                <div className="relative flex items-center justify-center bg-gradient-to-br from-[#161616] to-[#111] border-b border-white/5 h-36 overflow-hidden">
+                  {"image" in p && p.image ? (
+                    <img src={p.image as string} alt={p.name} className="w-full h-full object-cover" />
+                  ) : (
+                    <span className="text-6xl drop-shadow-xl">{p.emoji}</span>
+                  )}
                 </div>
 
                 {/* Info */}
