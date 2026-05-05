@@ -39,7 +39,7 @@ const products = [
   {
     id: 3, name: "Shoe Supplier", badge: "HOT",
     badgeColor: "#f97316", regularPrice: 20.00, salePrice: 14.99,
-    emoji: "👟", image: "/shoe-product.jpeg", tags: ["Sneakers","Boots","Sandals"],
+    emoji: "👟", image: "/shoe-product.jpeg", imgPos: "center 10%", imgScale: 1.0, tags: ["Sneakers","Boots","Sandals"],
     shopifyUrl: `${CHECKOUT}/53352384233790:1`, variantId: "53352384233790",
     description: "Wholesale sneaker & footwear suppliers. Name brands at a fraction of retail.",
     details: {
@@ -50,7 +50,7 @@ const products = [
   {
     id: 4, name: "Watch Supplier", badge: "NEW",
     badgeColor: "#22c55e", regularPrice: 20.00, salePrice: 14.99,
-    emoji: "⌚", image: "/watch-product.jpeg", tags: ["Luxury","Fashion","Wholesale"],
+    emoji: "⌚", image: "/watch-product.jpeg", imgPos: "center 18%", imgScale: 1.05, tags: ["Luxury","Fashion","Wholesale"],
     shopifyUrl: `${CHECKOUT}/53342887084350:1`, variantId: "53342887084350",
     description: "Luxury and fashion watch suppliers. High-margin resale opportunity.",
     details: {
@@ -72,7 +72,7 @@ const products = [
   {
     id: 6, name: "Glasses Supplier", badge: null,
     badgeColor: "", regularPrice: 20.00, salePrice: 14.99,
-    emoji: "🕶️", image: "/glasses-product.jpeg", tags: ["Sunglasses","Designer","Eyewear"],
+    emoji: "🕶️", image: "/glasses-product.jpeg", imgPos: "center 35%", imgScale: 1.15, tags: ["Sunglasses","Designer","Eyewear"],
     shopifyUrl: `${CHECKOUT}/53352380662078:1`, variantId: "53352380662078",
     description: "Designer & fashion eyewear. Sunglasses & frames at wholesale pricing.",
     details: {
@@ -116,7 +116,7 @@ const products = [
   {
     id: 11, name: "Clothing Supplier", badge: "POPULAR",
     badgeColor: "#10b981", regularPrice: 20.00, salePrice: 14.99,
-    emoji: "👕", image: "/clothing-product.jpeg", tags: ["Streetwear","Basics","Boutique"],
+    emoji: "👕", image: "/clothing-product.jpeg", imgPos: "center 12%", imgScale: 1.0, tags: ["Streetwear","Basics","Boutique"],
     shopifyUrl: `${CHECKOUT}/53352387281214:1`, variantId: "53352387281214",
     description: "Wholesale clothing suppliers for all styles. Streetwear, basics & boutique.",
     details: {
@@ -127,7 +127,7 @@ const products = [
   {
     id: 12, name: "Cologne Supplier", badge: null,
     badgeColor: "", regularPrice: 20.00, salePrice: 14.99,
-    emoji: "🧴", image: "/cologne-product.jpeg", tags: ["Designer","Niche","Fragrance"],
+    emoji: "🧴", image: "/cologne-product.jpeg", imgPos: "center 22%", imgScale: 1.05, tags: ["Designer","Niche","Fragrance"],
     shopifyUrl: `${CHECKOUT}/53352373420350:1`, variantId: "53352373420350",
     description: "Designer & niche fragrance suppliers. Cologne resale is booming.",
     details: {
@@ -138,7 +138,7 @@ const products = [
   {
     id: 13, name: "LazzzyPodz Supplier", badge: "EXCLUSIVE",
     badgeColor: "#16a34a", regularPrice: 20.00, salePrice: 14.99,
-    emoji: "🎵", image: "/podz-product.jpeg", tags: ["AirPods","Wireless","Exclusive"],
+    emoji: "🎵", image: "/podz-product.jpeg", imgPos: "center 5%", imgScale: 1.0, tags: ["AirPods","Wireless","Exclusive"],
     shopifyUrl: `${CHECKOUT}/53342886986046:1`, variantId: "53342886986046",
     description: "AirPods & wireless earbud suppliers at wholesale pricing.",
     details: {
@@ -381,9 +381,12 @@ export default function Home() {
                         src={p.image as string}
                         alt={p.name}
                         className="w-full h-full object-cover"
-                        style={{ objectPosition: "center 15%", transform: "scale(1.08)" }}
+                        style={{
+                          objectPosition: (p as any).imgPos ?? "center center",
+                          transform: `scale(${(p as any).imgScale ?? 1})`,
+                          transformOrigin: "center top",
+                        }}
                       />
-                      {/* gradient at bottom hides any Sale badge remnants */}
                       <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-[#0a0a0a] to-transparent pointer-events-none" />
                     </>
                   ) : (
