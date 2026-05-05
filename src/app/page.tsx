@@ -27,7 +27,7 @@ const products = [
   {
     id: 2, name: "Elite Supplier Bundle", badge: "50% OFF",
     badgeColor: "#ef4444", regularPrice: 80.00, salePrice: 39.99,
-    emoji: "💎", tags: ["All Categories","Best Value","Exclusive"],
+    emoji: "💎", image: "/elite-product.png", tags: ["All Categories","Best Value","Exclusive"],
     shopifyUrl: `${CHECKOUT}/53352541913406:1`, variantId: "53352541913406",
     description: "The ultimate bundle — all individual suppliers at the lowest price possible.",
     details: {
