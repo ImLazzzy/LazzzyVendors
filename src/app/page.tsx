@@ -39,7 +39,7 @@ const products = [
   {
     id: 3, name: "Shoe Supplier", badge: "HOT",
     badgeColor: "#f97316", regularPrice: 20.00, salePrice: 14.99,
-    emoji: "👟", image: "/shoe-product.svg", tags: ["Sneakers","Boots","Sandals"],
+    emoji: "👟", image: "/shoe-product.png", tags: ["Sneakers","Boots","Sandals"],
     shopifyUrl: `${CHECKOUT}/53352384233790:1`, variantId: "53352384233790",
     description: "Wholesale sneaker & footwear suppliers. Name brands at a fraction of retail.",
     details: {
@@ -50,7 +50,7 @@ const products = [
   {
     id: 4, name: "Watch Supplier", badge: "NEW",
     badgeColor: "#22c55e", regularPrice: 20.00, salePrice: 14.99,
-    emoji: "⌚", image: "/watch-product.jpeg", tags: ["Luxury","Fashion","Wholesale"],
+    emoji: "⌚", image: "/watch-product.png", tags: ["Luxury","Fashion","Wholesale"],
     shopifyUrl: `${CHECKOUT}/53342887084350:1`, variantId: "53342887084350",
     description: "Luxury and fashion watch suppliers. High-margin resale opportunity.",
     details: {
@@ -72,7 +72,7 @@ const products = [
   {
     id: 6, name: "Glasses Supplier", badge: null,
     badgeColor: "", regularPrice: 20.00, salePrice: 14.99,
-    emoji: "🕶️", image: "/glasses-product.jpeg", tags: ["Sunglasses","Designer","Eyewear"],
+    emoji: "🕶️", image: "/glasses-product.png", tags: ["Sunglasses","Designer","Eyewear"],
     shopifyUrl: `${CHECKOUT}/53352380662078:1`, variantId: "53352380662078",
     description: "Designer & fashion eyewear. Sunglasses & frames at wholesale pricing.",
     details: {
@@ -83,7 +83,7 @@ const products = [
   {
     id: 8, name: "Looloo Supplier", badge: null,
     badgeColor: "", regularPrice: 20.00, salePrice: 14.99,
-    emoji: "👗", tags: ["Women's","Fashion","Boutique"],
+    emoji: "👗", image: "/looloo-product.png", tags: ["Women's","Fashion","Boutique"],
     shopifyUrl: `${CHECKOUT}/53352387772734:1`, variantId: "53352387772734",
     description: "Women's fashion & boutique clothing at competitive wholesale prices.",
     details: {
@@ -94,7 +94,7 @@ const products = [
   {
     id: 9, name: "Designer Bag Supplier", badge: "HOT",
     badgeColor: "#f97316", regularPrice: 20.00, salePrice: 14.99,
-    emoji: "👜", image: "/bag-product.svg", tags: ["Louis Vuitton","Gucci","Prada","Wholesale"],
+    emoji: "👜", image: "/bag-product.png", tags: ["Louis Vuitton","Gucci","Prada","Wholesale"],
     shopifyUrl: `${CHECKOUT}/53342886920510:1`, variantId: "53342886920510",
     description: "Luxury & designer bag suppliers. Premium handbag resale with high margins.",
     details: {
@@ -138,7 +138,7 @@ const products = [
   {
     id: 13, name: "LazzzyPodz Supplier", badge: "EXCLUSIVE",
     badgeColor: "#16a34a", regularPrice: 20.00, salePrice: 14.99,
-    emoji: "🎵", image: "/podz-product.jpeg", tags: ["AirPods","Wireless","Exclusive"],
+    emoji: "🎵", image: "/podz-product.png", tags: ["AirPods","Wireless","Exclusive"],
     shopifyUrl: `${CHECKOUT}/53342886986046:1`, variantId: "53342886986046",
     description: "AirPods & wireless earbud suppliers at wholesale pricing.",
     details: {
