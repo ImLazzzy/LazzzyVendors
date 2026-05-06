@@ -6,9 +6,8 @@ import {
   Zap, Shield, Star, Package, TrendingUp, Award, Search, Menu
 } from "lucide-react";
 
-/* ─── Shopify config ─── */
-const SHOPIFY_STORE = "lazzzyresells.myshopify.com";
-const CHECKOUT = `https://${SHOPIFY_STORE}/cart`;
+/* ─── Gumroad config ─── */
+const GUMROAD_BASE = "https://gallegosaurus22.gumroad.com";
 
 /* ─── Products ─── */
 const products = [
@@ -73,7 +72,7 @@ const products = [
     id: 6, name: "Glasses Supplier", badge: null,
     badgeColor: "", regularPrice: 20.00, salePrice: 14.99,
     emoji: "🕶️", image: "/glasses-product.png?v=2", tags: ["Sunglasses","Designer","Eyewear"],
-    shopifyUrl: `${CHECKOUT}/53352380662078:1`, variantId: "53352380662078",
+    shopifyUrl: `${GUMROAD_BASE}`, variantId: "",
     description: "Designer & fashion eyewear. Sunglasses & frames at wholesale pricing.",
     details: {
       whatYouGet: ["Designer sunglasses wholesalers","Fashion frames & eyewear sources","Brand-inspired style suppliers","Instant email delivery"],
@@ -106,7 +105,7 @@ const products = [
     id: 10, name: "Lego Supplier", badge: "NEW",
     badgeColor: "#22c55e", regularPrice: 20.00, salePrice: 14.99,
     emoji: "🧱", image: "/lego-product.png", tags: ["Rare Sets","Bulk","Retired"],
-    shopifyUrl: `${CHECKOUT}/53352373420350:1`, variantId: "53352373420350",
+    shopifyUrl: `${GUMROAD_BASE}`, variantId: "",
     description: "Rare & bulk Lego set suppliers. Highest resale margins in the toy niche.",
     details: {
       whatYouGet: ["Rare & retired set suppliers","Bulk Lego wholesalers","Collector-focused sources","Instant email delivery"],
@@ -169,11 +168,9 @@ const faqs = [
 ];
 
 /* ─── Cart helpers ─── */
-interface CartItem { id: number; name: string; price: number; emoji: string; qty: number; variantId: string; shopifyUrl: string; }
+interface CartItem { id: number; name: string; price: number; emoji: string; qty: number; gumroadUrl: string; }
 function buildCheckoutUrl(items: CartItem[]) {
-  const valid = items.filter(i => i.variantId);
-  if (!valid.length) return items[0]?.shopifyUrl ?? `https://${SHOPIFY_STORE}`;
-  return `https://${SHOPIFY_STORE}/cart/${valid.map(i => `${i.variantId}:${i.qty}`).join(",")}`;
+  return items[0]?.gumroadUrl ?? GUMROAD_BASE;
 }
 
 /* ─── FAQ Item ─── */
@@ -283,7 +280,7 @@ export default function Home() {
     setCart(prev => {
       const ex = prev.find(i => i.id === product.id);
       if (ex) return prev.map(i => i.id === product.id ? { ...i, qty: i.qty + 1 } : i);
-      return [...prev, { id: product.id, name: product.name, price: product.salePrice, emoji: product.emoji, qty: 1, variantId: product.variantId, shopifyUrl: product.shopifyUrl }];
+      return [...prev, { id: product.id, name: product.name, price: product.salePrice, emoji: product.emoji, qty: 1, gumroadUrl: product.shopifyUrl }];
     });
     setCartOpen(true);
   };
@@ -557,7 +554,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             {[
               { icon: <Zap size={22} />, title: "Instant Delivery", desc: "Supplier links are sent to your email the moment your payment is confirmed — no waiting." },
-              { icon: <Shield size={22} />, title: "Secure Checkout", desc: "Payments processed through Shopify's encrypted secure checkout. Your info is always protected." },
+              { icon: <Shield size={22} />, title: "Secure Checkout", desc: "Payments processed through Gumroad's encrypted secure checkout. Your info is always protected." },
               { icon: <Award size={22} />, title: "Vetted Suppliers", desc: "Every supplier has been personally tested and verified for quality & reliability." },
             ].map(item => (
               <div key={item.title} className="flex gap-4 items-start">
