@@ -16,7 +16,7 @@ const products = [
     id: 1, name: "2026 All-In-One Supplier", badge: "BEST SELLER",
     badgeColor: "#16a34a", regularPrice: 34.99, salePrice: 24.99,
     emoji: "🏆", image: "/allinone-product.png", tags: ["Clothes","Shoes","Jewelry","Handbags","Belts"],
-    shopifyUrl: `${CHECKOUT}/53352382562622:1`, variantId: "53352382562622",
+    shopifyUrl: "https://gallegosaurus22.gumroad.com/l/skuoit", variantId: "",
     description: "Every category covered — clothes, shoes, jewelry, belts, handbags & more.",
     details: {
       whatYouGet: ["Clothing suppliers (50+ sources)","Shoe & sneaker wholesalers","Jewelry & accessory suppliers","Handbag & belt sources","Instant email delivery"],
@@ -28,7 +28,7 @@ const products = [
     id: 2, name: "Elite Supplier Bundle", badge: "50% OFF",
     badgeColor: "#ef4444", regularPrice: 80.00, salePrice: 39.99,
     emoji: "💎", image: "/elite-product.png", tags: ["All Categories","Best Value","Exclusive"],
-    shopifyUrl: `${CHECKOUT}/53352541913406:1`, variantId: "53352541913406",
+    shopifyUrl: "https://gallegosaurus22.gumroad.com/l/syuiil", variantId: "",
     description: "The ultimate bundle — all individual suppliers at the lowest price possible.",
     details: {
       whatYouGet: ["Every individual supplier list","13 categories in one purchase","Unlimited access — no expiry","Priority support","Instant email delivery"],
@@ -40,7 +40,7 @@ const products = [
     id: 3, name: "Shoe Supplier", badge: "HOT",
     badgeColor: "#f97316", regularPrice: 20.00, salePrice: 14.99,
     emoji: "👟", image: "/shoe-product.png", tags: ["Sneakers","Boots","Sandals"],
-    shopifyUrl: `${CHECKOUT}/53352384233790:1`, variantId: "53352384233790",
+    shopifyUrl: "https://gallegosaurus22.gumroad.com/l/bmmvm", variantId: "",
     description: "Wholesale sneaker & footwear suppliers. Name brands at a fraction of retail.",
     details: {
       whatYouGet: ["Name-brand sneaker wholesalers","Boots & casual footwear sources","Sandal & seasonal suppliers","Instant email delivery"],
@@ -51,7 +51,7 @@ const products = [
     id: 4, name: "Watch Supplier", badge: "NEW",
     badgeColor: "#22c55e", regularPrice: 20.00, salePrice: 14.99,
     emoji: "⌚", image: "/watch-product.png", tags: ["Luxury","Fashion","Wholesale"],
-    shopifyUrl: `${CHECKOUT}/53342887084350:1`, variantId: "53342887084350",
+    shopifyUrl: "https://gallegosaurus22.gumroad.com/l/dfchgs", variantId: "",
     description: "Luxury and fashion watch suppliers. High-margin resale opportunity.",
     details: {
       whatYouGet: ["Luxury watch wholesalers","Fashion & casual watch sources","High-margin resale contacts","Instant email delivery"],
@@ -62,7 +62,7 @@ const products = [
     id: 5, name: "Moissanite Supplier", badge: "POPULAR",
     badgeColor: "#10b981", regularPrice: 20.00, salePrice: 14.99,
     emoji: "💍", image: "/moissanite-product.png", tags: ["Earrings","Rings","Watches"],
-    shopifyUrl: `${CHECKOUT}/53352384790846:1`, variantId: "53352384790846",
+    shopifyUrl: "https://gallegosaurus22.gumroad.com/l/hkswqp", variantId: "",
     description: "Earrings, rings & watches. Moissanite jewelry at wholesale pricing.",
     details: {
       whatYouGet: ["Moissanite ring suppliers","Earring wholesalers","Watch & bracelet sources","Instant email delivery"],
@@ -84,7 +84,7 @@ const products = [
     id: 8, name: "Looloo Supplier", badge: null,
     badgeColor: "", regularPrice: 20.00, salePrice: 14.99,
     emoji: "👗", image: "/looloo-product.png", tags: ["Women's","Fashion","Boutique"],
-    shopifyUrl: `${CHECKOUT}/53352387772734:1`, variantId: "53352387772734",
+    shopifyUrl: "https://gallegosaurus22.gumroad.com/l/aphwds", variantId: "",
     description: "Women's fashion & boutique clothing at competitive wholesale prices.",
     details: {
       whatYouGet: ["Women's fashion wholesalers","Boutique clothing sources","Seasonal trend suppliers","Instant email delivery"],
@@ -95,7 +95,7 @@ const products = [
     id: 9, name: "Designer Bag Supplier", badge: "HOT",
     badgeColor: "#f97316", regularPrice: 20.00, salePrice: 14.99,
     emoji: "👜", image: "/bag-product.png", tags: ["Louis Vuitton","Gucci","Prada","Wholesale"],
-    shopifyUrl: `${CHECKOUT}/53342886920510:1`, variantId: "53342886920510",
+    shopifyUrl: "https://gallegosaurus22.gumroad.com/l/ddswdq", variantId: "",
     description: "Luxury & designer bag suppliers. Premium handbag resale with high margins.",
     details: {
       whatYouGet: ["Louis Vuitton-style bag wholesalers","Gucci & Prada-inspired sources","Premium handbag suppliers","Instant email delivery"],
@@ -117,7 +117,7 @@ const products = [
     id: 11, name: "Clothing Supplier", badge: "POPULAR",
     badgeColor: "#10b981", regularPrice: 20.00, salePrice: 14.99,
     emoji: "👕", image: "/clothing-product.png", tags: ["Streetwear","Basics","Boutique"],
-    shopifyUrl: `${CHECKOUT}/53352387281214:1`, variantId: "53352387281214",
+    shopifyUrl: "https://gallegosaurus22.gumroad.com/l/yszpya", variantId: "",
     description: "Wholesale clothing suppliers for all styles. Streetwear, basics & boutique.",
     details: {
       whatYouGet: ["Streetwear wholesalers","Basic & essential clothing sources","Boutique style suppliers","Instant email delivery"],
@@ -128,7 +128,7 @@ const products = [
     id: 12, name: "Cologne Supplier", badge: null,
     badgeColor: "", regularPrice: 20.00, salePrice: 14.99,
     emoji: "🧴", image: "/cologne-product.png", tags: ["Designer","Niche","Fragrance"],
-    shopifyUrl: `${CHECKOUT}/53352373420350:1`, variantId: "53352373420350",
+    shopifyUrl: "https://gallegosaurus22.gumroad.com/l/hbekwy", variantId: "",
     description: "Designer & niche fragrance suppliers. Cologne resale is booming.",
     details: {
       whatYouGet: ["Designer fragrance wholesalers","Niche & indie perfume sources","High-margin cologne suppliers","Instant email delivery"],
@@ -139,7 +139,7 @@ const products = [
     id: 13, name: "LazzzyPodz Supplier", badge: "EXCLUSIVE",
     badgeColor: "#16a34a", regularPrice: 20.00, salePrice: 14.99,
     emoji: "🎵", image: "/podz-product.png", tags: ["AirPods","Wireless","Exclusive"],
-    shopifyUrl: `${CHECKOUT}/53342886986046:1`, variantId: "53342886986046",
+    shopifyUrl: "https://gallegosaurus22.gumroad.com/l/teewek", variantId: "",
     description: "AirPods & wireless earbud suppliers at wholesale pricing.",
     details: {
       whatYouGet: ["AirPods-compatible wholesalers","Wireless earbud suppliers","Exclusive LazzzyPodz source access","Instant email delivery"],
