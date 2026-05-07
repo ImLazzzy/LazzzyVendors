@@ -72,7 +72,7 @@ const products = [
     id: 6, name: "Glasses Supplier", badge: null,
     badgeColor: "", regularPrice: 20.00, salePrice: 14.99,
     emoji: "🕶️", image: "/glasses-product.png?v=2", tags: ["Sunglasses","Designer","Eyewear"],
-    shopifyUrl: `${GUMROAD_BASE}`, variantId: "",
+    shopifyUrl: "https://gallegosaurus22.gumroad.com/l/dehcp", variantId: "",
     description: "Designer & fashion eyewear. Sunglasses & frames at wholesale pricing.",
     details: {
       whatYouGet: ["Designer sunglasses wholesalers","Fashion frames & eyewear sources","Brand-inspired style suppliers","Instant email delivery"],
@@ -105,7 +105,7 @@ const products = [
     id: 10, name: "Lego Supplier", badge: "NEW",
     badgeColor: "#22c55e", regularPrice: 20.00, salePrice: 14.99,
     emoji: "🧱", image: "/lego-product.png", tags: ["Rare Sets","Bulk","Retired"],
-    shopifyUrl: `${GUMROAD_BASE}`, variantId: "",
+    shopifyUrl: "https://gallegosaurus22.gumroad.com/l/tobset", variantId: "",
     description: "Rare & bulk Lego set suppliers. Highest resale margins in the toy niche.",
     details: {
       whatYouGet: ["Rare & retired set suppliers","Bulk Lego wholesalers","Collector-focused sources","Instant email delivery"],
